@@ -1,0 +1,184 @@
+@import "../../node_modules/the-new-css-reset/css/reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;700&display=swap");
+
+:root {
+	--text-grey: #8a97a8;
+	--azzurro: #55c2e4;
+
+	--margin-large: 150px;
+	--margin-standard: 50px;
+	--margin-small: 20px;
+	--margin-smallest: 10px;
+}
+
+html {
+	/* 1rem = 10px */
+	font-size: 62.5%;
+}
+
+body {
+	color: var(--text-grey);
+	font-size: 2rem;
+	font-family: "Alegreya Sans", sans-serif;
+
+	text-align: center;
+}
+
+h1 {
+	font-size: 5.4rem;
+	font-weight: bold;
+	color: var(--azzurro);
+	margin-bottom: var(--margin-standard);
+}
+
+h2 {
+	font-size: 3.4rem;
+	font-weight: bold;
+}
+
+small {
+	font-size: 1.6rem;
+}
+
+button {
+
+	background-color: var(--azzurro);
+	color: white;
+	border: 0;
+	padding-left: 4rem;
+	padding-right: 4rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	border-radius: 0.6rem;
+	font-weight: bold;
+
+	&.btn--secondary {
+		background-color: transparent;
+		border: 2px solid white;
+	}
+
+}
+
+p {
+	margin-top: var(--margin-standard);
+	margin-bottom: var(--margin-standard);
+}
+
+header {
+
+	padding-top: var(--margin-standard);
+	padding-bottom: var(--margin-standard);
+
+	color: white;
+
+	text-align: center;
+
+	background-image: url(../images/header.jpg);
+	background-size: auto 100%;
+	background-position: bottom;
+
+	.logo {
+		max-width: 15rem;
+		height: auto;
+		aspect-ratio: 13 / 6;
+		display: block;
+		margin: 0 auto;
+	}
+
+	button,
+	small,
+	strong {
+		display: inline-block;
+	}
+
+	strong {
+		font-family: 'ramen-ichikaru';
+	}
+
+	button {
+		margin-top: var(--margin-small);
+		margin-bottom: var(--margin-small);
+		width: 220px;
+	}
+
+}
+
+section {
+
+	.content {
+
+		padding-left: 2rem;
+		padding-right: 2rem;
+
+		max-width: 1300px;
+		margin-left: auto;
+		margin-right: auto;
+
+		overflow: hidden;
+	}
+
+}
+
+.content > .mappa-piccoli-comprensori,
+.content > .title-copy-cta {
+	display: block;
+	margin-bottom: var(--margin-large);
+	margin-top: var(--margin-large);
+}
+
+.intro {
+}
+
+.come-usufruire {
+
+	margin: 0;
+	padding-top: var(--margin-large);
+	padding-bottom: var(--margin-large);
+	background-color: #ececec;
+
+	h1,
+	h2 {
+		color: white;
+	}
+
+	li {
+
+		color: white;
+		max-width: 28rem;
+		margin: 0 auto;
+
+		.number {
+
+			display: flex;
+			justify-content: center;
+
+			align-items: center;
+			font-size: 6rem;
+			font-weight: bold;
+			color: white;
+			width: 6rem;
+			height: 6rem;
+			border-radius: 6rem;
+			background-color: var(--azzurro);
+			margin: 0 auto;
+			margin-bottom: var(--margin-small);
+		}
+
+		h2 {
+			margin-bottom: 0;
+			line-height: 1;
+		}
+
+		p {
+			margin-top: 0;
+		}
+	}
+}
+
+.mappa-piccoli-comprensori {
+	width: 150%;
+	height: auto;
+	margin-left: -25%;
+	max-inline-size: none;
+	max-block-size: none;
+}
