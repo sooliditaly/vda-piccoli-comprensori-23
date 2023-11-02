@@ -1,9 +1,11 @@
 ---
-import "../styles/main.scss";
+// import "../styles/main.scss";
+
+import "../../node_modules/the-new-css-reset/css/reset.css";
 
 import { Image } from "astro:assets";
 
-import mapImage from "../images/mappa-piccoli-comprensori.svg";
+import mapImage from "../images/mappa-piccoli-comprensori.webp";
 import tariffeImage from "../images/illustrazione-tariffe.svg";
 import logoSkiLife from "../images/ski-life-logo.svg";
 
@@ -25,7 +27,11 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 
 	<body>
 
-		<style>
+		<style is:global>
+			@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;700&family=Oxygen:wght@300;400;700&display=swap");
+		</style>
+
+		<style is:global>
 			:root {
 				--text-grey: #8a97a8;
 				--azzurro: #55c2e4;
@@ -34,6 +40,13 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 				--margin-standard: 50px;
 				--margin-small: 20px;
 				--margin-smallest: 10px;
+			}
+
+			@font-face {
+				font-family: "Ramen";
+				src:
+					url("../fonts/ramen.woff") format("woff"),
+					url("../fonts/ramen.woff2") format("woff2");
 			}
 
 			@media (min-width: 750px) {
@@ -50,21 +63,29 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 			body {
 				color: var(--text-grey);
 				font-size: 2rem;
-				font-family: "Alegreya Sans", sans-serif;
-
+				line-height: 1.4;
+				font-family: 'Oxygen', sans-serif;
 				text-align: center;
+				font-weight: 300;
+				letter-spacing: 1px;
 			}
 
 			h1 {
+				font-family: "Alegreya Sans", sans-serif;
 				font-size: 5.4rem;
 				font-weight: bold;
 				color: var(--azzurro);
-				margin-bottom: var(--margin-standard);
+				margin-bottom: var(--margin-smallest);
+				line-height: 1;
 			}
 
 			h2 {
+				font-family: "Alegreya Sans", sans-serif;
+				color: var(--azzurro);
 				font-size: 3.4rem;
 				font-weight: bold;
+				line-height: 1.1;
+				margin-bottom: var(--margin-smallest);
 			}
 
 			small {
@@ -73,14 +94,15 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 
 			button {
 				background-color: var(--azzurro);
+				border: 2px solid var(--azzurro);
 				color: white;
-				border: 0;
 				padding-left: 4rem;
 				padding-right: 4rem;
-				padding-top: 1rem;
-				padding-bottom: 1rem;
+				padding-top: 0.5rem;
+				padding-bottom: 0.7rem;
 				border-radius: 0.6rem;
 				font-weight: bold;
+				font-size: 1.7rem;
 			}
 
 			button.btn--secondary {
@@ -93,19 +115,22 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 				margin-bottom: var(--margin-standard);
 			}
 
-			p small {
+			p > small {
 				display: block;
 				margin: var(--margin-small) 0;
 			}
 
 			b {
 				font-weight: bold;
+				font-weight: 700;
+			}
+
+			a {
+				color: var(--azzurro);
+				font-weight: bold;
 			}
 
 			header {
-				padding-top: var(--margin-standard);
-				padding-bottom: var(--margin-standard);
-
 				color: white;
 
 				text-align: center;
@@ -116,8 +141,13 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 
 				height: 90vh;
 
+				padding-top: var(--margin-small);
+				padding-bottom: var(--margin-small);
+
 				display: flex;
+				flex-direction: column;
 				align-items: flex-end;
+				justify-content: space-between;
 			}
 
 			header .logo {
@@ -128,36 +158,50 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 				margin: 0 auto;
 			}
 
-			header button,
 			header small,
 			header strong {
 				display: inline-block;
 			}
 
-			header strong {
-				font-family: "ramen-ichikaru";
-			}
-
 			header button {
+				display: block;
+
+				margin-left: auto;
+				margin-right: auto;
+
 				margin-top: var(--margin-small);
 				margin-bottom: var(--margin-small);
-				width: 220px;
+				width: 225px;
+			}
+
+			header small {
+				font-size: 2rem;
+				font-weight: bold;
+				line-height: 1.2;
+				margin-bottom: var(--margin-smallest);
+			}
+
+			header strong {
+				font-family: "Ramen";
+				font-size: 4rem;
+				line-height: 1.2;
+				margin-bottom: var(--margin-standard);
 			}
 
 			section {
 				margin-top: var(--margin-large);
 				margin-bottom: var(--margin-large);
+			}
 
-				.content {
-					padding-left: 2rem;
-					padding-right: 2rem;
+			section .content {
+				padding-left: var(--margin-small);
+				padding-right: var(--margin-small);
 
-					max-width: 1300px;
-					margin-left: auto;
-					margin-right: auto;
+				max-width: 1300px;
+				margin-left: auto;
+				margin-right: auto;
 
-					overflow: hidden;
-				}
+				overflow: hidden;
 			}
 
 			.content > .mappa-piccoli-comprensori {
@@ -169,6 +213,10 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 			}
 			.content > .title-copy-cta:last-child {
 				margin-bottom: 0;
+			}
+
+			.title-copy-cta p:first-of-type {
+				margin-top: 0;
 			}
 
 			.come-usufruire {
@@ -184,6 +232,10 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 			.come-usufruire h1,
 			.come-usufruire h2 {
 				color: white;
+			}
+
+			.come-usufruire h1 {
+				margin-bottom: var(--margin-standard);
 			}
 
 			.come-usufruire li {
@@ -240,23 +292,35 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 			footer {
 				height: 40rem;
 			}
+
+			@media (min-width: 750px) {
+				.mobile-only {
+					display: none;
+				}
+			}
 		</style>
 
 		<header>
+			<Image
+				src={logoSkiLife}
+				alt="Ski Life valle d'Aosta"
+				class="logo"
+				loading="eager"
+			/>
+
 			<div class="content">
-				<Image
-					src={logoSkiLife}
-					alt="Ski Life valle d'Aosta"
-					class="logo"
-					loading="eager"
-				/>
-				<p>
-					<small>Scopri l'autentica magia della Valle d'Aosta e scia nei</small>
-					<strong>PICCOLI COMPRENSORI</strong>
-				</p>
-				<button class="btn">Acquista online</button><br />
+				<div>
+					<small
+						>Scopri l'autentica magia della<br class="mobile-only" /> Valle
+						d'Aosta e scia nei</small
+					>
+					<strong>PICCOLI <br class="mobile-only" /> COMPRENSORI</strong>
+				</div>
+				<button class="btn">Acquista online</button>
 				<button class="btn btn--secondary">Scopri di più</button>
 			</div>
+
+			<span>arrow</span>
 		</header>
 
 		<section class="intro">
@@ -368,6 +432,9 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 							<small
 								>**Lo skipass è utilizzabile per un massimo di 3 giornate di sci
 								fruibili all’interno dello stesso piccolo comprensorio.</small
+							>
+							<small
+								>Under 14: nati dopo il 31/10/2029. Under 8: nati dopo il 31/10/2015.</small
 							>
 						</p>
 					</div>
