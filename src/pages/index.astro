@@ -1,10 +1,17 @@
 ---
 import "../styles/main.scss";
 
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 
-import mapImage from '../images/mappa-piccoli-comprensori.svg';
-import logoSkiLife from '../images/ski-life-logo.svg';
+import mapImage from "../images/mappa-piccoli-comprensori.svg";
+import tariffeImage from "../images/illustrazione-tariffe.svg";
+import logoSkiLife from "../images/ski-life-logo.svg";
+
+import stepOneImage from "../images/icon-step-1.svg";
+import stepTwoImage from "../images/icon-step-2.svg";
+import stepThreeImage from "../images/icon-step-3.svg";
+
+import SliderComprensori from "../components/SliderComprensori.astro";
 ---
 
 <html lang="en">
@@ -19,9 +26,9 @@ import logoSkiLife from '../images/ski-life-logo.svg';
 	<body>
 		<header>
 			<div class="content">
-				<Image src={logoSkiLife} alt="Ski Life valle d'Aosta" class="logo" />
+				<Image src={logoSkiLife} alt="Ski Life valle d'Aosta" class="logo" loading="eager"/>
 				<p>
-					<small>Scopri l'autentica magia della Valle d'Aosta e scia nei </small>
+					<small>Scopri l'autentica magia della Valle d'Aosta e scia nei</small>
 					<strong>PICCOLI COMPRENSORI</strong>
 				</p>
 				<button class="btn">Acquista online</button><br />
@@ -56,48 +63,40 @@ import logoSkiLife from '../images/ski-life-logo.svg';
 
 				<div class="title-copy-cta">
 					<h1>E non è tutto!</h1>
-
 					<p>
 						Con Magic Skipass, potrai usufruire anche di 1 ora di lezione di sci
 						o di snowboard, presso le <a href="">Scuole Sci</a> disponibili nei
 						piccoli comprensori che aderiscono all'iniziativa.
-					</p>
-
-					<p>
 						<small
 							>Potrai usufruire dell’ora di lezione per tutta la stagione
 							2023/2024 ad eccezione dei weekend e del periodo dal 24/12 al
 							07/01 e dal 12/02 al 16/02.
 						</small>
 					</p>
-
 					<p>
 						Soggiornando per 2 notti consecutive in una delle <a href=""
 							>strutture aderenti</a
 						> degli 11 borghi che aderiscono alla promozione, <b>2 ragazzi*</b>
 						 (fino a 18 anni non compiuti) dormono gratis per 1 notte in camera
 						con i genitori.
+						<small
+							>*Figli di genitori possessori dello skipass promozionale Magic
+							Skipass.</small
+						>
 					</p>
-
-					<small
-						>*Figli di genitori possessori dello skipass promozionale Magic
-						Skipass.</small
-					>
 				</div>
 			</div>
 
 		</section>
 
 		<section class="come-usufruire">
-
 			<div class="content">
 
 				<h1>Come usufruire della promozione</h1>
 
 				<ul class="steps">
-
 					<li>
-						<span class="number">1</span>
+						<Image src={stepOneImage} alt="Uno" width="100" />
 						<h2>Acquista</h2>
 						<p>
 							Acquista il Magic Skipass online o presso le biglietterie dei
@@ -106,7 +105,7 @@ import logoSkiLife from '../images/ski-life-logo.svg';
 					</li>
 
 					<li>
-						<span class="number">2</span>
+						<Image src={stepTwoImage} alt="Due" width="100" />
 						<h2>Ritira</h2>
 						<p>
 							Ritira il Magic Skipass in una delle biglietterie dei comprensori
@@ -115,7 +114,7 @@ import logoSkiLife from '../images/ski-life-logo.svg';
 					</li>
 
 					<li>
-						<span class="number">3</span>
+						<Image src={stepThreeImage} alt="Tre" width="100" />
 						<h2>Scopri</h2>
 						<p>
 							Scopri la bellezza di sciare in uno dei borghi più magici della
@@ -130,175 +129,48 @@ import logoSkiLife from '../images/ski-life-logo.svg';
 
 		<section>
 			<div class="content">
+				<div class="tariffe-grid">
+					<div class="title-copy-cta">
+						<h1>Un prezzo imbattibile</h1>
 
-				<div class="title-copy-cta">
-					<h1>Un prezzo imbattibile</h1>
+						<p>
+							1 skipass plurigiornaliero** da 6 giornate di sci da utilizzare a
+							libera scelta nei piccoli comprensori valdostani <b
+								>a soli 100€ per gli adulti, gratis per i bambini fino a 8 anni</b
+							> (con l’acquisto di uno skipass adulto) e <b
+								>80€ per i ragazzi sotto ai 14 anni.</b
+							>
+						</p>
 
-					<p>
-						1 skipass plurigiornaliero** da 6 giornate di sci da utilizzare a
-						libera scelta nei piccoli comprensori valdostani <b
-							>a soli 100€ per gli adulti, gratis per i bambini fino a 8 anni</b
-						> (con l’acquisto di uno skipass adulto) e <b
-							>80€ per i ragazzi sotto ai 14 anni.</b
-						>
-					</p>
-
-					<p>
-						Lo skipass è utilizzabile per un massimo di due giorni nella stessa
-						località sciistica
-					</p>
-
-					<p>
-						<small
-							>**Lo skipass è utilizzabile per un massimo di 3 giornate di sci
-							fruibili all’interno dello stesso piccolo comprensorio.</small
-						>
-					</p>
-				</div>
-
-				<Image src={mapImage} alt="Mappa piccoli comprensori" class="mappa-piccoli-comprensori" />
-
-				<div class="lasciati-ispirare">
-					<div class="slider-comprensori">
-						<div class="slide">
-							<div>
-								<h1>Lasciati ispirare dai piccoli borghi</h1>
-
-								<p>
-									Scopri la magia dei piccoli borghi in cui assaporare la
-									tradizione:<b>
-										Antagnod, Brusson, Chamois, Champorcher, Cogne, Crévacol,
-										Gressoney-Saint-Jean, La Magdeleine, Ollomont,
-										Rhêmes-Notre-Dame, Valgrisenche.</b
-									>
-								</p>
-
-								<button>Acquista online</button>
-							</div>
-							<span class="arrow"></span>
-						</div>
-
-						<div class="slide comprensorio">
-							<h1>Brusson</h1>
-							<p>
-								Località situata a 1.338 metri di altitudine nella bassa Val
-								d’Ayas, prima di Antagnod.
-							</p>
-							<button class="btn btn--secondary">Scopri</button>
-						</div>
-
-						<div class="slide comprensorio">
-							<h1>Brusson</h1>
-							<p>
-								Località situata a 1.338 metri di altitudine nella bassa Val
-								d’Ayas, prima di Antagnod.
-							</p>
-							<button class="btn btn--secondary">Scopri</button>
-						</div>
-
-						<div class="slide comprensorio">
-							<h1>VALGRISENCHE</h1>
-							<p>
-								Località situata a 1.664 metri di altitudine nell’omonima Valle
-								nella parte sud-occidentale della Valle d’Aosta, accanto alla
-								Val di Rhêmes.
-							</p>
-							<button class="btn btn--secondary">Scopri</button>
-						</div>
-
-						<div class="slide comprensorio">
-							<h1>Rhêmes Notre Dame</h1>
-							<p>
-								Località situata a 1.725 metri di altitudine nella Val di
-								Rhêmes, immersa nel Parco Nazionale del Gran Paradiso.
-							</p>
-							<button class="btn btn--secondary">Scopri</button>
-						</div>
-
-						<div class="slide comprensorio">
-							<h1>CHAMPORCHER</h1>
-							<p>
-								Località situata a 1.440 metri di altitudine nella prima vallata
-								a sinistra arrivando dal Piemonte.
-							</p>
-							<button class="btn btn--secondary">Scopri</button>
-						</div>
-
-						<div class="slide comprensorio">
-							<h1>COGNE</h1>
-							<p>
-								Località situata a 1.544 metri di altitudine nell’omonima Valle,
-								nel cuore del Parco Nazionale del Gran Paradiso.
-							</p>
-							<button class="btn btn--secondary">Scopri</button>
-						</div>
-
-						<div class="slide comprensorio">
-							<h1>Ollomont</h1>
-							<p>
-								Località situata a 1.335 metri di altitudine nella Valpelline,
-								ad est della Valle del Gran San Bernardo.
-							</p>
-							<button class="btn btn--secondary">Scopri</button>
-						</div>
-
-						<div class="slide comprensorio">
-							<h1>Antagnod</h1>
-							<p>
-								Località situata a 1.700 metri di altitudine nella Val d’Ayas,
-								gode di una vista spettacolare sul Monte Rosa.
-							</p>
-							<button class="btn btn--secondary">Scopri</button>
-						</div>
-
-						<div class="slide comprensorio">
-							<h1>chamois</h1>
-							<p>
-								Località situata a 1.800 metri di altitudine nella
-								Valtournenche, la Valle del Monte Cervino.
-							</p>
-							<button class="btn btn--secondary">Scopri</button>
-						</div>
-
-						<div class="slide comprensorio">
-							<h1>La magdeleine</h1>
-							<p>
-								Località situata a 1.650 metri di altitudine nella bassa
-								Valtournenche, la Valle del Monte Cervino.
-							</p>
-							<button class="btn btn--secondary">Scopri</button>
-						</div>
-
-						<div class="slide comprensorio">
-							<h1>La magdeleine</h1>
-							<p>
-								Località situata a 1.650 metri di altitudine nella bassa
-								Valtournenche, la Valle del Monte Cervino.
-							</p>
-							<button class="btn btn--secondary">Scopri</button>
-						</div>
-
-						<div class="slide comprensorio">
-							<h1>gressoney saint jean</h1>
-							<p>
-								Località situata a 1.385 metri di altitudine nella Valle del
-								Lys, ai piedi del Monte Rosa.
-							</p>
-							<button class="btn btn--secondary">Scopri</button>
-						</div>
-
-						<div class="slide comprensorio">
-							<h1>crevacol</h1>
-							<p>
-								Località situata a 1.640 metri di altitudine nei pressi di
-								Saint-Rhémy-en-Bosses, ultimo villaggio della Valle del Gran San
-								Bernardo.
-							</p>
-							<button class="btn btn--secondary">Scopri</button>
-						</div>
+						<p>
+							Lo skipass è utilizzabile per un massimo di due giorni nella
+							stessa località sciistica
+							<small
+								>**Lo skipass è utilizzabile per un massimo di 3 giornate di sci
+								fruibili all’interno dello stesso piccolo comprensorio.</small
+							>
+						</p>
 					</div>
+
+					<Image
+						src={tariffeImage}
+						alt="100€ Adulti, 80€ Under 14, 0€ Under 8"
+						class="mappa-piccoli-comprensori"
+					/>
 				</div>
+
+				<Image
+					src={mapImage}
+					alt="Mappa piccoli comprensori"
+					class="mappa-piccoli-comprensori"
+				/>
 			</div>
 		</section>
+
+		<section class="lasciati-ispirare">
+			<SliderComprensori />
+		</section>
+
+		<footer></footer>
 	</body>
 </html>

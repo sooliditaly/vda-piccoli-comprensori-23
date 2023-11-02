@@ -5,10 +5,14 @@
 	--text-grey: #8a97a8;
 	--azzurro: #55c2e4;
 
-	--margin-large: 150px;
+	--margin-large: 80px;
 	--margin-standard: 50px;
 	--margin-small: 20px;
 	--margin-smallest: 10px;
+
+	@media (min-width: 750px) {
+		--margin-large: 150px;
+	}
 }
 
 html {
@@ -41,7 +45,6 @@ small {
 }
 
 button {
-
 	background-color: var(--azzurro);
 	color: white;
 	border: 0;
@@ -56,16 +59,23 @@ button {
 		background-color: transparent;
 		border: 2px solid white;
 	}
-
 }
 
 p {
 	margin-top: var(--margin-standard);
 	margin-bottom: var(--margin-standard);
+
+	small {
+		display: block;
+		margin: var(--margin-small) 0;
+	}
+}
+
+b {
+	font-weight: bold;
 }
 
 header {
-
 	padding-top: var(--margin-standard);
 	padding-bottom: var(--margin-standard);
 
@@ -73,9 +83,30 @@ header {
 
 	text-align: center;
 
-	background-image: url(../images/header.jpg);
-	background-size: auto 100%;
+	background-image: url(../images/bg-header-mobile@1x.webp);
+	background-size: 100% auto;
 	background-position: bottom;
+
+	height: 90vh;
+
+	display: flex;
+	align-items: flex-end;
+
+	// .content {
+	// 	position: absolute;
+	// 	z-index: 2;
+	// }
+
+	// .gradient-overlay {
+	// 	position: absolute;
+	// 	top: 0;
+	// 	left: 0;
+	// 	z-index: 1;
+	// 	height: 90vh;
+	// 	width: 100%;
+	// 	background: rgb(17, 31, 54);
+	// 	background: linear-gradient(0deg, rgba(17, 31, 54, 0.7721682422969187) 30%, rgba(121, 197, 158, 0) 100%);
+	// }
 
 	.logo {
 		max-width: 15rem;
@@ -92,7 +123,7 @@ header {
 	}
 
 	strong {
-		font-family: 'ramen-ichikaru';
+		font-family: "ramen-ichikaru";
 	}
 
 	button {
@@ -100,13 +131,13 @@ header {
 		margin-bottom: var(--margin-small);
 		width: 220px;
 	}
-
 }
 
 section {
+	margin-top: var(--margin-large);
+	margin-bottom: var(--margin-large);
 
 	.content {
-
 		padding-left: 2rem;
 		padding-right: 2rem;
 
@@ -116,25 +147,30 @@ section {
 
 		overflow: hidden;
 	}
-
 }
 
-.content > .mappa-piccoli-comprensori,
-.content > .title-copy-cta {
+.content > .mappa-piccoli-comprensori {
 	display: block;
-	margin-bottom: var(--margin-large);
-	margin-top: var(--margin-large);
 }
 
-.intro {
+.content > .title-copy-cta {
+	margin-bottom: var(--margin-large);
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.title-copy-cta {
 }
 
 .come-usufruire {
-
 	margin: 0;
 	padding-top: var(--margin-large);
 	padding-bottom: var(--margin-large);
 	background-color: #ececec;
+	background-image: url(../images/come-usufruire@1x.webp);
+	background-size: cover;
+	background-position: center bottom;
 
 	h1,
 	h2 {
@@ -142,30 +178,16 @@ section {
 	}
 
 	li {
-
 		color: white;
 		max-width: 28rem;
 		margin: 0 auto;
 
-		.number {
-
-			display: flex;
-			justify-content: center;
-
-			align-items: center;
-			font-size: 6rem;
-			font-weight: bold;
-			color: white;
-			width: 6rem;
-			height: 6rem;
-			border-radius: 6rem;
-			background-color: var(--azzurro);
-			margin: 0 auto;
+		> img {
 			margin-bottom: var(--margin-small);
 		}
 
 		h2 {
-			margin-bottom: 0;
+			margin-bottom: var(--margin-smallest);
 			line-height: 1;
 		}
 
@@ -175,10 +197,37 @@ section {
 	}
 }
 
+.tariffe-grid {
+	margin-bottom: var(--margin-large);
+
+	@media (min-width: 750px) {
+		text-align: left;
+
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		column-gap: var(--margin-standard);
+		justify-items: center;
+		align-items: center;
+
+		img {
+			grid-column: 1;
+			grid-row: 1;
+		}
+		.title-copy-cta {
+			grid-column: 2;
+		}
+	}
+}
+
 .mappa-piccoli-comprensori {
-	width: 150%;
+	width: 95%;
+	max-width: 100rem;
+	margin: 0 auto;
 	height: auto;
-	margin-left: -25%;
 	max-inline-size: none;
 	max-block-size: none;
+}
+
+footer {
+	height: 40rem;
 }

@@ -1,0 +1,424 @@
+---
+import { Image } from "astro:assets";
+
+import brussonImage from "../images/card-brusson.webp";
+import valgrisencheImage from "../images/card-valgrisenche.webp";
+import remesImage from "../images/card-remes.webp";
+import antagnodImage from "../images/card-antagnod.webp";
+import chamoisImage from "../images/card-chamois.webp";
+import champorcherImage from "../images/card-champorcher.webp";
+import cogneImage from "../images/card-cogne.webp";
+import crevacolImage from "../images/card-crevacol.webp";
+import gressoneyImage from "../images/card-gressoney.webp";
+import magdeleineImage from "../images/card-magdeleine.webp";
+import ollomontImage from "../images/card-ollomont.webp";
+
+import iconBrussonImage from "../images/icon-brusson.svg";
+import iconValgrisencheImage from "../images/icon-valgrisenche.svg";
+import iconRemesImage from "../images/icon-remes.svg";
+import iconChamporcherImage from "../images/icon-champorcher.svg";
+import iconCogneImage from "../images/icon-cogne.svg";
+import iconOllomontImage from "../images/icon-ollomont.svg";
+import iconAntagnodImage from "../images/icon-antagnod.svg";
+import iconChamoisImage from "../images/icon-chamois.svg";
+import iconMagdeleineImage from "../images/icon-magdeleine.svg";
+import iconGressoneyImage from "../images/icon-gressoney.svg";
+import iconCrevacolImage from "../images/icon-crevacol.svg";
+
+const parallaxPercentage = "15%";
+---
+
+<script>
+	// core version + navigation, pagination modules:
+	import Swiper from "swiper";
+	import { Manipulation, Navigation, Parallax } from "swiper/modules";
+	// import Swiper and modules styles
+	import "swiper/css";
+	import "swiper/css/navigation";
+	import "swiper/css/pagination";
+
+	import "../styles/slider.scss";
+
+	const swiper = new Swiper(".swiper", {
+		// Optional parameters
+		direction: "horizontal",
+		loop: true,
+		modules: [Navigation, Parallax, Manipulation],
+		parallax: true,
+
+		slidesPerView: "auto",
+		centeredSlides: true,
+		spaceBetween: 20,
+
+		// Navigation arrows
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev"
+		},
+
+		breakpoints: {
+			// when window width is >= 320px
+			750: {
+				initialSlide: 0,
+				loop: false,
+			}
+		}
+
+	});
+
+	if( window.innerWidth <= 750 ) {
+		swiper.removeSlide(0)
+	}
+
+</script>
+
+<div class="slider-intro mobile-only">
+	<div>
+		<h2>Lasciati ispirare dai piccoli borghi</h2>
+		<p>
+			Scopri la magia dei piccoli borghi in cui assaporare la tradizione:<b>
+				Antagnod, Brusson, Chamois, Champorcher, Cogne, Crévacol,
+				Gressoney-Saint-Jean, La Magdeleine, Ollomont, Rhêmes-Notre-Dame,
+				Valgrisenche.</b
+			>
+		</p>
+		<button>Acquista online</button>
+	</div>
+</div>
+
+<section class="slider-comprensori">
+
+	<div class="swiper">
+
+		<div class="swiper-wrapper">
+
+			<div class="swiper-slide desktop-only">
+				<div>
+					<h2>Lasciati ispirare dai piccoli borghi</h2>
+					<p>
+						Scopri la magia dei piccoli borghi in cui assaporare la tradizione:<b>
+							Antagnod, Brusson, Chamois, Champorcher, Cogne, Crévacol,
+							Gressoney-Saint-Jean, La Magdeleine, Ollomont, Rhêmes-Notre-Dame,
+							Valgrisenche.</b
+						>
+					</p>
+					<button>Acquista online</button>
+				</div>
+			</div>
+
+			<div class="swiper-slide comprensorio">
+				<div
+					class="card-parallax-background"
+					data-swiper-parallax-x={parallaxPercentage}
+				>
+					<Image
+						src={brussonImage}
+						alt="Panorama Brusson"
+						widths={[600, 1190]}
+						width="600"
+						height="600"
+					/>
+					<div class="gradient-overlay"></div>
+				</div>
+				<Image
+					src={iconBrussonImage}
+					alt="Illustrazione Brusson"
+					width="84"
+					height="82"
+				/>
+				<h2>Brusson</h2>
+				<p>
+					Località situata a 1.338 metri di altitudine nella bassa Val d’Ayas,
+					prima di Antagnod.
+				</p>
+				<button class="btn btn--secondary">Scopri</button>
+			</div>
+
+			<div class="swiper-slide comprensorio">
+				<div
+					class="card-parallax-background"
+					data-swiper-parallax-x={parallaxPercentage}
+				>
+					<Image
+						src={valgrisencheImage}
+						alt="Panorama Valgrisenche"
+						widths={[600, 1190]}
+						width="600"
+						height="600"
+					/>
+					<div class="gradient-overlay"></div>
+				</div>
+				<Image
+					src={iconValgrisencheImage}
+					alt="Illustrazione Valgrisenche"
+					width="136"
+					height="82"
+				/>
+				<h2>VALGRISENCHE</h2>
+				<p>
+					Località situata a 1.664 metri di altitudine nell’omonima Valle nella
+					parte sud-occidentale della Valle d’Aosta, accanto alla Val di Rhêmes.
+				</p>
+				<button class="btn btn--secondary">Scopri</button>
+			</div>
+
+			<div class="swiper-slide comprensorio">
+				<div
+					class="card-parallax-background"
+					data-swiper-parallax-x={parallaxPercentage}
+				>
+					<Image
+						src={remesImage}
+						alt="Panorama Rhêmes Notre Dame"
+						widths={[600, 1190]}
+						width="600"
+						height="600"
+					/>
+					<div class="gradient-overlay"></div>
+				</div>
+				<Image
+					src={iconRemesImage}
+					alt="Illustrazione Rhêmes Notre Dame"
+					width="60"
+					height="90"
+				/>
+				<h2>Rhêmes Notre Dame</h2>
+				<p>
+					Località situata a 1.725 metri di altitudine nella Val di Rhêmes,
+					immersa nel Parco Nazionale del Gran Paradiso.
+				</p>
+				<button class="btn btn--secondary">Scopri</button>
+			</div>
+
+			<div class="swiper-slide comprensorio">
+				<div
+					class="card-parallax-background"
+					data-swiper-parallax-x={parallaxPercentage}
+				>
+					<Image
+						src={champorcherImage}
+						alt="Panorama Champorcher"
+						widths={[600, 1190]}
+						width="600"
+						height="600"
+					/>
+					<div class="gradient-overlay"></div>
+				</div>
+				<Image
+					src={iconChamporcherImage}
+					alt="Illustrazione Champorcher"
+					width="96"
+					height="64"
+				/>
+				<h2>CHAMPORCHER</h2>
+				<p>
+					Località situata a 1.440 metri di altitudine nella prima vallata a
+					sinistra arrivando dal Piemonte.
+				</p>
+				<button class="btn btn--secondary">Scopri</button>
+			</div>
+
+			<div class="swiper-slide comprensorio">
+				<div
+					class="card-parallax-background"
+					data-swiper-parallax-x={parallaxPercentage}
+				>
+					<Image
+						src={cogneImage}
+						alt="Panorama Cogne"
+						widths={[600, 1190]}
+						width="600"
+						height="600"
+					/>
+					<div class="gradient-overlay"></div>
+				</div>
+				<Image
+					src={iconCogneImage}
+					alt="Illustrazione Cogne"
+					width="75"
+					height="88"
+				/>
+				<h2>COGNE</h2>
+				<p>
+					Località situata a 1.544 metri di altitudine nell’omonima Valle, nel
+					cuore del Parco Nazionale del Gran Paradiso.
+				</p>
+				<button class="btn btn--secondary">Scopri</button>
+			</div>
+
+			<div class="swiper-slide comprensorio">
+				<div
+					class="card-parallax-background"
+					data-swiper-parallax-x={parallaxPercentage}
+				>
+					<Image
+						src={ollomontImage}
+						alt="Panorama Ollomont"
+						widths={[600, 1190]}
+						width="600"
+						height="600"
+					/>
+					<div class="gradient-overlay"></div>
+				</div>
+				<Image
+					src={iconOllomontImage}
+					alt="Illustrazione Ollomont"
+					width="96"
+					height="64"
+				/>
+				<h2>Ollomont</h2>
+				<p>
+					Località situata a 1.335 metri di altitudine nella Valpelline, ad est
+					della Valle del Gran San Bernardo.
+				</p>
+				<button class="btn btn--secondary">Scopri</button>
+			</div>
+
+			<div class="swiper-slide comprensorio">
+				<div
+					class="card-parallax-background"
+					data-swiper-parallax-x={parallaxPercentage}
+				>
+					<Image
+						src={antagnodImage}
+						alt="Panorama Antagnod"
+						widths={[600, 1190]}
+						width="600"
+						height="600"
+					/>
+					<div class="gradient-overlay"></div>
+				</div>
+				<Image
+					src={iconAntagnodImage}
+					alt="Illustrazione Antagnod"
+					width="87"
+					height="80"
+				/>
+				<h2>Antagnod</h2>
+				<p>
+					Località situata a 1.700 metri di altitudine nella Val d’Ayas, gode di
+					una vista spettacolare sul Monte Rosa.
+				</p>
+				<button class="btn btn--secondary">Scopri</button>
+			</div>
+
+			<div class="swiper-slide comprensorio">
+				<div
+					class="card-parallax-background"
+					data-swiper-parallax-x={parallaxPercentage}
+				>
+					<Image
+						src={chamoisImage}
+						alt="Panorama Chamois"
+						widths={[600, 1190]}
+						width="600"
+						height="600"
+					/>
+					<div class="gradient-overlay"></div>
+				</div>
+				<Image
+					src={iconChamoisImage}
+					alt="Illustrazione Chamois"
+					width="68"
+					height="95"
+				/>
+				<h2>Chamois</h2>
+				<p>
+					Località situata a 1.800 metri di altitudine nella Valtournenche, la
+					Valle del Monte Cervino.
+				</p>
+				<button class="btn btn--secondary">Scopri</button>
+			</div>
+
+			<div class="swiper-slide comprensorio">
+				<div
+					class="card-parallax-background"
+					data-swiper-parallax-x={parallaxPercentage}
+				>
+					<Image
+						src={magdeleineImage}
+						alt="Panorama Magdeleine"
+						widths={[600, 1190]}
+						width="600"
+						height="600"
+					/>
+					<div class="gradient-overlay"></div>
+				</div>
+				<Image
+					src={iconMagdeleineImage}
+					alt="Illustrazione Magdeleine"
+					width="98"
+					height="80"
+				/>
+				<h2>La magdeleine</h2>
+				<p>
+					Località situata a 1.650 metri di altitudine nella bassa Valtournenche,
+					la Valle del Monte Cervino.
+				</p>
+				<button class="btn btn--secondary">Scopri</button>
+			</div>
+
+			<div class="swiper-slide comprensorio">
+				<div
+					class="card-parallax-background"
+					data-swiper-parallax-x={parallaxPercentage}
+				>
+					<Image
+						src={gressoneyImage}
+						alt="Panorama Gressoney Saint Jean"
+						widths={[600, 1190]}
+						width="600"
+						height="600"
+					/>
+					<div class="gradient-overlay"></div>
+				</div>
+				<Image
+					src={iconGressoneyImage}
+					alt="Illustrazione Gressoney Saint Jean"
+					width="74"
+					height="80"
+				/>
+				<h2>Gressoney saint jean</h2>
+				<p>
+					Località situata a 1.385 metri di altitudine nella Valle del Lys, ai
+					piedi del Monte Rosa.
+				</p>
+				<button class="btn btn--secondary">Scopri</button>
+			</div>
+
+			<div class="swiper-slide comprensorio">
+				<div
+					class="card-parallax-background"
+					data-swiper-parallax-x={parallaxPercentage}
+				>
+					<Image
+						src={crevacolImage}
+						alt="Panorama Crevacol"
+						widths={[600, 1190]}
+						width="600"
+						height="600"
+					/>
+					<div class="gradient-overlay"></div>
+				</div>
+				<Image
+					src={iconCrevacolImage}
+					alt="Illustrazione Crevacol"
+					width="102"
+					height="70"
+				/>
+				<h2>crevacol</h2>
+				<p>
+					Località situata a 1.640 metri di altitudine nei pressi di
+					Saint-Rhémy-en-Bosses, ultimo villaggio della Valle del Gran San
+					Bernardo.
+				</p>
+				<button class="btn btn--secondary">Scopri</button>
+			</div>
+		</div>
+
+		<!-- If we need navigation buttons -->
+		<div class="swiper-button-prev"></div>
+		<div class="swiper-button-next"></div>
+	</div>
+
+</section>
