@@ -60,7 +60,7 @@ import "swiper/css/pagination";
 		breakpoints: {
 			// when window width is >= 320px
 			750: {
-				initialSlide: 0,
+				initialSlide: 1,
 				loop: false
 			}
 		}
@@ -76,24 +76,17 @@ import "swiper/css/pagination";
 		width: 100%;
 	}
 
-	@media (min-width: 750px) {
-		.mobile-only {
-			display: none;
-		}
-	}
-
-	.desktop-only {
-		display: none;
-	}
-
-	@media (min-width: 750px) {
-		.desktop-only {
-			display: block;
-		}
-	}
-
 	.slider-intro {
 		padding: 0 var(--margin-small);
+	}
+
+	.swiper-slide.desktop-only  {
+		align-items: self-start;
+	}
+
+	.swiper-slide.desktop-only h2 {
+		color: var(--azzurro);
+		max-width: 40rem;
 	}
 
 	.slider-intro p {
@@ -209,18 +202,15 @@ import "swiper/css/pagination";
 	<div class="swiper">
 		<div class="swiper-wrapper">
 			<div class="swiper-slide desktop-only">
-				<div>
-					<h2>Lasciati ispirare dai piccoli borghi</h2>
-					<p>
-						Scopri la magia dei piccoli borghi in cui assaporare la tradizione:<b
-						>
-							Antagnod, Brusson, Chamois, Champorcher, Cogne, Crévacol,
-							Gressoney-Saint-Jean, La Magdeleine, Ollomont, Rhêmes-Notre-Dame,
-							Valgrisenche.</b
-						>
-					</p>
-					<button>Acquista online</button>
-				</div>
+				<h2>Lasciati ispirare dai piccoli borghi</h2>
+				<p>
+					Scopri la magia dei piccoli borghi in cui assaporare la tradizione:<b>
+						Antagnod, Brusson, Chamois, Champorcher, Cogne, Crévacol,
+						Gressoney-Saint-Jean, La Magdeleine, Ollomont, Rhêmes-Notre-Dame,
+						Valgrisenche.</b
+					>
+				</p>
+				<button>Acquista online</button>
 			</div>
 
 			<div class="swiper-slide comprensorio">

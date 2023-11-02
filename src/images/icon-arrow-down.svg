@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="54px" height="54px" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon_scroll down</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Mobile" transform="translate(-223, -930)" stroke="#FFFFFF" stroke-width="2">
+            <g id="icon_scroll-down" transform="translate(250, 957) rotate(90) translate(-250, -957)translate(223, 930)">
+                <circle id="Oval" cx="27" cy="27" r="26"></circle>
+                <polyline id="Path-2" stroke-linecap="round" stroke-linejoin="round" points="19.5517241 14.8965517 34.4482759 26.977751 19.5517241 39.1034483"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

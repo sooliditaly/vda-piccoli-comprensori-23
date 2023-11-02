@@ -1,13 +1,16 @@
 ---
-// import "../styles/main.scss";
-
 import "../../node_modules/the-new-css-reset/css/reset.css";
 
 import { Image } from "astro:assets";
 
 import mapImage from "../images/mappa-piccoli-comprensori.webp";
+import seiGiornateImage from "../images/illustrazione-6-giornate.svg";
+import percorsoImage from "../images/illustrazione-percorso.svg";
+import percorsoDesktopImage from "../images/illustrazione-percorso-desktop.svg";
 import tariffeImage from "../images/illustrazione-tariffe.svg";
+
 import logoSkiLife from "../images/ski-life-logo.svg";
+import arrowDownImage from "../images/icon-arrow-down.svg";
 
 import stepOneImage from "../images/icon-step-1.svg";
 import stepTwoImage from "../images/icon-step-2.svg";
@@ -26,7 +29,6 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 	</head>
 
 	<body>
-
 		<style is:global>
 			@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;700&family=Oxygen:wght@300;400;700&display=swap");
 		</style>
@@ -64,7 +66,7 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 				color: var(--text-grey);
 				font-size: 2rem;
 				line-height: 1.4;
-				font-family: 'Oxygen', sans-serif;
+				font-family: "Oxygen", sans-serif;
 				text-align: center;
 				font-weight: 300;
 				letter-spacing: 1px;
@@ -138,16 +140,41 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 				background-image: url(../images/bg-header-mobile@1x.webp);
 				background-size: 100% auto;
 				background-position: bottom;
+			}
 
-				height: 90vh;
-
+			header .content {
 				padding-top: var(--margin-small);
 				padding-bottom: var(--margin-small);
-
 				display: flex;
 				flex-direction: column;
-				align-items: flex-end;
 				justify-content: space-between;
+
+				margin: 0 auto;
+				height: 90vh;
+			}
+
+			header .arrow-down {
+				margin: 0 auto;
+			}
+
+			@media (min-width: 750px) {
+				header {
+					background-image: url(../images/bg-header-desktop@1x.webp);
+				}
+
+				header .content {
+					padding-top: var(--margin-standard);
+					padding-bottom: var(--margin-standard);
+					align-items: center;
+					height: auto;
+				}
+
+				header .content img {
+					align-self: flex-start;
+					margin: 0;
+					margin-bottom: var(--margin-standard);
+					width: 261px;
+				}
 			}
 
 			header .logo {
@@ -160,7 +187,7 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 
 			header small,
 			header strong {
-				display: inline-block;
+				display: block;
 			}
 
 			header button {
@@ -188,12 +215,29 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 				margin-bottom: var(--margin-standard);
 			}
 
+			@media (min-width: 750px) {
+				header small {
+					font-size: 3.2rem;
+					font-weight: bold;
+					line-height: 1.2;
+					margin-bottom: var(--margin-smallest);
+				}
+
+				header strong {
+					font-family: "Ramen";
+					font-size: 7.8rem;
+					line-height: 1.2;
+					margin-bottom: var(--margin-standard);
+				}
+			}
+
 			section {
 				margin-top: var(--margin-large);
 				margin-bottom: var(--margin-large);
 			}
 
-			section .content {
+			section .content,
+			header .content {
 				padding-left: var(--margin-small);
 				padding-right: var(--margin-small);
 
@@ -219,14 +263,44 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 				margin-top: 0;
 			}
 
+			.cose-grid {
+				display: grid;
+				grid-template-columns: 1fr;
+				column-gap: var(--margin-small);
+				row-gap: var(--margin-large);
+				align-items: center;
+				justify-items: center;
+			}
+
+ 	 		@media (min-width: 750px) {
+
+				.cose-grid .percorso-desktop {
+					width: 70%;
+				}
+
+				.title-copy-cta {
+					text-align: left;
+				}
+
+				.cose-grid {
+					grid-template-columns: 1fr 1fr;
+				}
+			}
+
 			.come-usufruire {
 				margin: 0;
 				padding-top: var(--margin-large);
 				padding-bottom: var(--margin-large);
 				background-color: #ececec;
-				background-image: url(../images/come-usufruire@1x.webp);
+				background-image: url(../images/bg-come-usufruire-mobile@1x.webp);
 				background-size: cover;
 				background-position: center bottom;
+			}
+
+			@media (min-width: 750px) {
+				.come-usufruire {
+					background-image: url(../images/bg-come-usufruire-desktop@1x.webp);
+				}
 			}
 
 			.come-usufruire h1,
@@ -262,6 +336,11 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 			}
 
 			@media (min-width: 750px) {
+				.come-usufruire .steps {
+					display: grid;
+					grid-template-columns: 1fr 1fr 1fr;
+				}
+
 				.tariffe-grid {
 					text-align: left;
 
@@ -293,83 +372,111 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 				height: 40rem;
 			}
 
+			.desktop-only {
+				display: none;
+			}
+
 			@media (min-width: 750px) {
 				.mobile-only {
 					display: none;
+				}
+				.desktop-only {
+					display: block;
 				}
 			}
 		</style>
 
 		<header>
-			<Image
-				src={logoSkiLife}
-				alt="Ski Life valle d'Aosta"
-				class="logo"
-				loading="eager"
-			/>
-
 			<div class="content">
-				<div>
-					<small
-						>Scopri l'autentica magia della<br class="mobile-only" /> Valle
-						d'Aosta e scia nei</small
-					>
-					<strong>PICCOLI <br class="mobile-only" /> COMPRENSORI</strong>
-				</div>
-				<button class="btn">Acquista online</button>
-				<button class="btn btn--secondary">Scopri di più</button>
-			</div>
+				<Image
+					src={logoSkiLife}
+					alt="Ski Life valle d'Aosta"
+					class="logo"
+					loading="eager"
+				/>
 
-			<span>arrow</span>
+				<div>
+					<div>
+						<small
+							>Scopri l'autentica magia della<br class="mobile-only" /> Valle
+							d'Aosta e scia nei</small
+						>
+						<strong>PICCOLI <br class="mobile-only" /> COMPRENSORI</strong>
+					</div>
+
+					<button class="btn">Acquista online</button>
+					<button class="btn btn--secondary">Scopri di più</button>
+				</div>
+
+				<Image src={arrowDownImage} alt="Vai giù" class="arrow-down" />
+
+			</div>
 		</header>
 
 		<section class="intro">
 			<div class="content">
-				<div class="title-copy-cta">
-					<h1>Cos'è il magic Skipass</h1>
+				<div class="cose-grid">
+					<div class="title-copy-cta">
+						<h1>Cos'è il magic Skipass</h1>
 
-					<p>
-						Magic Skipass è la promozione ideata dalla Regione Valle d’Aosta per
-						incentivare la scoperta di <b
-							>itinerari fuori dal comune dove poter vivere la propria passione
-							per la neve</b
-						>, provare a sciare e assaporare le tradizioni più vere e radicate,
-						contrastando il caro vita.
-					</p>
+						<p>
+							Magic Skipass è la promozione ideata dalla Regione Valle d’Aosta
+							per incentivare la scoperta di <b
+								>itinerari fuori dal comune dove poter vivere la propria
+								passione per la neve</b
+							>, provare a sciare e assaporare le tradizioni più vere e
+							radicate, contrastando il caro vita.
+						</p>
 
-					<p>
-						Esperienze imperdibili per godere di qualche giorno lontani dal
-						caos, dai ritmi frenetici delle città e scoprire la bellezza di
-						sciare in mezzo alla natura più pura e meravigliosa della Valle
-						d’Aosta.
-					</p>
+						<p>
+							Esperienze imperdibili per godere di qualche giorno lontani dal
+							caos, dai ritmi frenetici delle città e scoprire la bellezza di
+							sciare in mezzo alla natura più pura e meravigliosa della Valle
+							d’Aosta.
+						</p>
 
-					<button>Acquista online</button>
-				</div>
+						<button>Acquista online</button>
+					</div>
 
-				<div class="title-copy-cta">
-					<h1>E non è tutto!</h1>
-					<p>
-						Con Magic Skipass, potrai usufruire anche di 1 ora di lezione di sci
-						o di snowboard, presso le <a href="">Scuole Sci</a> disponibili nei
-						piccoli comprensori che aderiscono all'iniziativa.
-						<small
-							>Potrai usufruire dell’ora di lezione per tutta la stagione
-							2023/2024 ad eccezione dei weekend e del periodo dal 24/12 al
-							07/01 e dal 12/02 al 16/02.
-						</small>
-					</p>
-					<p>
-						Soggiornando per 2 notti consecutive in una delle <a href=""
-							>strutture aderenti</a
-						> degli 11 borghi che aderiscono alla promozione, <b>2 ragazzi*</b>
-						 (fino a 18 anni non compiuti) dormono gratis per 1 notte in camera
-						con i genitori.
-						<small
-							>*Figli di genitori possessori dello skipass promozionale Magic
-							Skipass.</small
-						>
-					</p>
+					<Image
+						src={seiGiornateImage}
+						alt="100€, 6 giornate di skipass + 1 ora di maestro + una notte in alberto per due minorenni"
+					/>
+
+					<Image src={percorsoImage} alt="Percorso" class="mobile-only" />
+					<Image
+						src={percorsoDesktopImage}
+						alt="Percorso"
+						class="desktop-only percorso-desktop"
+					/>
+
+					<div class="title-copy-cta">
+						<h1>E non è tutto!</h1>
+						<p>
+							Con Magic Skipass, potrai usufruire anche di 1 ora di lezione di
+							sci o di snowboard, presso le <a href="">Scuole Sci</a>
+							 disponibili nei piccoli comprensori che aderiscono
+							all'iniziativa.
+
+							<small
+								>Potrai usufruire dell’ora di lezione per tutta la stagione
+								2023/2024 ad eccezione dei weekend e del periodo dal 24/12 al
+								07/01 e dal 12/02 al 16/02.
+							</small>
+						</p>
+						<p>
+							Soggiornando per 2 notti consecutive in una delle <a href=""
+								>strutture aderenti</a
+							> degli 11 borghi che aderiscono alla promozione, <b>2 ragazzi*</b
+							>
+							 (fino a 18 anni non compiuti) dormono gratis per 1 notte in
+							camera con i genitori.
+							<small
+								>*Figli di genitori possessori dello skipass promozionale Magic
+								Skipass.</small
+							>
+						</p>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -434,7 +541,8 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 								fruibili all’interno dello stesso piccolo comprensorio.</small
 							>
 							<small
-								>Under 14: nati dopo il 31/10/2029. Under 8: nati dopo il 31/10/2015.</small
+								>Under 14: nati dopo il 31/10/2029. Under 8: nati dopo il
+								31/10/2015.</small
 							>
 						</p>
 					</div>
