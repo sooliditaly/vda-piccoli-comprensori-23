@@ -140,6 +140,7 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 				background-image: url(../images/bg-header-mobile@1x.webp);
 				background-size: 100% auto;
 				background-position: bottom;
+				background-size: cover;
 			}
 
 			header .content {
@@ -174,6 +175,10 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 					margin: 0;
 					margin-bottom: var(--margin-standard);
 					width: 261px;
+				}
+
+				header .arrow-down {
+					display: none;
 				}
 			}
 
@@ -272,8 +277,7 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 				justify-items: center;
 			}
 
- 	 		@media (min-width: 750px) {
-
+			@media (min-width: 750px) {
 				.cose-grid .percorso-desktop {
 					width: 70%;
 				}
@@ -409,7 +413,6 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 				</div>
 
 				<Image src={arrowDownImage} alt="Vai giù" class="arrow-down" />
-
 			</div>
 		</header>
 
