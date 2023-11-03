@@ -25,7 +25,7 @@ import iconMagdeleineImage from "../images/icon-magdeleine.svg";
 import iconGressoneyImage from "../images/icon-gressoney.svg";
 import iconCrevacolImage from "../images/icon-crevacol.svg";
 
-const parallaxPercentage = "15%";
+const parallaxPercentage = "20%";
 
 // import Swiper and modules styles
 import "swiper/css";
@@ -36,7 +36,7 @@ import "swiper/css/pagination";
 <script>
 	// core version + navigation, pagination modules:
 	import Swiper from "swiper";
-	import { Manipulation, Navigation, Parallax } from "swiper/modules";
+	import { Manipulation, Navigation, Parallax, FreeMode } from "swiper/modules";
 
 	// import "../styles/slider.scss";
 
@@ -44,12 +44,12 @@ import "swiper/css/pagination";
 		// Optional parameters
 		direction: "horizontal",
 		loop: true,
-		modules: [Navigation, Parallax, Manipulation],
+		modules: [Navigation, Parallax, Manipulation, FreeMode],
 		parallax: true,
 
 		slidesPerView: "auto",
 		centeredSlides: true,
-		spaceBetween: 20,
+		spaceBetween: 15,
 
 		// Navigation arrows
 		navigation: {
@@ -60,10 +60,50 @@ import "swiper/css/pagination";
 		breakpoints: {
 			// when window width is >= 320px
 			750: {
-				initialSlide: 1,
-				loop: false
+				initialSlide: 0,
+				loop: false,
+				centeredSlides: false,
+				spaceBetween: 20,
+				freeMode: {
+					enabled: true,
+					sticky: false,
+					momentum: true,
+					momentumRatio: 0.7,
+					momentumBounce: true,
+					momentumVelocityRatio: 0.4
+				}
 			}
 		}
+		// on: {
+		// 	progress: function () {
+		// 		// console.log(this.progress);
+
+		// 		let total_slides_length =
+		// 			document.querySelectorAll(".swiper-slide").length * 380; // da calcolare con foreach
+		// 		let total_scrollable_x = total_slides_length - this.width;
+
+		// 		document.querySelectorAll(".swiper .swiper-slide").forEach(($slide) => {
+		// 			let slide_progress_position_start =
+		// 				(1 / total_slides_length) * $slide.offsetLeft;
+		// 			let slide_progress_position_end =
+		// 				(1 / total_slides_length) * ($slide.offsetLeft + this.width);
+
+		// 			if (
+		// 				this.progress > slide_progress_position_start ||
+		// 				this.progress < slide_progress_position_end
+		// 			) {
+		// 				let slide_progress =
+		// 					(this.progress - slide_progress_position_start) /
+		// 					(slide_progress_position_end - slide_progress_position_start);
+		// 				let $slideBg = $slide.querySelector(".card-parallax-background");
+		// 				if ($slideBg)
+		// 					$slideBg.style.transform = `translateX(${
+		// 						200 * slide_progress
+		// 					}px)`;
+		// 			}
+		// 		});
+		// 	},
+		// }
 	});
 
 	if (window.innerWidth <= 750) {
@@ -80,7 +120,7 @@ import "swiper/css/pagination";
 		padding: 0 var(--margin-small);
 	}
 
-	.swiper-slide.desktop-only  {
+	.swiper-slide.desktop-only {
 		align-items: self-start;
 	}
 
@@ -108,17 +148,16 @@ import "swiper/css/pagination";
 		overflow: hidden;
 	}
 
-	@media (min-width: 450px) {
-		.swiper-slide {
-			width: 36rem;
-		}
+	.swiper-slide {
+		width: 36rem;
+	}
 
-		.swiper-slide:first-child {
-			text-align: left;
-			padding-left: 0;
-			width: 80vw;
-			max-width: 600px;
-		}
+	.swiper-slide:first-child {
+		text-align: left;
+		padding-left: 0;
+		width: 80vw;
+		max-width: 600px;
+		padding-left: var(--margin-standard);
 	}
 
 	.swiper-slide h2 {
@@ -129,6 +168,7 @@ import "swiper/css/pagination";
 
 	.swiper-slide p {
 		margin: 0;
+		min-height: 8rem;
 	}
 
 	.swiper-slide button {
@@ -186,7 +226,7 @@ import "swiper/css/pagination";
 
 <div class="slider-intro mobile-only">
 	<div>
-		<h2>Lasciati ispirare dai piccoli borghi</h2>
+		<h1>Lasciati ispirare dai piccoli borghi</h1>
 		<p>
 			Scopri la magia dei piccoli borghi in cui assaporare la tradizione:<b>
 				Antagnod, Brusson, Chamois, Champorcher, Cogne, Crévacol,
@@ -202,7 +242,7 @@ import "swiper/css/pagination";
 	<div class="swiper">
 		<div class="swiper-wrapper">
 			<div class="swiper-slide desktop-only">
-				<h2>Lasciati ispirare dai piccoli borghi</h2>
+				<h1>Lasciati ispirare <br />dai piccoli borghi</h1>
 				<p>
 					Scopri la magia dei piccoli borghi in cui assaporare la tradizione:<b>
 						Antagnod, Brusson, Chamois, Champorcher, Cogne, Crévacol,
@@ -289,7 +329,7 @@ import "swiper/css/pagination";
 					width="60"
 					height="90"
 				/>
-				<h2>Rhêmes Notre Dame</h2>
+				<h2>Rhêmes <br />Notre Dame</h2>
 				<p>
 					Località situata a 1.725 metri di altitudine nella Val di Rhêmes,
 					immersa nel Parco Nazionale del Gran Paradiso.
