@@ -49,6 +49,7 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 				src:
 					url("../fonts/ramen.woff") format("woff"),
 					url("../fonts/ramen.woff2") format("woff2");
+				font-display: swap;
 			}
 
 			@media (min-width: 750px) {
@@ -94,7 +95,7 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 				font-size: 1.6rem;
 			}
 
-			button {
+			.btn {
 				background-color: var(--azzurro);
 				border: 2px solid var(--azzurro);
 				color: white;
@@ -105,9 +106,10 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 				border-radius: 0.6rem;
 				font-weight: bold;
 				font-size: 1.7rem;
+				display: inline-block;
 			}
 
-			button.btn--secondary {
+			.btn.btn--secondary {
 				background-color: transparent;
 				border: 2px solid white;
 			}
@@ -155,6 +157,10 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 
 				margin: 0 auto;
 				height: 90vh;
+			}
+
+			header .btn {
+				display: block;
 			}
 
 			header .arrow-down {
@@ -395,7 +401,7 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 
 			footer {
 				height: 40rem;
-				background-color: #00264A;
+				background-color: #00264a;
 			}
 
 			.desktop-only {
@@ -464,7 +470,9 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 							d’Aosta.
 						</p>
 
-						<button>Acquista online</button>
+						<a href="#" class="btn" target="_blank"
+							>Acquista online</a
+						>
 					</div>
 
 					<Image
@@ -548,7 +556,9 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 					</li>
 				</ul>
 
-				<button> Acquista online</button>
+				<a href="#" class="btn" target="_blank"
+					>Acquista online</a
+				>
 			</div>
 		</section>
 

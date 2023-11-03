@@ -153,11 +153,16 @@ import "swiper/css/pagination";
 	}
 
 	.swiper-slide:first-child {
+		justify-content: center;
 		text-align: left;
 		padding-left: 0;
 		width: 80vw;
 		max-width: 600px;
 		padding-left: var(--margin-standard);
+	}
+
+	.swiper-slide:first-child p {
+		margin-bottom: var(--margin-small);
 	}
 
 	.swiper-slide h2 {
@@ -168,11 +173,7 @@ import "swiper/css/pagination";
 
 	.swiper-slide p {
 		margin: 0;
-		min-height: 8rem;
-	}
-
-	.swiper-slide button {
-		margin-top: var(--margin-standard);
+		min-height: 12rem;
 	}
 
 	.swiper-slide &:first-child {
@@ -184,9 +185,11 @@ import "swiper/css/pagination";
 	.swiper-slide.comprensorio {
 		color: white;
 	}
+
 	.swiper-slide.comprensorio h1 {
 		color: white;
 	}
+
 	.swiper-slide.comprensorio p {
 		font-size: 1.5rem;
 		margin-left: var(--margin-small);
@@ -234,7 +237,8 @@ import "swiper/css/pagination";
 				Valgrisenche.</b
 			>
 		</p>
-		<button>Acquista online</button>
+
+		<a href="#" class="btn" target="_blank">Acquista online</a>
 	</div>
 </div>
 
@@ -250,7 +254,7 @@ import "swiper/css/pagination";
 						Valgrisenche.</b
 					>
 				</p>
-				<button>Acquista online</button>
+				<a href="#" class="btn" target="_blank">Acquista online</a>
 			</div>
 
 			<div class="swiper-slide comprensorio">
@@ -278,7 +282,11 @@ import "swiper/css/pagination";
 					Località situata a 1.338 metri di altitudine nella bassa Val d’Ayas,
 					prima di Antagnod.
 				</p>
-				<button class="btn btn--secondary">Scopri</button>
+				<a
+					href="https://www.skilife.ski/brusson/"
+					class="btn btn--secondary"
+					target="_blank">Scopri</a
+				>
 			</div>
 
 			<div class="swiper-slide comprensorio">
@@ -306,7 +314,11 @@ import "swiper/css/pagination";
 					Località situata a 1.664 metri di altitudine nell’omonima Valle nella
 					parte sud-occidentale della Valle d’Aosta, accanto alla Val di Rhêmes.
 				</p>
-				<button class="btn btn--secondary">Scopri</button>
+				<a
+					href="https://www.skilife.ski/valgrisenche/"
+					class="btn btn--secondary"
+					target="_blank">Scopri</a
+				>
 			</div>
 
 			<div class="swiper-slide comprensorio">
@@ -334,7 +346,11 @@ import "swiper/css/pagination";
 					Località situata a 1.725 metri di altitudine nella Val di Rhêmes,
 					immersa nel Parco Nazionale del Gran Paradiso.
 				</p>
-				<button class="btn btn--secondary">Scopri</button>
+				<a
+					href="https://www.skilife.ski/rhemes-notre-dame/"
+					class="btn btn--secondary"
+					target="_blank">Scopri</a
+				>
 			</div>
 
 			<div class="swiper-slide comprensorio">
@@ -362,7 +378,11 @@ import "swiper/css/pagination";
 					Località situata a 1.440 metri di altitudine nella prima vallata a
 					sinistra arrivando dal Piemonte.
 				</p>
-				<button class="btn btn--secondary">Scopri</button>
+				<a
+					href="https://www.skilife.ski/champorcher/"
+					class="btn btn--secondary"
+					target="_blank">Scopri</a
+				>
 			</div>
 
 			<div class="swiper-slide comprensorio">
@@ -390,7 +410,11 @@ import "swiper/css/pagination";
 					Località situata a 1.544 metri di altitudine nell’omonima Valle, nel
 					cuore del Parco Nazionale del Gran Paradiso.
 				</p>
-				<button class="btn btn--secondary">Scopri</button>
+				<a
+					href="https://www.skilife.ski/cogne/"
+					class="btn btn--secondary"
+					target="_blank">Scopri</a
+				>
 			</div>
 
 			<div class="swiper-slide comprensorio">
@@ -418,7 +442,11 @@ import "swiper/css/pagination";
 					Località situata a 1.335 metri di altitudine nella Valpelline, ad est
 					della Valle del Gran San Bernardo.
 				</p>
-				<button class="btn btn--secondary">Scopri</button>
+				<a
+					href="https://www.skilife.ski/ollomont/"
+					class="btn btn--secondary"
+					target="_blank">Scopri</a
+				>
 			</div>
 
 			<div class="swiper-slide comprensorio">
@@ -446,7 +474,11 @@ import "swiper/css/pagination";
 					Località situata a 1.700 metri di altitudine nella Val d’Ayas, gode di
 					una vista spettacolare sul Monte Rosa.
 				</p>
-				<button class="btn btn--secondary">Scopri</button>
+				<a
+					href="https://www.skilife.ski/antagnod/"
+					class="btn btn--secondary"
+					target="_blank">Scopri</a
+				>
 			</div>
 
 			<div class="swiper-slide comprensorio">
@@ -474,7 +506,11 @@ import "swiper/css/pagination";
 					Località situata a 1.800 metri di altitudine nella Valtournenche, la
 					Valle del Monte Cervino.
 				</p>
-				<button class="btn btn--secondary">Scopri</button>
+				<a
+					href="https://www.skilife.ski/chamois/"
+					class="btn btn--secondary"
+					target="_blank">Scopri</a
+				>
 			</div>
 
 			<div class="swiper-slide comprensorio">
@@ -502,7 +538,11 @@ import "swiper/css/pagination";
 					Località situata a 1.650 metri di altitudine nella bassa
 					Valtournenche, la Valle del Monte Cervino.
 				</p>
-				<button class="btn btn--secondary">Scopri</button>
+				<a
+					href="https://www.skilife.ski/magdeleine/"
+					class="btn btn--secondary"
+					target="_blank">Scopri</a
+				>
 			</div>
 
 			<div class="swiper-slide comprensorio">
@@ -530,7 +570,11 @@ import "swiper/css/pagination";
 					Località situata a 1.385 metri di altitudine nella Valle del Lys, ai
 					piedi del Monte Rosa.
 				</p>
-				<button class="btn btn--secondary">Scopri</button>
+				<a
+					href="https://www.skilife.ski/gressoney-it/"
+					class="btn btn--secondary"
+					target="_blank">Scopri</a
+				>
 			</div>
 
 			<div class="swiper-slide comprensorio">
@@ -559,7 +603,11 @@ import "swiper/css/pagination";
 					Saint-Rhémy-en-Bosses, ultimo villaggio della Valle del Gran San
 					Bernardo.
 				</p>
-				<button class="btn btn--secondary">Scopri</button>
+				<a
+					href="https://www.skilife.ski/crevacol/"
+					class="btn btn--secondary"
+					target="_blank">Scopri</a
+				>
 			</div>
 		</div>
 
