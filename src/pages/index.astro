@@ -442,11 +442,35 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 					</div>
 
 					<button class="btn">Acquista online</button>
-					<button class="btn btn--secondary">Scopri di più</button>
+					<button class="btn btn--secondary scopri-di-piu">Scopri di più</button>
 				</div>
 
 				<Image src={arrowDownImage} alt="Vai giù" class="arrow-down" />
 			</div>
+
+			<script>
+				const scrollLink = document.querySelector(".arrow-down"),
+					targetElement = document.querySelector(".intro"),
+					scopriElement = document.querySelector(".scopri-di-piu"),
+					sliderElement = document.querySelector(".slider-comprensori");
+
+				scrollLink.addEventListener("click", function (e) {
+					e.preventDefault();
+					window.scroll({
+						top: targetElement.offsetTop - 50,
+						left: 0,
+						behavior: "smooth"
+					});
+				});
+				scopriElement.addEventListener("click", function (e) {
+					e.preventDefault();
+					window.scroll({
+						top: sliderElement.offsetTop - 50,
+						left: 0,
+						behavior: "smooth"
+					});
+				});
+			</script>
 		</header>
 
 		<section class="intro">
@@ -471,9 +495,7 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 							d’Aosta.
 						</p>
 
-						<a href="#" class="btn" target="_blank"
-							>Acquista online</a
-						>
+						<a href="#" class="btn" target="_blank">Acquista online</a>
 					</div>
 
 					<Image
@@ -557,9 +579,7 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 					</li>
 				</ul>
 
-				<a href="#" class="btn" target="_blank"
-					>Acquista online</a
-				>
+				<a href="#" class="btn" target="_blank">Acquista online</a>
 			</div>
 		</section>
 
