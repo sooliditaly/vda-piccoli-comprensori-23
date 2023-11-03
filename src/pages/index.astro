@@ -17,6 +17,11 @@ import stepTwoImage from "../images/icon-step-2.svg";
 import stepThreeImage from "../images/icon-step-3.svg";
 
 import SliderComprensori from "../components/SliderComprensori.astro";
+
+// loghi footer
+import snowcareImage from "../images/footer-logo_snowcare.png";
+import valleImage from "../images/footer-logo_valle-daosta.png";
+import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 ---
 
 <html lang="en">
@@ -26,13 +31,14 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Vda Piccoli comprensori</title>
+		<meta
+			name="description"
+			content="Magic Skipass è la promozione ideata dalla Regione Valle d’Aosta
+							per incentivare la scoperta di itinerari fuori dal comune"
+		/>
 	</head>
 
 	<body>
-		<style is:global>
-			@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;700&family=Oxygen:wght@300;400;700&display=swap");
-		</style>
-
 		<style is:global>
 			:root {
 				--text-grey: #8a97a8;
@@ -43,6 +49,8 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 				--margin-small: 20px;
 				--margin-smallest: 10px;
 			}
+
+			@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;700&family=Oxygen:wght@300;400;700&display=swap");
 
 			@font-face {
 				font-family: "Ramen";
@@ -213,7 +221,14 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 
 				margin-top: var(--margin-small);
 				margin-bottom: var(--margin-small);
-				width: 225px;
+			}
+
+			header button,
+			header .btn {
+				width: 240px;
+				margin-left: auto;
+				margin-right: auto;
+				cursor: pointer;
 			}
 
 			header small {
@@ -252,7 +267,8 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 			}
 
 			section .content,
-			header .content {
+			header .content,
+			footer .content {
 				padding-left: var(--margin-small);
 				padding-right: var(--margin-small);
 
@@ -400,11 +416,6 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 				margin-bottom: var(--margin-standard);
 			}
 
-			footer {
-				height: 40rem;
-				background-color: #00264a;
-			}
-
 			.desktop-only {
 				display: none;
 			}
@@ -441,8 +452,13 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 						<strong>PICCOLI <br class="mobile-only" /> COMPRENSORI</strong>
 					</div>
 
-					<button class="btn">Acquista online</button>
-					<button class="btn btn--secondary scopri-di-piu">Scopri di più</button>
+					<a href="https://pila.skiperformance.com" class="btn" target="_blank"
+						>Acquista online</a
+					>
+
+					<button class="btn btn--secondary scopri-di-piu"
+						>Lasciati ispirare</button
+					>
 				</div>
 
 				<Image src={arrowDownImage} alt="Vai giù" class="arrow-down" />
@@ -452,7 +468,7 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 				const scrollLink = document.querySelector(".arrow-down"),
 					targetElement = document.querySelector(".intro"),
 					scopriElement = document.querySelector(".scopri-di-piu"),
-					sliderElement = document.querySelector(".slider-comprensori");
+					sliderElement = document.querySelector(".swiper");
 
 				scrollLink.addEventListener("click", function (e) {
 					e.preventDefault();
@@ -465,7 +481,6 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 				scopriElement.addEventListener("click", function (e) {
 					e.preventDefault();
 					window.scroll({
-						top: sliderElement.offsetTop - 50,
 						left: 0,
 						behavior: "smooth"
 					});
@@ -579,7 +594,9 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 					</li>
 				</ul>
 
-				<a href="#" class="btn" target="_blank">Acquista online</a>
+				<a href="https://pila.skiperformance.com" class="btn" target="_blank"
+					>Acquista online</a
+				>
 			</div>
 		</section>
 
@@ -631,6 +648,159 @@ import SliderComprensori from "../components/SliderComprensori.astro";
 			<SliderComprensori />
 		</section>
 
-		<footer></footer>
+		<style>
+			.loghi {
+				display: grid;
+				grid-template-columns: 1fr;
+				grid-template-rows: 100px;
+				max-width: 60rem;
+				margin: 0 auto;
+				align-items: center;
+				justify-items: center;
+				row-gap: var(--margin-small);
+				margin-bottom: var(--margin-standard);
+				padding-left: var(--margin-small);
+				padding-right: var(--margin-small);
+			}
+
+			.loghi .portale {
+				/* grid-column-start: 1;
+				grid-column-end: 2; */
+				grid-column: 1 / span 2;
+				width: 100%;
+				height: 4rem;
+			}
+
+			.loghi .valle {
+				width: auto;
+				height: 9rem;
+				justify-self: flex-start;
+				margin-left: var(--margin-small);
+			}
+
+			.loghi .snowcare {
+				width: auto;
+				height: 7rem;
+				justify-self: flex-end;
+			}
+
+			footer {
+				background-color: #00264a;
+				padding-top: var(--margin-standard);
+			}
+
+			footer .col {
+				text-align: left;
+			}
+			footer .col img {
+				min-height: 50px;
+			}
+
+			footer h3 {
+				font-weight: 700;
+				color: var(--azzurro);
+				margin-bottom: var(--margin-smallest);
+			}
+
+			footer a {
+				color: white;
+				font-weight: 300;
+				display: block;
+				font-size: 1.3rem;
+				line-height: 1.7;
+			}
+
+			footer .content {
+				display: flex;
+				flex-direction: column;
+				row-gap: var(--margin-standard);
+				justify-content: space-between;
+			}
+
+			@media (min-width: 750px) {
+				footer .content {
+					display: flex;
+					flex-direction: row;
+					column-gap: var(--margin-standard);
+					justify-content: space-between;
+				}
+			}
+
+			.footer-bottom {
+				margin-top: var(--margin-standard);
+				padding-top: var(--margin-smallest);
+				padding-bottom: var(--margin-smallest);
+
+				font-size: 1.2rem;
+
+				color: white;
+				background-color: #0084be;
+			}
+		</style>
+
+		<div class="loghi">
+			<div>
+				<Image
+					src={snowcareImage}
+					alt="Assicurazione sci e snowboard Snowcare"
+					class="snowcare"
+				/>
+
+				<a href="http://www.lovevda.it/" target="_blank">
+					<Image
+						src={valleImage}
+						alt="Valle d'Aosta, Vallée d'Aosta"
+						class="valle"
+					/>
+				</a>
+			</div>
+
+			<Image
+				src={portaleImage}
+				alt="Il portale dello sci in valle d'aosta"
+				class="portale"
+			/>
+		</div>
+
+		<footer>
+			<div class="content">
+				<div class="col">
+					<Image src={logoSkiLife} alt="Ski lige Valle d'Aosta" width="200" />
+				</div>
+
+				<div class="col">
+					<h3>Link utili</h3>
+					<ul>
+						<a
+							href="http://www.skilife.ski/associazione-valdostana-impianti-a-fune/"
+							>Associazione Valdostana Impianti a fune</a
+						>
+
+						<a href="https://www.skilife.ski/agenzie/">Area agenzie</a>
+
+						<a href="https://www.skilife.ski/societa-funiviarie/"
+							>Società funiviarie</a
+						>
+					</ul>
+				</div>
+
+				<div class="col">
+					<h3>Contatti</h3>
+					<a href="tel:+39 0165 238871">Telefono +39 0165 238871</a>
+					<a href="mailto:info@skilife.ski">info@skilife.ski</a>
+				</div>
+
+				<div class="col">
+					<h3>Informazioni</h3>
+					<a href="">Skipass online</a>
+					<a href="">Privacy</a>
+					<a href="">Cookies policy</a>
+				</div>
+			</div>
+
+			<div class="footer-bottom">
+				© 2023 Copyright Skilife P.I. IT00035130079
+			</div>
+		</footer>
 	</body>
 </html>

@@ -36,7 +36,13 @@ import "swiper/css/pagination";
 <script>
 	// core version + navigation, pagination modules:
 	import Swiper from "swiper";
-	import { Manipulation, Navigation, Parallax, FreeMode } from "swiper/modules";
+	import {
+		Manipulation,
+		Navigation,
+		Parallax,
+		FreeMode,
+		Pagination
+	} from "swiper/modules";
 
 	// import "../styles/slider.scss";
 
@@ -44,7 +50,7 @@ import "swiper/css/pagination";
 		// Optional parameters
 		direction: "horizontal",
 		loop: true,
-		modules: [Navigation, Parallax, Manipulation, FreeMode],
+		modules: [Navigation, Parallax, Manipulation, FreeMode, Pagination],
 		parallax: true,
 
 		slidesPerView: "auto",
@@ -55,6 +61,10 @@ import "swiper/css/pagination";
 		navigation: {
 			nextEl: ".swiper-button-next",
 			prevEl: ".swiper-button-prev"
+		},
+
+		pagination: {
+			el: ".swiper-pagination"
 		},
 
 		breakpoints: {
@@ -71,7 +81,8 @@ import "swiper/css/pagination";
 					momentumRatio: 0.7,
 					momentumBounce: true,
 					momentumVelocityRatio: 0.4
-				}
+				},
+				grabCursor: true
 			}
 		}
 		// on: {
@@ -109,7 +120,6 @@ import "swiper/css/pagination";
 	if (window.innerWidth <= 750) {
 		swiper.removeSlide(0);
 	}
-
 </script>
 
 <style>
@@ -140,17 +150,17 @@ import "swiper/css/pagination";
 		align-items: center;
 		justify-content: flex-end;
 
-		height: 60rem;
-		width: 85vw;
+		height: 90vh;
+		width: 83vw;
+		max-width: 36rem;
+		max-height: 60rem;
 
 		padding: 2rem;
 		padding-bottom: var(--margin-standard);
 
 		overflow: hidden;
-	}
 
-	.swiper-slide {
-		width: 36rem;
+		user-select: none;
 	}
 
 	.swiper-slide:first-child {
@@ -173,8 +183,6 @@ import "swiper/css/pagination";
 	}
 
 	.swiper-slide p {
-		margin: 0;
-		min-height: 12rem;
 	}
 
 	.swiper-slide &:first-child {
@@ -193,8 +201,8 @@ import "swiper/css/pagination";
 
 	.swiper-slide.comprensorio p {
 		font-size: 1.5rem;
-		margin-left: var(--margin-small);
-		margin-right: var(--margin-small);
+		margin: 0;
+		min-height: 14rem;
 	}
 
 	.card-parallax-background {
@@ -226,6 +234,19 @@ import "swiper/css/pagination";
 		max-inline-size: none;
 		max-block-size: none;
 	}
+
+	.swiper-pagination {
+		--swiper-theme-color: var(--azzurro);
+		bottom: auto;
+		top: auto;
+		margin-top: var(--margin-smallest);
+	}
+
+	@media (min-width: 750px) {
+		.swiper-pagination {
+			margin-top: var(--margin-small);
+		}
+	}
 </style>
 
 <div class="slider-intro mobile-only">
@@ -239,7 +260,9 @@ import "swiper/css/pagination";
 			>
 		</p>
 
-		<a href="#" class="btn" target="_blank">Acquista online</a>
+		<a href="https://pila.skiperformance.com" class="btn" target="_blank"
+			>Acquista online</a
+		>
 	</div>
 </div>
 
@@ -611,9 +634,6 @@ import "swiper/css/pagination";
 				>
 			</div>
 		</div>
-
-		<!-- If we need navigation buttons -->
-		<!-- <div class="swiper-button-prev"></div>
-		<div class="swiper-button-next"></div> -->
 	</div>
+	<div class="swiper-pagination"></div>
 </section>
