@@ -27,7 +27,6 @@ import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Vda Piccoli comprensori</title>
@@ -53,9 +52,13 @@ import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 	</head>
 
 	<body>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@700&family=Oxygen:wght@300;700&display=swap"
+			rel="stylesheet"
+		/>
 		<style is:global>
-			@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;700&family=Oxygen:wght@300;400;700&display=swap");
-
 			:root {
 				--text-grey: #8a97a8;
 				--azzurro: #55c2e4;
@@ -69,8 +72,8 @@ import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 			@font-face {
 				font-family: "Ramen";
 				src:
-					url("../fonts/ramen.woff") format("woff"),
-					url("../fonts/ramen.woff2") format("woff2");
+					/* url("../fonts/ramen.woff") format("woff"), */ url("../fonts/ramen.woff2")
+					format("woff2");
 				font-display: swap;
 			}
 
