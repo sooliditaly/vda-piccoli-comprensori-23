@@ -553,9 +553,9 @@ import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 
 			<script>
 				const scrollLink = document.querySelector(".arrow-down"),
-					targetElement = document.querySelector(".intro"),
-					scopriElement = document.querySelector(".scopri-di-piu"),
-					sliderElement = document.querySelector(".swiper");
+				targetElement = document.querySelector(".intro"),
+				scopriElement = document.querySelector(".scopri-di-piu"),
+				sliderElement = document.querySelector(".swiper");
 
 				scrollLink.addEventListener("click", function (e) {
 					e.preventDefault();
@@ -565,9 +565,11 @@ import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 						behavior: "smooth"
 					});
 				});
+
 				scopriElement.addEventListener("click", function (e) {
 					e.preventDefault();
 					window.scroll({
+						top: sliderElement.offsetTop - 15,
 						left: 0,
 						behavior: "smooth"
 					});
