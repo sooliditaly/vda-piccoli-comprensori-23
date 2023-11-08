@@ -29,12 +29,26 @@ import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Vda Piccoli comprensori</title>
+		<title>Scopri l'autentica magia della Valle d'Aosta</title>
 		<meta
 			name="description"
-			content="Magic Skipass è la promozione ideata dalla Regione Valle d’Aosta
-							per incentivare la scoperta di itinerari fuori dal comune"
+			content="Magic Skipass è la promozione ideata per incentivare la scoperta di itinerari fuori dal comune dove poter vivere la propria passione per la neve, provare a sciare e assaporare le tradizioni più vere e radicate, contrastando il caro vita."
 		/>
+
+		<meta property="og:url" content="https://magic-pass.skilife.ski/" />
+		<meta property="og:site_name" content="magic-pass.skilife.ski" />
+		<meta
+			property="og:title"
+			content="Scopri l'autentica magia della Valle d'Aosta"
+		/>
+		<meta
+			property="og:description"
+			content="Magic Skipass è la promozione ideata per incentivare la scoperta di itinerari fuori dal comune dove poter vivere la propria passione per la neve, provare a sciare e assaporare le tradizioni più vere e radicate, contrastando il caro vita."
+		/>
+		<meta property="og:locale" content="it_IT" />
+		<meta property="og:image" content="" />
+
+		<meta property="og:type" content="website" />
 
 		<script>
 			(function (w, d, s, l, i) {
@@ -48,7 +62,6 @@ import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 				f.parentNode.insertBefore(j, f);
 			})(window, document, "script", "dataLayer", "GTM-KX3PPB8T");
 		</script>
-
 	</head>
 
 	<body>
@@ -177,7 +190,8 @@ import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 				margin-bottom: var(--margin-smallest);
 			}
 
-			small {
+			small,
+			.esempi {
 				font-size: 1.6rem;
 			}
 
@@ -553,9 +567,9 @@ import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 
 			<script>
 				const scrollLink = document.querySelector(".arrow-down"),
-				targetElement = document.querySelector(".intro"),
-				scopriElement = document.querySelector(".scopri-di-piu"),
-				sliderElement = document.querySelector(".swiper");
+					targetElement = document.querySelector(".intro"),
+					scopriElement = document.querySelector(".scopri-di-piu"),
+					sliderElement = document.querySelector(".swiper");
 
 				scrollLink.addEventListener("click", function (e) {
 					e.preventDefault();
@@ -644,38 +658,50 @@ import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 							pernottamento e prima colazione se soggiornano in camera con i
 							genitori, possessori dello skipass promozionale.
 						</p>
-						<b>Alcuni esempi:</b>
+
 						<style>
+							.esempi {
+								margin-top: calc(var(--margin-small)*-1);
+							}
 							.esempi ul {
 								list-style-type: decimal;
 								margin-top: var(--margin-smallest);
 								margin-bottom: var(--margin-small);
 							}
+
 							.esempi li {
 								margin-bottom: var(--margin-small);
 								text-align: left;
+								margin-left: var(--margin-small);
 							}
+
 						</style>
-						<ul class="esempi">
-							<li>
-								2 genitori (2 skipass) + 1/2 ragazzo/i è gli adulti pagano la
-								tariffa piena e il/i ragazzo/i soggiorna/no gratis per due notti
-							</li>
-							<li>
-								2 genitori (1 skipass) + 1/2 ragazzo/i è gli adulti pagano la
-								tariffa piena e il/i ragazzo/i soggiorna/no gratis per una notte
-							</li>
-							<li>
-								1 genitore (1 skipass) + 1/2 ragazzo/i è l’adulto paga la
-								tariffa piena della camera doppia e il/i ragazzo/i soggiorna/no
-								gratis per una notte
-							</li>
-						</ul>
-						<p>
-							<b>N.B.</b>: La gratuità in hotel è abbinata esclusivamente ad uno
-							skipass adulto. Lo skipass dei ragazzi 14-18 anni non genera la
-							gratuità.
-						</p>
+						<div class="esempi">
+							<b>Alcuni esempi:</b>
+							<ul>
+								<li>
+									2 genitori (2 skipass) + 1/2 ragazzo/i: gli adulti pagano la
+									tariffa piena e il/i ragazzo/i soggiorna/no gratis per due
+									notti
+								</li>
+								<li>
+									2 genitori (1 skipass) + 1/2 ragazzo/i: gli adulti pagano la
+									tariffa piena e il/i ragazzo/i soggiorna/no gratis per una
+									notte
+								</li>
+								<li>
+									1 genitore (1 skipass) + 1/2 ragazzo/i: l’adulto paga la
+									tariffa piena della camera doppia e il/i ragazzo/i
+									soggiorna/no gratis per una notte
+								</li>
+							</ul>
+
+							<p>
+								<b>N.B.:</b> La gratuità in hotel è abbinata esclusivamente ad
+								uno skipass adulto. Lo skipass dei ragazzi 14-18 anni non genera
+								la gratuità.
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
