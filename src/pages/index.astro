@@ -27,7 +27,7 @@ import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="generator" content={Astro.generator} />
 		<title>Scopri l'autentica magia della Valle d'Aosta</title>
 		<meta
@@ -562,7 +562,7 @@ import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 					>
 				</div>
 
-				<Image src={arrowDownImage} alt="Vai giù" class="arrow-down" />
+				<Image src={arrowDownImage} alt="Vai giù" class="arrow-down" loading="eager"/>
 			</div>
 
 			<script>
