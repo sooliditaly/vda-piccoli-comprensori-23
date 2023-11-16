@@ -27,7 +27,7 @@ import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Scopri l'autentica magia della Valle d'Aosta</title>
 		<meta
@@ -554,15 +554,42 @@ import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 					<a
 						href="https://skilife.skiperformance.com/it/negozio?skugroup_id=4119#/it/acquista"
 						class="btn"
+						id="cta-acquista-header"
 						target="_blank">Acquista online</a
 					>
+
+					<script>
+						function cta_header_conversion(url) {
+							gtag("event", "conversion", {
+								send_to: "AW-11020578527/LRidCLb6mvcYEN_dgocp",
+								event_callback: callback
+							});
+							return false;
+						}
+						document.querySelector('.cta-acquista-header').addEventListener( 'click', () => {
+
+							var callback = function () {
+								window.location = "https://skilife.skiperformance.com/it/negozio?skugroup_id=4119#/it/acquista"
+							};
+
+							gtag("event", "conversion", {
+								send_to: "AW-11020578527/LRidCLb6mvcYEN_dgocp",
+								event_callback: callback
+							});
+						})
+					</script>
 
 					<button class="btn btn--secondary scopri-di-piu"
 						>Lasciati ispirare</button
 					>
 				</div>
 
-				<Image src={arrowDownImage} alt="Vai giù" class="arrow-down" loading="eager"/>
+				<Image
+					src={arrowDownImage}
+					alt="Vai giù"
+					class="arrow-down"
+					loading="eager"
+				/>
 			</div>
 
 			<script>
@@ -663,7 +690,8 @@ import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 							<b
 								>Ogni Magic skipass acquistato da un adulto dà diritto a una
 								notte gratuita per 1 o due ragazzi fino a 18 anni non ancora
-								compiuti, in camera con i genitori.</b>
+								compiuti, in camera con i genitori.</b
+							>
 						</p>
 
 						<div class="esempi">
@@ -944,16 +972,21 @@ import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 
 				<div class="col">
 					<h3>Informazioni</h3>
-					<a href="https://skilife.skiperformance.com/it/negozio#/it/acquista?skugroup_id=4119">Skipass online</a>
+					<a
+						href="https://skilife.skiperformance.com/it/negozio#/it/acquista?skugroup_id=4119"
+						>Skipass online</a
+					>
 					<a href="https://www.skilife.ski/privacy/">Privacy</a>
-					<a href="https://www.iubenda.com/privacy-policy/50649705/cookie-policy?an=no&s_ck=false&newmarkup=yes">Cookies policy</a>
+					<a
+						href="https://www.iubenda.com/privacy-policy/50649705/cookie-policy?an=no&s_ck=false&newmarkup=yes"
+						>Cookies policy</a
+					>
 				</div>
 			</div>
 
 			<div class="footer-bottom">
 				© 2023 Copyright Skilife P.I. IT00035130079
 			</div>
-
 		</footer>
 
 		<script>
