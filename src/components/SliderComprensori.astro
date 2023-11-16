@@ -120,6 +120,24 @@ import "swiper/css/pagination";
 	if (window.innerWidth <= 750) {
 		swiper.removeSlide(0);
 	}
+
+	window.addEventListener('DOMContentLoaded', () => {
+
+		document.querySelectorAll('.comprensorio').forEach( ($element) => {
+
+			$element.querySelector('a').addEventListener('click', () => {
+
+				// send event
+				dataLayer.push({
+					event: 'click_cta_comprensorio',
+					nome_comprensorio: $element.querySelector('h2').innerText,
+				});
+
+			});
+
+		})
+	})
+
 </script>
 
 <style>
