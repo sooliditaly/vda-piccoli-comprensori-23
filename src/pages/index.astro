@@ -579,11 +579,20 @@ import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 				const scrollLink = document.querySelector(".arrow-down"),
 					targetElement = document.querySelector(".intro"),
 					scopriElement = document.querySelector(".scopri-di-piu"),
-					acquistaHeaderElement = document.querySelector(".cta-acquista-header"),
-					acquistaComeElement = document.querySelector(".cta-acquista-section-come"),
-					acquistaCoseElement = document.querySelector(".cta-acquista-section-cose"),
-					acquistaLasciatiIspirareElement = document.querySelector(".cta-acquista-section-lasciati-ispirare")
-					;
+					acquistaHeaderElement = document.querySelector(
+						"#cta-acquista-header"
+					),
+					acquistaComeElement = document.querySelector(
+						"#cta-acquista-section-come"
+					),
+					acquistaCoseElement = document.querySelector(
+						"#cta-acquista-section-cose"
+					),
+					acquistaLasciatiIspirareElement = document.querySelector(
+						"#cta-acquista-section-lasciati-ispirare"
+					),
+					footerTelLinkElement = document.querySelector("#footer-tel-link"),
+					footerEmailLinkElement = document.querySelector("#footer-email-link");
 
 				scrollLink.addEventListener("click", function (e) {
 					e.preventDefault();
@@ -595,44 +604,53 @@ import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 				});
 
 				scopriElement.addEventListener("click", function (e) {
-
 					e.preventDefault();
 
 					dataLayer.push({
-						event: "click_cta-lasciati-ispirare-header",
+						event: "click_cta-lasciati-ispirare-header"
 					});
 
-					fbq('trackCustom', 'click_cta-lasciati-ispirare-header');
+					fbq("trackCustom", "click_cta-lasciati-ispirare-header");
 
 					window.scroll({
 						top: sliderElement.offsetTop - 15,
 						left: 0,
 						behavior: "smooth"
 					});
-
 				});
 
 				acquistaHeaderElement.addEventListener("click", function (e) {
 					// evt ga4 impostato da tag mangager
-					fbq('trackCustom', 'click_cta-acquista-header');
-				})
+					fbq("trackCustom", "click_cta-acquista-header");
+				});
 
 				acquistaComeElement.addEventListener("click", function (e) {
 					// evt ga4 impostato da tag mangager
-					fbq('trackCustom', 'click_cta-acquista-section-come');
-				})
+					fbq("trackCustom", "click_cta-acquista-section-come");
+				});
 
 				acquistaCoseElement.addEventListener("click", function (e) {
 					// evt ga4 impostato da tag mangager
-					fbq('trackCustom', 'click_cta-acquista-section-cose');
-				})
+					fbq("trackCustom", "click_cta-acquista-section-cose");
+				});
 
 				acquistaLasciatiIspirareElement.addEventListener("click", function (e) {
 					// evt ga4 impostato da tag mangager
-					fbq('trackCustom', 'click_cta-acquista-section-lasciati-ispirare');
-				})
-			</script>
+					fbq("trackCustom", "click_cta-acquista-section-lasciati-ispirare");
+				});
 
+				// footerTelLinkElement.addEventListener("click", function (e) {
+				// 	// evt ga4 impostato da tag mangager
+				// 	fbq("trackCustom", "click_footer-tel-link");
+				// });
+
+				// footerEmailLinkElement.addEventListener("click", function (e) {
+				// 	dataLayer.push({
+				// 		event: "click_footer-email-link"
+				// 	});
+				// 	fbq("trackCustom", "click_footer-email-link");
+				// });
+			</script>
 		</header>
 
 		<section class="intro">
@@ -696,9 +714,10 @@ import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 							</small>
 						</p>
 						<p>
-							Soggiornando in una delle <a href="/adesioni-promo-piccole-stazioni-sciistiche-9ott2023.pdf" target="_blank">strutture aderenti</a> alla promozione, max <b
-								>2 ragazzi*</b
-							>
+							Soggiornando in una delle <a
+								href="/adesioni-promo-piccole-stazioni-sciistiche-9ott2023.pdf"
+								target="_blank">strutture aderenti</a
+							> alla promozione, max <b>2 ragazzi*</b>
 							 (fino a 18 anni non compiuti) usufruiscono della gratuità
 							pernottamento e prima colazione se soggiornano in camera con i
 							genitori, possessori dello skipass promozionale.
@@ -988,7 +1007,9 @@ import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 					<a href="tel:+39 0165 238871" id="footer-tel-link"
 						>Telefono +39 0165 238871</a
 					>
-					<a href="mailto:info@skilife.ski">info@skilife.ski</a>
+					<a href="mailto:info@skilife.ski" id="footer-email-link"
+						>info@skilife.ski</a
+					>
 				</div>
 
 				<div class="col">
