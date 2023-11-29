@@ -579,7 +579,11 @@ import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 				const scrollLink = document.querySelector(".arrow-down"),
 					targetElement = document.querySelector(".intro"),
 					scopriElement = document.querySelector(".scopri-di-piu"),
-					sliderElement = document.querySelector(".swiper");
+					acquistaHeaderElement = document.querySelector(".cta-acquista-header"),
+					acquistaComeElement = document.querySelector(".cta-acquista-section-come"),
+					acquistaCoseElement = document.querySelector(".cta-acquista-section-cose"),
+					acquistaLasciatiIspirareElement = document.querySelector(".cta-acquista-section-lasciati-ispirare")
+					;
 
 				scrollLink.addEventListener("click", function (e) {
 					e.preventDefault();
@@ -591,17 +595,44 @@ import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 				});
 
 				scopriElement.addEventListener("click", function (e) {
+
 					e.preventDefault();
+
 					dataLayer.push({
 						event: "click_cta-lasciati-ispirare-header",
 					});
+
+					fbq('trackCustom', 'click_cta-lasciati-ispirare-header');
+
 					window.scroll({
 						top: sliderElement.offsetTop - 15,
 						left: 0,
 						behavior: "smooth"
 					});
+
 				});
+
+				acquistaHeaderElement.addEventListener("click", function (e) {
+					// evt ga4 impostato da tag mangager
+					fbq('trackCustom', 'click_cta-acquista-header');
+				})
+
+				acquistaComeElement.addEventListener("click", function (e) {
+					// evt ga4 impostato da tag mangager
+					fbq('trackCustom', 'click_cta-acquista-section-come');
+				})
+
+				acquistaCoseElement.addEventListener("click", function (e) {
+					// evt ga4 impostato da tag mangager
+					fbq('trackCustom', 'click_cta-acquista-section-cose');
+				})
+
+				acquistaLasciatiIspirareElement.addEventListener("click", function (e) {
+					// evt ga4 impostato da tag mangager
+					fbq('trackCustom', 'click_cta-acquista-section-lasciati-ispirare');
+				})
 			</script>
+
 		</header>
 
 		<section class="intro">

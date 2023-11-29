@@ -129,6 +129,11 @@ import "swiper/css/pagination";
 					event: "click_cta-comprensorio",
 					nome_comprensorio: $element.querySelector("h2").innerText
 				});
+
+				// send fb event
+				fbq("trackCustom", "click_cta-comprensorio", {
+					nome_comprensorio: $element.querySelector("h2").innerText
+				});
 			});
 		});
 	});
