@@ -639,17 +639,18 @@ import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 					fbq("trackCustom", "click_cta-acquista-section-lasciati-ispirare");
 				});
 
-				// footerTelLinkElement.addEventListener("click", function (e) {
-				// 	// evt ga4 impostato da tag mangager
-				// 	fbq("trackCustom", "click_footer-tel-link");
-				// });
+				footerTelLinkElement.addEventListener("click", function (e) {
+					// evt ga4 impostato da tag mangager
+					fbq("trackCustom", "click_footer-tel-link");
+				});
 
-				// footerEmailLinkElement.addEventListener("click", function (e) {
-				// 	dataLayer.push({
-				// 		event: "click_footer-email-link"
-				// 	});
-				// 	fbq("trackCustom", "click_footer-email-link");
-				// });
+				footerEmailLinkElement.addEventListener("click", function (e) {
+					dataLayer.push({
+						event: "click_footer-email-link"
+					});
+					fbq("trackCustom", "click_footer-email-link");
+				});
+
 			</script>
 		</header>
 
