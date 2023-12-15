@@ -265,7 +265,7 @@ import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 			}
 
 			header .btn {
-				display: block;
+				display: inline-block;
 			}
 
 			header .arrow-down {
@@ -321,7 +321,7 @@ import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 
 			header button,
 			header .btn {
-				width: 240px;
+				min-width: 240px;
 				margin-left: auto;
 				margin-right: auto;
 				cursor: pointer;
@@ -561,9 +561,9 @@ import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 						id="cta-acquista-header"
 						target="_blank">Acquista online</a
 					>
-
+					<br />
 					<button class="btn btn--secondary scopri-di-piu"
-						>Lasciati ispirare</button
+						>Scopri i borghi che aderiscono</button
 					>
 				</div>
 
@@ -612,13 +612,15 @@ import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 						event: "click_cta-lasciati-ispirare-header"
 					});
 
-					fbq("trackCustom", "click_cta-lasciati-ispirare-header");
-
 					window.scroll({
 						top: sliderElement.offsetTop - 15,
 						left: 0,
 						behavior: "smooth"
 					});
+
+					if (fbq != "undefined")
+						fbq("trackCustom", "click_cta-lasciati-ispirare-header");
+
 				});
 
 				acquistaHeaderElement.addEventListener("click", function (e) {
@@ -652,7 +654,6 @@ import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 					});
 					fbq("trackCustom", "click_footer-email-link");
 				});
-
 			</script>
 		</header>
 
@@ -660,14 +661,14 @@ import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 			<div class="content">
 				<div class="cose-grid">
 					<div class="title-copy-cta">
-						<h1>Cos'è il magic Skipass</h1>
+						<h1>Cos'è Magic Skipass</h1>
 
 						<p>
 							Magic Skipass è la promozione ideata per incentivare la scoperta
 							di <b
 								>itinerari fuori dal comune dove poter vivere la propria
 								passione per la neve</b
-							>, provare a sciare e assaporare le tradizioni più vere e
+							>, 11 magnifici borghi dove provare a sciare ed assaporare le tradizioni più vere e
 							radicate, contrastando il caro vita.
 						</p>
 
