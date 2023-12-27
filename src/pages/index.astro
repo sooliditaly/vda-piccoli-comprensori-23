@@ -241,6 +241,22 @@ import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 				font-weight: bold;
 			}
 
+			.lang-switch {
+				position: absolute;
+				display: flex;
+				top: var(--margin-smallest);
+				right: var(--margin-smallest);
+			}
+
+			.lang-switch a {
+				color: white;
+				font-size: 1.5rem;
+				font-weight: normal;
+				display: inline-block;
+				margin-left: var(--margin-smallest);
+				display: block;
+			}
+
 			header {
 				color: white;
 
@@ -273,6 +289,12 @@ import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 			}
 
 			@media (min-width: 750px) {
+
+				.lang-switch {
+					position: relative;
+					align-self: flex-end;
+				}
+
 				header {
 					background-image: url(../images/bg-header-desktop@1x.webp);
 				}
@@ -539,6 +561,12 @@ import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 
 		<header>
 			<div class="content">
+				<div class="lang-switch">
+					<a href="https://www.skilife.ski/en/promo-sci-piccoli-borghi-2/">EN</a
+					>
+					<a href="https://www.skilife.ski/fr/promo-sci-piccoli-borghi-2/">FR</a
+					>
+				</div>
 				<Image
 					src={logoSkiLife}
 					alt="Ski Life valle d'Aosta"
@@ -711,8 +739,7 @@ import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 							<br /><br />
 							<a
 								href="/Skilife_MagicSkipass_23-24.pdf"
-								download="/Skilife_MagicSkipass_23-24.pdf"
-								>Scarica il leaflet</a
+								download="/Skilife_MagicSkipass_23-24.pdf">Scarica il leaflet</a
 							> della promozione con l'elenco ed i contatti delle Scuola Sci che
 							aderiscono alla promozione
 
