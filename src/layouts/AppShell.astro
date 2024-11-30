@@ -23,10 +23,6 @@ const translations = loadTranslations(lang);
 		<meta property="og:image" content="/og-header.jpg" />
 		<meta property="og:type" content="website" />
 
-		<script define:vars={{ lang }}>
-			window.current_lang = 'it';
-		</script>
-
 		<script>
 			(function (w, d, s, l, i) {
 				w[l] = w[l] || [];
@@ -40,9 +36,13 @@ const translations = loadTranslations(lang);
 			})(window, document, "script", "dataLayer", "GTM-KX3PPB8T");
 		</script>
 
-		<script>
+		<script define:vars={{ lang }}>
 			window.dataLayer = window.dataLayer || [];
+			window.dataLayer.push({
+				current_lang: lang
+			});
 		</script>
+
 	</head>
 
 	<body>
