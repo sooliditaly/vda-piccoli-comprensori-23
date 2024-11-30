@@ -1,0 +1,280 @@
+---
+import { Image } from "astro:assets";
+
+import logoSkiLife from "../images/ski-life-logo.svg";
+import arrowDownImage from "../images/icon-arrow-down.svg";
+
+import { loadTranslations } from "../utils/loadTranslations";
+const { lang } = Astro.props;
+const translations = loadTranslations(lang);
+---
+
+<style>
+	.lang-switch {
+		position: absolute;
+		display: flex;
+		top: var(--margin-small);
+		right: var(--margin-small);
+		width: 130px;
+		justify-content: space-around;
+	}
+
+	.lang-switch .separator {
+		border-right: 2px solid white;
+	}
+
+	.lang-switch a {
+		color: white;
+		font-size: 1.5rem;
+		font-weight: 700;
+		display: inline-block;
+		display: block;
+	}
+
+	.lang-switch a:hover {
+		text-decoration: underline;
+	}
+
+	.lang-switch a.selected {
+		text-decoration: underline;
+	}
+
+	header {
+		color: white;
+		text-align: center;
+		background-image: url(../images/bg-header-mobile@1x.webp);
+		background-size: 100% auto;
+		background-position: bottom;
+		background-size: cover;
+	}
+
+	header .content {
+		padding-top: calc(var(--margin-standard) * 1.5);
+		padding-bottom: var(--margin-small);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		margin: 0 auto;
+		height: 90vh;
+		max-height: 90rem;
+	}
+
+	header .btn {
+		display: inline-block;
+	}
+
+	header .arrow-down {
+		margin: 0 auto;
+		width: 30px;
+		height: auto;
+	}
+
+	@media (min-width: 750px) {
+		.lang-switch {
+			position: relative;
+			align-self: flex-end;
+			width: 150px;
+			margin-bottom: -4rem;
+		}
+
+		.lang-switch {
+			background-color: var(--azzurro);
+			padding: 10px;
+			/* border: 2px solid white; */
+			border-radius: 0.6rem;
+		}
+
+		header {
+			background-image: url(../images/bg-header-desktop@1x.webp);
+		}
+
+		header .content {
+			padding-top: var(--margin-standard);
+			padding-bottom: var(--margin-standard);
+			align-items: center;
+			height: auto;
+		}
+
+		header .content img {
+			align-self: flex-start;
+			margin: 0;
+			margin-bottom: var(--margin-standard);
+			width: 261px;
+		}
+
+		header .arrow-down {
+			display: none;
+		}
+	}
+
+	header .logo {
+		max-width: 15rem;
+		height: auto;
+		aspect-ratio: 13 / 6;
+		display: block;
+		margin: 0 auto;
+	}
+
+	header small,
+	header strong {
+		display: block;
+	}
+
+	header button {
+		display: block;
+
+		margin-left: auto;
+		margin-right: auto;
+
+		margin-top: var(--margin-small);
+		margin-bottom: var(--margin-small);
+	}
+
+	header button,
+	header .btn {
+		min-width: 240px;
+		margin-left: auto;
+		margin-right: auto;
+		cursor: pointer;
+	}
+
+	header small {
+		font-size: 2rem;
+		font-weight: bold;
+		line-height: 1.2;
+		margin-bottom: var(--margin-smallest);
+	}
+
+	header strong {
+		font-family: "Ramen";
+		font-size: 3rem;
+		line-height: 1.2;
+		margin-bottom: var(--margin-standard);
+	}
+
+	@media (min-width: 750px) {
+		header .logo {
+			max-width: 18rem;
+			height: auto;
+			aspect-ratio: 13 / 6;
+			display: block;
+			margin: 0 auto;
+		}
+
+		header small {
+			font-size: 2.2rem;
+			font-weight: bold;
+			line-height: 1.2;
+			margin-bottom: var(--margin-smallest);
+		}
+
+		header strong {
+			font-family: "Ramen";
+			font-size: 5.8rem;
+			line-height: 1.2;
+			margin-bottom: var(--margin-standard);
+		}
+
+		header .content {
+			padding-top: calc(var(--margin-small));
+		}
+	}
+</style>
+
+<header>
+	<div class="content">
+		<div class="lang-switch">
+			<a href="/" class={lang == "it" ? "selected" : ""}>IT</a>
+			<span class="separator"></span>
+			<a href="/en" class={lang == "en" ? "selected" : ""}>EN</a>
+			<span class="separator"></span>
+			<a href="/fr" class={lang == "fr" ? "selected" : ""}>FR</a>
+		</div>
+
+		<Image src={logoSkiLife} alt="Ski Life valle d'Aosta" class="logo" loading="eager" />
+
+		<div>
+			<div>
+				<small set:html={translations.scopri_la_magia}></small>
+				<strong set:html={translations.piccoli_comprensori}></strong>
+			</div>
+
+			<a href="https://skilife.skiperformance.com/it/negozio?skugroup_id=4119#/it/acquista" class="btn" id="cta-acquista-header" target="_blank">{translations.acquista_online}</a>
+			<br />
+			<button class="btn btn--secondary scopri-di-piu">{translations.scopri_borghi}</button>
+		</div>
+
+		<Image src={arrowDownImage} alt="Vai giù" class="arrow-down" loading="eager" />
+	</div>
+
+	<script>
+		const scrollLink = document.querySelector(".arrow-down"),
+			targetElement = document.querySelector(".intro"),
+			scopriElement = document.querySelector(".scopri-di-piu"),
+			sliderElement = document.querySelector(".slider-comprensori"),
+			acquistaHeaderElement = document.querySelector("#cta-acquista-header"),
+			acquistaComeElement = document.querySelector("#cta-acquista-section-come"),
+			acquistaCoseElement = document.querySelector("#cta-acquista-section-cose"),
+			acquistaLasciatiIspirareElement = document.querySelector("#cta-acquista-section-lasciati-ispirare"),
+			footerTelLinkElement = document.querySelector("#footer-tel-link"),
+			footerEmailLinkElement = document.querySelector("#footer-email-link");
+
+		scrollLink.addEventListener("click", function (e) {
+			e.preventDefault();
+			window.scroll({
+				top: targetElement.offsetTop - 50,
+				left: 0,
+				behavior: "smooth"
+			});
+		});
+
+		scopriElement.addEventListener("click", function (e) {
+			e.preventDefault();
+
+			dataLayer.push({
+				event: "click_cta-lasciati-ispirare-header"
+			});
+
+			window.scroll({
+				top: sliderElement.offsetTop - 15,
+				left: 0,
+				behavior: "smooth"
+			});
+
+			if (fbq != "undefined") fbq("trackCustom", "click_cta-lasciati-ispirare-header");
+		});
+
+		acquistaHeaderElement.addEventListener("click", function (e) {
+			// evt ga4 impostato da tag mangager
+			fbq("trackCustom", "click_cta-acquista-header");
+		});
+
+		acquistaComeElement.addEventListener("click", function (e) {
+			// evt ga4 impostato da tag mangager
+			fbq("trackCustom", "click_cta-acquista-section-come");
+		});
+
+		acquistaCoseElement.addEventListener("click", function (e) {
+			// evt ga4 impostato da tag mangager
+			fbq("trackCustom", "click_cta-acquista-section-cose");
+		});
+
+		acquistaLasciatiIspirareElement.addEventListener("click", function (e) {
+			// evt ga4 impostato da tag mangager
+			fbq("trackCustom", "click_cta-acquista-section-lasciati-ispirare");
+		});
+
+		footerTelLinkElement.addEventListener("click", function (e) {
+			// evt ga4 impostato da tag mangager
+			fbq("trackCustom", "click_footer-tel-link");
+		});
+
+		footerEmailLinkElement.addEventListener("click", function (e) {
+			dataLayer.push({
+				event: "click_footer-email-link"
+			});
+			fbq("trackCustom", "click_footer-email-link");
+		});
+	</script>
+</header>

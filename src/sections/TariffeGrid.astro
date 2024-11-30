@@ -1,0 +1,72 @@
+---
+import { Image } from "astro:assets";
+import mapImage from "../images/mappa-piccoli-comprensori.webp";
+import tariffeImage_it from "../images/illustrazione-tariffe-it.svg";
+import tariffeImage_en from "../images/illustrazione-tariffe-en.svg";
+import tariffeImage_fr from "../images/illustrazione-tariffe-fr.svg";
+
+import { loadTranslations } from "../utils/loadTranslations";
+const { lang } = Astro.props;
+const translations = loadTranslations(lang);
+
+const tariffsImages = {
+	it: {
+		src: tariffeImage_it,
+		alt: "100€ Adulti, 80€ Under 14, 0€ Under 8"
+	},
+	en: {
+		src: tariffeImage_en,
+		alt: "€100 Adults, €80 Under 14, €0 Under 8"
+	},
+	fr: {
+		src: tariffeImage_fr,
+		alt: "100€ Adultes, 80€ Moins de 14 ans, 0€ Moins de 8 ans"
+	}
+};
+---
+
+<style>
+	.mappa-piccoli-comprensori,
+	.illustrazione-tariffe {
+		width: 95%;
+		max-width: 100rem;
+		margin: 0 auto;
+		height: auto;
+		max-inline-size: none;
+		max-block-size: none;
+	}
+
+	.illustrazione-tariffe {
+		margin-top: var(--margin-standard);
+		margin-bottom: var(--margin-standard);
+	}
+
+	@media (min-width: 750px) {
+		.mappa-piccoli-comprensori {
+			margin-top: var(--margin-large);
+		}
+	}
+</style>
+
+<section>
+
+	<div class="content">
+
+		<div class="tariffe-grid">
+
+			<div class="title-copy-cta">
+				<h1 set:html={translations.tariffe_title} />
+				<p set:html={translations.tariffe_p1} />
+				<p set:html={translations.tariffe_p2} />
+				<p set:html={translations.tariffe_p3} />
+			</div>
+
+			<Image src={tariffsImages[lang].src} alt={tariffsImages[lang].alt} class="illustrazione-tariffe" />
+
+		</div>
+
+		<Image src={mapImage} alt="Mappa piccoli comprensori" class="mappa-piccoli-comprensori" />
+
+	</div>
+
+</section>

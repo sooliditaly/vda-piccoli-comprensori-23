@@ -1,0 +1,81 @@
+---
+import { Image } from "astro:assets";
+
+import seiGiornateImage from "../images/illustrazione-6-giornate.svg";
+import percorsoImage from "../images/illustrazione-percorso.svg";
+import percorsoDesktopImage from "../images/illustrazione-percorso-desktop.svg";
+
+import { loadTranslations } from "../utils/loadTranslations";
+const { lang } = Astro.props;
+const translations = loadTranslations(lang);
+---
+
+<style>
+	.cose-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+
+		align-items: center;
+		justify-items: center;
+	}
+
+	.sei-giornate {
+		margin-top: var(--margin-large);
+		max-width: 80%;
+		height: auto;
+	}
+
+	.percorso-mobile {
+		margin-bottom: var(--margin-large);
+	}
+
+	@media (min-width: 750px) {
+		.cose-grid {
+			column-gap: 8rem;
+			row-gap: var(--margin-large);
+		}
+
+		.cose-grid .percorso-desktop {
+			width: 90%;
+			justify-self: flex-start;
+		}
+
+		.cose-grid {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		.sei-giornate {
+			margin-top: 0;
+		}
+	}
+</style>
+
+<section class="intro">
+	<div class="content">
+		<div class="cose-grid">
+
+			<div class="title-copy-cta">
+				<h1>{translations.cose_title}</h1>
+				<p set:html={translations.cose_p1} />
+				<p set:html={translations.cose_p2} />
+				<a href="https://skilife.skiperformance.com/it/negozio?skugroup_id=4119#/it/acquista" class="btn" target="_blank" id="cta-acquista-section-cose">{translations.acquista_online}</a>
+			</div>
+
+			<Image src={seiGiornateImage} alt="6 giornate di skipass + 1 ora di maestro a soli 100€" class="sei-giornate" />
+			<Image src={percorsoImage} alt="Percorso" class="mobile-only percorso-mobile" />
+			<Image src={percorsoDesktopImage} alt="Percorso" class="desktop-only percorso-desktop" />
+
+			<div class="title-copy-cta">
+				<h1>{translations.nonetutto_title}</h1>
+				<p set:html={translations.nonetutto_p1} />
+				<p set:html={translations.nonetutto_p2} />
+				<p set:html={translations.nonetutto_scarica_lista} />
+				<p set:html={translations.nonetutto_p3} />
+				<p set:html={translations.nonetutto_esempi} />
+			</div>
+
+		</div>
+
+	</div>
+
+</section>

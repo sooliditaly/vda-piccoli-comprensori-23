@@ -1,0 +1,139 @@
+---
+import { Image } from "astro:assets";
+
+import stepOneImage from "../images/icon-step-1.svg";
+import stepTwoImage from "../images/icon-step-2.svg";
+import stepThreeImage from "../images/icon-step-3.svg";
+
+import { loadTranslations } from "../utils/loadTranslations";
+const { lang } = Astro.props;
+const translations = loadTranslations(lang);
+---
+
+<style>
+	.come-usufruire h1,
+	.come-usufruire h2 {
+		color: white;
+	}
+
+	.come-usufruire h1 {
+		margin-bottom: calc(var(--margin-standard) * 2);
+	}
+
+	.come-usufruire li {
+		color: white;
+		max-width: 28rem;
+		margin: 0 auto;
+	}
+
+	.come-usufruire li > img {
+		margin-bottom: var(--margin-small);
+	}
+
+	.come-usufruire li h2 {
+		margin-bottom: var(--margin-smallest);
+		line-height: 1;
+	}
+
+	.come-usufruire li p {
+		margin-top: 0;
+	}
+
+	.come-usufruire {
+		margin: 0;
+		padding-top: var(--margin-large);
+		padding-bottom: var(--margin-large);
+	}
+
+	.come-usufruire.visible {
+		background-image: url(../images/bg-come-usufruire-mobile@1x.webp);
+	}
+
+	.come-usufruire {
+		background-color: #ececec;
+		background-size: cover;
+		background-position: center bottom;
+	}
+
+	.come-usufruire h1,
+	.come-usufruire h2 {
+		color: white;
+	}
+
+	.come-usufruire li {
+		color: white;
+		max-width: 28rem;
+		margin: 0 auto;
+	}
+
+	.come-usufruire li img {
+		margin-bottom: var(--margin-small);
+	}
+
+	.come-usufruire li h2 {
+		margin-bottom: var(--margin-smallest);
+		line-height: 1;
+	}
+
+	.come-usufruire li p {
+		margin-top: 0;
+	}
+
+	@media (min-width: 750px) {
+		.come-usufruire .steps {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+
+		.come-usufruire.visible {
+			background-image: url(../images/bg-come-usufruire-desktop@1x.webp);
+		}
+
+		.tariffe-grid {
+			text-align: left;
+
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			column-gap: var(--margin-standard);
+			justify-items: center;
+			align-items: center;
+		}
+
+		.tariffe-grid img {
+			grid-column: 1;
+			grid-row: 1;
+		}
+
+		.tariffe-grid .title-copy-cta {
+			grid-column: 2;
+		}
+	}
+</style>
+
+<section class="come-usufruire lazy-background">
+	<div class="content">
+		<h1>{translations.come_usufruire_title}</h1>
+
+		<ul class="steps">
+			<li>
+				<Image src={stepOneImage} alt="Uno" width="100" />
+				<h2>{translations.come_usufruire_acquista}</h2>
+				<p>{translations.come_usufruire_acquista_p}</p>
+			</li>
+
+			<li>
+				<Image src={stepTwoImage} alt="Due" width="100" />
+				<h2>{translations.come_usufruire_ritira}</h2>
+				<p>{translations.come_usufruire_ritira_p}</p>
+			</li>
+
+			<li>
+				<Image src={stepThreeImage} alt="Tre" width="100" />
+				<h2>{translations.come_usufruire_scopri}</h2>
+				<p>{translations.come_usufruire_scopri_p}</p>
+			</li>
+		</ul>
+
+		<a href="https://skilife.skiperformance.com/it/negozio?skugroup_id=4119#/it/acquista" class="btn" id="cta-acquista-section-come" target="_blank">{translations.acquista_online}</a>
+	</div>
+</section>

@@ -1,0 +1,56 @@
+section {
+	margin-top: var(--margin-large);
+	margin-bottom: var(--margin-large);
+}
+
+section .content,
+header .content,
+footer .content {
+	padding-left: var(--margin-small);
+	padding-right: var(--margin-small);
+
+	max-width: 1300px;
+	margin-left: auto;
+	margin-right: auto;
+
+	overflow: hidden;
+}
+
+p {
+	margin-top: var(--margin-standard);
+	margin-bottom: var(--margin-standard);
+}
+
+p > small {
+	display: block;
+	margin: var(--margin-small) 0;
+}
+
+p > small:last-child {
+	margin-bottom: 0;
+}
+
+.content > .mappa-piccoli-comprensori {
+	display: block;
+}
+
+.content > .title-copy-cta {
+	margin-bottom: var(--margin-large);
+}
+
+.content > .title-copy-cta:last-child {
+	margin-bottom: 0;
+}
+
+.title-copy-cta p:first-of-type {
+	margin-top: 0;
+}
+.title-copy-cta p:last-child {
+	margin-bottom: 0;
+}
+
+@media (min-width: 750px) {
+	.title-copy-cta {
+		text-align: left;
+	}
+}

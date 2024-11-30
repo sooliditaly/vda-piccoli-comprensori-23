@@ -1,11 +1,15 @@
 @import "../../node_modules/the-new-css-reset/css/reset.css";
-@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;700&display=swap");
+
+@import "./typography.scss";
+@import "./structure.scss";
+@import "./buttons.scss";
+@import "./slider.scss";
 
 :root {
 	--text-grey: #8a97a8;
 	--azzurro: #55c2e4;
 
-	--margin-large: 80px;
+	--margin-large: 100px;
 	--margin-standard: 50px;
 	--margin-small: 20px;
 	--margin-smallest: 10px;
@@ -15,16 +19,10 @@
 	}
 }
 
-html {
-	/* 1rem = 10px */
-	font-size: 62.5%;
-}
-
 body {
 	color: var(--text-grey);
 	font-size: 2rem;
-	font-family: "Alegreya Sans", sans-serif;
-
+	font-family: "Oxygen";
 	text-align: center;
 }
 
@@ -75,64 +73,6 @@ b {
 	font-weight: bold;
 }
 
-header {
-	padding-top: var(--margin-standard);
-	padding-bottom: var(--margin-standard);
-
-	color: white;
-
-	text-align: center;
-
-	background-image: url(../images/bg-header-mobile@1x.webp);
-	background-size: 100% auto;
-	background-position: bottom;
-
-	height: 90vh;
-
-	display: flex;
-	align-items: flex-end;
-
-	// .content {
-	// 	position: absolute;
-	// 	z-index: 2;
-	// }
-
-	// .gradient-overlay {
-	// 	position: absolute;
-	// 	top: 0;
-	// 	left: 0;
-	// 	z-index: 1;
-	// 	height: 90vh;
-	// 	width: 100%;
-	// 	background: rgb(17, 31, 54);
-	// 	background: linear-gradient(0deg, rgba(17, 31, 54, 0.7721682422969187) 30%, rgba(121, 197, 158, 0) 100%);
-	// }
-
-	.logo {
-		max-width: 15rem;
-		height: auto;
-		aspect-ratio: 13 / 6;
-		display: block;
-		margin: 0 auto;
-	}
-
-	button,
-	small,
-	strong {
-		display: inline-block;
-	}
-
-	strong {
-		font-family: "ramen-ichikaru";
-	}
-
-	button {
-		margin-top: var(--margin-small);
-		margin-bottom: var(--margin-small);
-		width: 220px;
-	}
-}
-
 section {
 	margin-top: var(--margin-large);
 	margin-bottom: var(--margin-large);
@@ -161,40 +101,6 @@ section {
 }
 
 .title-copy-cta {
-}
-
-.come-usufruire {
-	margin: 0;
-	padding-top: var(--margin-large);
-	padding-bottom: var(--margin-large);
-	background-color: #ececec;
-	background-image: url(../images/come-usufruire@1x.webp);
-	background-size: cover;
-	background-position: center bottom;
-
-	h1,
-	h2 {
-		color: white;
-	}
-
-	li {
-		color: white;
-		max-width: 28rem;
-		margin: 0 auto;
-
-		> img {
-			margin-bottom: var(--margin-small);
-		}
-
-		h2 {
-			margin-bottom: var(--margin-smallest);
-			line-height: 1;
-		}
-
-		p {
-			margin-top: 0;
-		}
-	}
 }
 
 .tariffe-grid {
@@ -228,6 +134,31 @@ section {
 	max-block-size: none;
 }
 
-footer {
-	height: 40rem;
+.desktop-only {
+	display: none;
+}
+
+.esempi {
+	margin-top: calc(var(--margin-small) * -1);
+}
+
+.esempi ul {
+	list-style-type: decimal;
+	margin-top: var(--margin-smallest);
+	margin-bottom: var(--margin-small);
+}
+
+.esempi li {
+	margin-bottom: var(--margin-small);
+	text-align: left;
+	margin-left: var(--margin-small);
+}
+
+@media (min-width: 750px) {
+	.mobile-only {
+		display: none;
+	}
+	.desktop-only {
+		display: block;
+	}
 }

@@ -1,0 +1,48 @@
+---
+import "../../node_modules/the-new-css-reset/css/reset.css";
+const { lang } = Astro.props;
+
+import { loadTranslations } from "../utils/loadTranslations";
+const translations = loadTranslations(lang);
+---
+
+<html lang={lang}>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<title>{translations.page_title}</title>
+
+		<meta name="description" content="Magic Skipass è la promozione ideata per incentivare la scoperta di itinerari fuori dal comune dove poter vivere la propria passione per la neve, provare a sciare e assaporare le tradizioni più vere e radicate, contrastando il caro vita." />
+
+		<meta property="og:url" content="https://magic-pass.skilife.ski/" />
+		<meta property="og:site_name" content="magic-pass.skilife.ski" />
+		<meta property="og:title" content="Scopri l'autentica magia della Valle d'Aosta" />
+		<meta property="og:description" content="Magic Skipass è la promozione ideata per incentivare la scoperta di itinerari fuori dal comune dove poter vivere la propria passione per la neve, provare a sciare e assaporare le tradizioni più vere e radicate, contrastando il caro vita." />
+		<meta property="og:locale" content="it_IT" />
+		<meta property="og:image" content="/og-header.jpg" />
+		<meta property="og:type" content="website" />
+
+		<script>
+			(function (w, d, s, l, i) {
+				w[l] = w[l] || [];
+				w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s),
+					dl = l != "dataLayer" ? "&l=" + l : "";
+				j.async = true;
+				j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+				f.parentNode.insertBefore(j, f);
+			})(window, document, "script", "dataLayer", "GTM-KX3PPB8T");
+		</script>
+
+		<script define:vars={{ lang }}>
+			window.dataLayer = window.dataLayer || [];
+			window.current_lang = lang;
+		</script>
+	</head>
+
+	<body>
+		<slot lang={lang} />
+	</body>
+</html>

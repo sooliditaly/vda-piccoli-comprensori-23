@@ -1,0 +1,121 @@
+---
+import { Image } from "astro:assets";
+import logoSkiLife from "../images/ski-life-logo.svg";
+
+import { loadTranslations } from "../utils/loadTranslations";
+const { lang } = Astro.props;
+const translations = loadTranslations(lang);
+---
+
+<style>
+	footer {
+		background-color: #00264a;
+		padding-top: var(--margin-standard);
+	}
+
+	footer .col {
+		text-align: left;
+	}
+	footer .col img {
+		min-height: 50px;
+	}
+
+	footer h3 {
+		font-weight: 700;
+		color: var(--azzurro);
+		margin-bottom: var(--margin-smallest);
+	}
+
+	footer a {
+		color: white;
+		font-weight: 300;
+		display: block;
+		font-size: 1.3rem;
+		line-height: 2.7;
+	}
+
+	footer .content {
+		display: flex;
+		flex-direction: column;
+		row-gap: var(--margin-standard);
+		justify-content: space-between;
+	}
+
+	@media (min-width: 750px) {
+		footer .content {
+			display: flex;
+			flex-direction: row;
+			column-gap: var(--margin-standard);
+			justify-content: space-between;
+		}
+	}
+
+	.footer-bottom {
+		margin-top: var(--margin-standard);
+		padding-top: var(--margin-smallest);
+		padding-bottom: var(--margin-smallest);
+
+		font-size: 1.2rem;
+
+		color: white;
+		background-color: #0084be;
+	}
+</style>
+
+<footer>
+	<div class="content">
+		<div class="col">
+			<Image src={logoSkiLife} alt="Ski lige Valle d'Aosta" width="200" />
+		</div>
+
+		<div class="col">
+			<h3>{translations.link_utili}</h3>
+			<a href="http://www.skilife.ski/associazione-valdostana-impianti-a-fune/"> {translations.associazione} </a>
+			<a href="https://www.skilife.ski/agenzie/">{translations.area_agenzie}</a>
+			<a href="https://www.skilife.ski/societa-funiviarie/">{translations.societa_funiviarie}</a>
+		</div>
+
+		<div class="col">
+			<h3>{translations.contatti}</h3>
+			<a href="tel:+39 0165 238871" id="footer-tel-link">{translations.telefono}</a>
+			<a href="mailto:info@skilife.ski" id="footer-email-link">info@skilife.ski</a>
+		</div>
+
+		<div class="col">
+			<h3>{translations.informazioni}</h3>
+			<a href="https://skilife.skiperformance.com/it/negozio#/it/acquista?skugroup_id=4119">{translations.skipass_online}</a>
+			<a href="https://www.skilife.ski/privacy/">{translations.privacy}</a>
+			<a href="https://www.iubenda.com/privacy-policy/50649705/cookie-policy?an=no&s_ck=false&newmarkup=yes">{translations.coookie_policy}</a>
+		</div>
+
+		<div class="col">
+			<h3>{translations.seleziona_lingua}</h3>
+			<a href="/it">Italiano</a>
+			<a href="/en">English</a>
+			<a href="/fr">French</a>
+		</div>
+	</div>
+
+	<div class="footer-bottom">©{new Date().getFullYear()} Copyright Skilife P.I. IT00035130079</div>
+</footer>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		var lazyBackgrounds = [].slice.call(document.querySelectorAll(".lazy-background"));
+
+		if ("IntersectionObserver" in window) {
+			let lazyBackgroundObserver = new IntersectionObserver(function (entries, observer) {
+				entries.forEach(function (entry) {
+					if (entry.isIntersecting) {
+						entry.target.classList.add("visible");
+						lazyBackgroundObserver.unobserve(entry.target);
+					}
+				});
+			});
+
+			lazyBackgrounds.forEach(function (lazyBackground) {
+				lazyBackgroundObserver.observe(lazyBackground);
+			});
+		}
+	});
+</script>

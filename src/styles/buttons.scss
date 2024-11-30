@@ -1,0 +1,25 @@
+.btn {
+	background-color: var(--azzurro);
+	border: 2px solid var(--azzurro);
+	color: white;
+	padding-left: 4rem;
+	padding-right: 4rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.7rem;
+	border-radius: 0.6rem;
+	font-weight: bold;
+	font-size: 1.7rem;
+	display: inline-block;
+	transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.btn.btn--secondary {
+	background-color: transparent;
+	border: 2px solid white;
+}
+
+.btn:hover {
+	transform: scale(1.05);
+	box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Adds a shadow for a "lifted" effect */
+	text-decoration: none;
+}
