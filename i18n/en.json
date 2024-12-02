@@ -8,7 +8,7 @@
 
 	"cose_title": "What is the Magic Skipass?",
 
-	"cose_p1": "Magic Skipass is the promotion designed to encourage to discover <b>unusual routes where to live your passion for snow</b>, 11 magnificent villages where you can try skiing and savor the truest and deepest traditions, counteracting the high cost of living.",
+	"cose_p1": "The Magic Skipass promotes exploring the <b>hidden gems of the Aosta Valley, where to live your passion for snow</b>. 11 magnificent villages where you can try skiing and savor the truest and deepest traditions, counteracting the high cost of living.",
 	"cose_p2": "Unmissable experiences to enjoy a few days away from the chaos, the frenetic rhythms of the cities and discover the beauty of skiing in the middle of the purest and most wonderful nature of the Aosta Valley.",
 
 	"nonetutto_title": "And that's not all!",
@@ -61,5 +61,13 @@
 	"privacy": "Privacy",
 	"cookie_policy": "Cookie policy",
 
-	"seleziona_lingua": "Select language"
+	"seleziona_lingua": "Select language",
+
+	"link_skilife_associazione": "",
+	"link_skilife_agenzie": "https://www.skilife.ski/en/pro-area",
+	"link_skilife_soc_funiviarie": "https://www.skilife.ski/en/cableway-societies",
+	"link_skilife_privacy_policy": "https://www.skilife.ski/en/privacy",
+	"link_skilife_cookie_policy": "/en/cookie-policy",
+
+	"link_skiperformance": "https://skilife.skiperformance.com/en/store#/en/buy?skugroup_id=4319"
 }

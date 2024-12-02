@@ -64,5 +64,14 @@
 	"privacy": "Confidentialité",
 	"cookie_policy": "Politique de cookies",
 
-	"seleziona_lingua": "Sélectionnez la langue"
+	"seleziona_lingua": "Sélectionnez la langue",
+
+	"link_skilife_associazione": "http://www.skilife.ski/associazione-valdostana-impianti-a-fune",
+	"link_skilife_agenzie": "https://www.skilife.ski/fr/espace-pro",
+	"link_skilife_soc_funiviarie": "https://www.skilife.ski/fr/societes-des-telepheriques",
+	"link_skilife_privacy_policy": "https://www.skilife.ski/fr/privacy",
+	"link_skilife_cookie_policy": "/fr/cookie-policy",
+
+	"link_skiperformance": "https://skilife.skiperformance.com/fr/store#/fr/buy?skugroup_id=4319"
+
 }

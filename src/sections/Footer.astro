@@ -31,22 +31,25 @@ const translations = loadTranslations(lang);
 		font-weight: 300;
 		display: block;
 		font-size: 1.3rem;
-		line-height: 2.7;
 	}
 
 	footer .content {
-		display: flex;
-		flex-direction: column;
-		row-gap: var(--margin-standard);
-		justify-content: space-between;
+		display: grid;
+		grid-template-columns: 1fr;
+		row-gap: var(--margin-small);
+
+	}
+
+	footer .content a {
+		line-height: 1.3;
+		display: block;
+		margin-bottom: var(--margin-small);
 	}
 
 	@media (min-width: 750px) {
 		footer .content {
-			display: flex;
-			flex-direction: row;
-			column-gap: var(--margin-standard);
-			justify-content: space-between;
+			grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+			column-gap: calc(var(--margin-small)*2);
 		}
 	}
 
@@ -70,9 +73,9 @@ const translations = loadTranslations(lang);
 
 		<div class="col">
 			<h3>{translations.link_utili}</h3>
-			<a href="http://www.skilife.ski/associazione-valdostana-impianti-a-fune/"> {translations.associazione} </a>
-			<a href="https://www.skilife.ski/agenzie/">{translations.area_agenzie}</a>
-			<a href="https://www.skilife.ski/societa-funiviarie/">{translations.societa_funiviarie}</a>
+			<a href={translations.link_skilife_associazione}> {translations.associazione} </a>
+			<a href={translations.link_skilife_agenzie}>{translations.area_agenzie}</a>
+			<a href={translations.link_skilife_soc_funiviarie}>{translations.societa_funiviarie}</a>
 		</div>
 
 		<div class="col">
@@ -83,9 +86,9 @@ const translations = loadTranslations(lang);
 
 		<div class="col">
 			<h3>{translations.informazioni}</h3>
-			<a href="https://skilife.skiperformance.com/it/negozio#/it/acquista?skugroup_id=4119">{translations.skipass_online}</a>
-			<a href="https://www.skilife.ski/privacy/">{translations.privacy}</a>
-			<a href="https://www.iubenda.com/privacy-policy/50649705/cookie-policy?an=no&s_ck=false&newmarkup=yes">{translations.coookie_policy}</a>
+			<a href={translations.link_skiperformance}>{translations.skipass_online}</a>
+			<a href={translations.link_skilife_privacy_policy}>{translations.privacy}</a>
+			<a href={translations.link_skilife_cookie_policy}>{translations.cookie_policy}</a>
 		</div>
 
 		<div class="col">

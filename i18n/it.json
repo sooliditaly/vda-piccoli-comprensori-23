@@ -13,7 +13,7 @@
 
 	"nonetutto_title": "E non è tutto!",
 	"nonetutto_p1": "Con Magic Skipass, potrai usufruire anche di 1 ora di lezione di sci o di snowboard, presso le Scuole Sci disponibili nei piccoli comprensori che aderiscono all'iniziativa.<br /><br /> <a href=\"/Skilife_MagicSkipass_24-25.pdf\" download=\"/Skilife_MagicSkipass_24-25.pdf\">Scarica il leaflet</a> della promozione con l'elenco ed i contatti delle Scuola Sci che aderiscono alla promozione. <small>L'ora di lezione con il maestro non è cedibile. Potrai usufruire dell'ora di lezione per tutta la stagione 2024/2025 ad eccezione dei weekend e dei periodi dal 26/12 al 06/01 e dal 24/02 al 07/03.</small>",
-	"nonetutto_p2": "Soggiornando in una delle <a href=\"https://magic-skipass.skilife.ski/adesioni-promo-piccole-stazioni-sciistiche-9ott2023.pdf\">strutture aderenti</a> alla promozione, <b>max 2 ragazzi*</b> (fino a 18 anni non compiuti) usufruiscono della gratuità pernottamento e prima colazione se soggiornano in camera con i genitori, possessori dello skipass promozionale.",
+	"nonetutto_p2": "Soggiornando in una delle <a href=\"https://magic-skipass.skilife.ski/adesioni-promo-piccole-stazioni-sciistiche-9ott2023.pdf\">strutture aderenti</a> alla promozione, <b>max 2 ragazzi*</b> (fino a 18 anni non compiuti) usufruiscono della gratuità per pernottamento e prima colazione se soggiornano in camera con i genitori, possessori dello skipass promozionale.",
 	"nonetutto_scarica_lista": "<p><a href=\"https://magic-skipass.skilife.ski/adesioni-promo-piccole-stazioni-sciistiche-9ott2023.pdf\">Scarica la lista degli alberghi che aderiscono alla promozione.</a></p>",
 	"nonetutto_p3": "<b>Ogni Magic skipass acquistato da un adulto dà diritto a una notte gratuita per 1 o due ragazzi fino a 18 anni non ancora compiuti, in camera con i genitori.</b>",
 	"nonetutto_esempi": "<div class=\"esempi\"><b>Alcuni esempi:</b><ul><li>2 genitori (2 skipass) + 1/2 ragazzo/i: gli adulti pagano la tariffa piena e il/i ragazzo/i soggiorna/no gratis per due notti</li><li>2 genitori (1 skipass) + 1/2 ragazzo/i: gli adulti pagano la tariffa piena e il/i ragazzo/i soggiorna/no gratis per una notte</li><li> 1 genitore (1 skipass) + 1/2 ragazzo/i: l'adulto paga la tariffa piena della camera doppia e il/i ragazzo/i soggiorna/no gratis per una notte</li></ul><p><b>N.B.:</b> La gratuità in hotel è abbinata esclusivamente ad uno skipass adulto. Lo skipass dei ragazzi 14 - 18 anni non genera la gratuità.</p></div>",
@@ -24,7 +24,7 @@
 	"come_usufruire_ritira": "Ritira",
 	"come_usufruire_ritira_p": "Ritira il Magic Skipass in una delle biglietterie dei comprensori aderenti l'iniziativa.",
 	"come_usufruire_scopri": "Scopri",
-	"come_usufruire_scopri_p": "Scopri la b ellezza di sciare sulle piste più magiche della Valle d'Aosta per un massimo di 3 giornate nella stessa stazione di sci.",
+	"come_usufruire_scopri_p": "Scopri la bellezza di sciare sulle piste più magiche della Valle d'Aosta per un massimo di 3 giornate nella stessa stazione di sci.",
 
 	"tariffe_title": "Un prezzo imbattibile",
 	"tariffe_p1": "1 skipass plurigiornaliero** nominale da 6 giornate di sci da utilizzare a libera scelta nei piccoli comprensori valdostani <b>a soli 100€ per gli adulti, gratis per i bambini fino a 8 anni</b> (con l'acquisto di uno skipass adulto) e <b>80€ per i ragazzi sotto ai 16 anni</b>.",
@@ -60,6 +60,13 @@
 	"privacy": "Privacy",
 	"cookie_policy": "Cookie Policy",
 
-	"seleziona_lingua": "Seleziona lingua"
+	"seleziona_lingua": "Seleziona lingua",
 
+	"link_skilife_associazione": "http://www.skilife.ski/associazione-valdostana-impianti-a-fune/",
+	"link_skilife_agenzie": "https://www.skilife.ski/agenzie",
+	"link_skilife_soc_funiviarie": "https://www.skilife.ski/societa-funiviarie/",
+	"link_skilife_privacy_policy": "https://www.skilife.ski/privacy/",
+	"link_skilife_cookie_policy": "/cookie-policy",
+
+	"link_skiperformance": "https://skilife.skiperformance.com/it/negozio#/it/acquista?skugroup_id=4119"
 }

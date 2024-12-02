@@ -196,8 +196,8 @@ const translations = loadTranslations(lang);
 
 		<div>
 			<div>
-				<small set:html={translations.scopri_la_magia}></small>
-				<strong set:html={translations.piccoli_comprensori}></strong>
+				<small set:html={translations.scopri_la_magia} />
+				<strong set:html={translations.piccoli_comprensori} />
 			</div>
 
 			<a href="https://skilife.skiperformance.com/it/negozio?skugroup_id=4119#/it/acquista" class="btn" id="cta-acquista-header" target="_blank">{translations.acquista_online}</a>
@@ -236,6 +236,8 @@ const translations = loadTranslations(lang);
 				event: "click_cta-lasciati-ispirare-header"
 			});
 
+			usermaven("track", "click_cta-lasciati-ispirare-header");
+
 			window.scroll({
 				top: sliderElement.offsetTop - 15,
 				left: 0,
@@ -246,31 +248,37 @@ const translations = loadTranslations(lang);
 		});
 
 		acquistaHeaderElement.addEventListener("click", function (e) {
+			usermaven("track", "click_cta-acquista-header");
 			// evt ga4 impostato da tag mangager
 			fbq("trackCustom", "click_cta-acquista-header");
 		});
 
 		acquistaComeElement.addEventListener("click", function (e) {
+			usermaven("track", "click_cta-acquista-section-come");
 			// evt ga4 impostato da tag mangager
 			fbq("trackCustom", "click_cta-acquista-section-come");
 		});
 
 		acquistaCoseElement.addEventListener("click", function (e) {
+			usermaven("track", "click_cta-acquista-section-cose");
 			// evt ga4 impostato da tag mangager
 			fbq("trackCustom", "click_cta-acquista-section-cose");
 		});
 
 		acquistaLasciatiIspirareElement.addEventListener("click", function (e) {
+			usermaven("track", "click_cta-acquista-section-lasciati-ispirare");
 			// evt ga4 impostato da tag mangager
 			fbq("trackCustom", "click_cta-acquista-section-lasciati-ispirare");
 		});
 
 		footerTelLinkElement.addEventListener("click", function (e) {
+			usermaven("track", "click_footer-tel-link");
 			// evt ga4 impostato da tag mangager
 			fbq("trackCustom", "click_footer-tel-link");
 		});
 
 		footerEmailLinkElement.addEventListener("click", function (e) {
+			usermaven("track", "click_footer-email-link");
 			dataLayer.push({
 				event: "click_footer-email-link"
 			});
