@@ -2,6 +2,8 @@
 import "../../node_modules/the-new-css-reset/css/reset.css";
 const { lang } = Astro.props;
 
+import favicon from "../images/favicon.svg";
+
 import { loadTranslations } from "../utils/loadTranslations";
 const translations = loadTranslations(lang);
 ---
@@ -15,6 +17,7 @@ const translations = loadTranslations(lang);
 
 		<meta name="description" content="Magic Skipass è la promozione ideata per incentivare la scoperta di itinerari fuori dal comune dove poter vivere la propria passione per la neve, provare a sciare e assaporare le tradizioni più vere e radicate, contrastando il caro vita." />
 		<meta name="google-site-verification" content="OfJmWG7hGmO0OGqfVR-4gILKZQERd-ew5d8at8oVvWc" />
+
 		<meta property="og:url" content="https://magic-pass.skilife.ski/" />
 		<meta property="og:site_name" content="magic-pass.skilife.ski" />
 		<meta property="og:title" content="Scopri l'autentica magia della Valle d'Aosta" />
@@ -22,6 +25,8 @@ const translations = loadTranslations(lang);
 		<meta property="og:locale" content="it_IT" />
 		<meta property="og:image" content="/og-header.jpg" />
 		<meta property="og:type" content="website" />
+
+		<link rel="icon" type="image/svg+xml" href={favicon.src} />
 
 		<script type="text/javascript">
 			(function () {
