@@ -250,25 +250,33 @@ const translations = loadTranslations(lang);
 		acquistaHeaderElement.addEventListener("click", function (e) {
 			usermaven("track", "click_cta-acquista-header");
 			// evt ga4 impostato da tag mangager
-			fbq("trackCustom", "click_cta-acquista-header");
+			fbq("trackCustom", "click_cta-acquista-lp", {
+				posizione: "header"
+			});
 		});
 
 		acquistaComeElement.addEventListener("click", function (e) {
 			usermaven("track", "click_cta-acquista-section-come");
 			// evt ga4 impostato da tag mangager
-			fbq("trackCustom", "click_cta-acquista-section-come");
+			fbq("trackCustom", "click_cta-acquista-lp", {
+				posizione: "section-come"
+			});
 		});
 
 		acquistaCoseElement.addEventListener("click", function (e) {
 			usermaven("track", "click_cta-acquista-section-cose");
 			// evt ga4 impostato da tag mangager
-			fbq("trackCustom", "click_cta-acquista-section-cose");
+			fbq("trackCustom", "click_cta-acquista-lp", {
+				posizione: "section-cose"
+			});
 		});
 
 		acquistaLasciatiIspirareElement.addEventListener("click", function (e) {
 			usermaven("track", "click_cta-acquista-section-lasciati-ispirare");
 			// evt ga4 impostato da tag mangager
-			fbq("trackCustom", "click_cta-acquista-section-lasciati-ispirare");
+			fbq("trackCustom", "click_cta-acquista-lp", {
+				posizione: "lasciati-ispirare"
+			});
 		});
 
 		footerTelLinkElement.addEventListener("click", function (e) {
