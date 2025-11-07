@@ -1,0 +1,23 @@
+---
+import AppShell from "../../../layouts/AppShell.astro";
+import ComprensorioDetail from "../../../components/ComprensorioDetail.astro";
+import { loadTranslations } from "../../../utils/loadTranslations";
+
+import comprensoriData from "../../../data/comprensori-fr.json";
+
+export async function getStaticPaths() {
+	return comprensoriData.map((comprensorio) => ({
+		params: { slug: comprensorio.slug },
+		props: { comprensorio }
+	}));
+}
+
+const { comprensorio } = Astro.props;
+const lang = "fr";
+
+const translations = loadTranslations(lang);
+---
+
+<AppShell lang={lang}>
+	<ComprensorioDetail comprensorio={comprensorio} lang={lang} />
+</AppShell>

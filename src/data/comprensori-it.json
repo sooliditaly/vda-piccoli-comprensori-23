@@ -1,0 +1,765 @@
+[
+  {
+    "slug": "brusson",
+    "nome": "Brusson",
+    "km_piste": "8",
+    "piste_dettagli": {
+      "nera": 0,
+      "rossa": 6,
+      "blu": 3
+    },
+    "impianti": {
+      "funivia": 0,
+      "telecabina": 0,
+      "seggiovia": 2,
+      "skilift": 1,
+      "tapis_roulant": 2
+    },
+	"titolo_sezione": "Un piccolo paradiso",
+    "descrizione": "A 1338 metri di altitudine tra alte cime, fitti boschi e pascoli, Brusson è un piccolo paradiso per gli appassionati di sci: i suoi 30 km di piste raggiungono Estoul, a 2000 metri, in cui si trovano magnifiche piste di discesa che, attraverso foreste di larici, si spingono verso la Punta Palasinaz, tra montagne dai dolci declivi, ottime mete anche per gli amanti dello sci alpinismo. I bambini potranno giocare sulla neve del baby snowpark di Estoul tra gonfiabili e gommoni oppure provare l'emozione di pattinare su ghiaccio.",
+    "immagine_card": "card-brusson.webp",
+    "immagine_icon": "icon-brusson.svg",
+    "noleggi_sci": [
+      {
+        "nome": "Da Bruna",
+        "indirizzo": "11022 Brusson (AO)",
+        "telefono": [
+          {
+            "label": null,
+            "numero": "(+39) 0125 300397"
+          }
+        ]
+      },
+      {
+        "nome": "La Crétsa",
+        "indirizzo": "Rue Ruet 2<br />11022 Brusson (AO)",
+        "telefono": [
+          {
+            "label": null,
+            "numero": "(+39) 348 3176321"
+          },
+          {
+            "label": null,
+            "numero": "(+39) 0125 300727"
+          }
+        ]
+      },
+      {
+        "nome": "Ski Neige",
+        "indirizzo": "Loc. Estoul<br />11022 Brusson (AO)",
+        "telefono": [
+          {
+            "label": null,
+            "numero": "(+39) 329 2270839"
+          }
+        ],
+        "email": "serafino@cugnod.it"
+      }
+    ],
+    "scuole_sci": [
+      {
+        "nome": "Scuola Sci Brusson Palasinaz",
+        "indirizzo": "Loc. Pian, Fraz. Vollon<br />11022 Brusson (AO)",
+        "telefono": [
+          {
+            "label": "Sci alpino",
+            "numero": "(+39) 340 5410632"
+          },
+          {
+            "label": "Sci di fondo",
+            "numero": "(+39) 347 9668259"
+          }
+        ],
+        "website": "scuolascibrusson-palasinaz.com"
+      },
+      {
+        "nome": "Scuola Sci Estoul Ski School",
+        "indirizzo": "Frazione Estoul 83<br />11022 Brusson (AO)",
+        "telefono": [
+          {
+            "label": null,
+            "numero": "(+39) 371 4615995"
+          }
+        ],
+        "website": "estoulskischool.com"
+      }
+    ],
+    "info": {
+      "nome": "Uff. promozione Monterosa Ski",
+      "indirizzo": "Route Ramey 69, Champoluc<br />11020 Ayas (AO)",
+      "telefono": [
+        {
+          "label": null,
+          "numero": "(+39) 0125 303111"
+        }
+      ],
+      "website": "visitmonterosa.com"
+    }
+  },
+  {
+    "slug": "valgrisenche",
+    "nome": "Valgrisenche",
+    "km_piste": "5",
+    "piste_dettagli": {
+      "nera": 2,
+      "rossa": 1,
+      "blu": 1
+    },
+    "impianti": {
+      "funivia": 0,
+      "telecabina": 0,
+      "seggiovia": 1,
+      "skilift": 0,
+      "tapis_roulant": 2
+    },
+	"titolo_sezione": "Immersi nella natura incontaminata",
+    "descrizione": "Se desiderate vivere la magia di sciare immersi nella natura più incontaminata, non dovete assolutamente perdere Valgrisenche: qui, grazie alle basse temperature, la neve rimane incredibilmente polverosa a lungo. Lontani dal caos, potrete sciare sfiorando i quasi 2000 metri, circondati da spettacolari ghiacciai e rigogliose foreste. Questo piccolo comprensorio ben si adatta a sciatori più o meno esperti. I bambini apprezzeranno il divertente snow park situato alla partenza della funivia. Valgrisenche conserva la tradizione della tessitura dei draps, realizzati con lana di pecora lavorata su antichi telai in legno.",
+    "immagine_card": "card-valgrisenche.webp",
+    "immagine_icon": "icon-valgrisenche.svg",
+    "noleggi_sci": [
+      {
+        "nome": "Sci Club Crammont",
+        "indirizzo": "Loc. Chez Carral 1<br />11010 Valgrisenche (AO)",
+        "telefono": [
+          {
+            "label": null,
+            "numero": "(+39) 0165547593"
+          }
+        ]
+      },
+      {
+        "nome": "Tabaccheria e Bazar di Bois Alessandro",
+        "indirizzo": "Fraz. Capoluogo<br />11010 Valgrisenche (AO)",
+        "telefono": [
+          {
+            "label": null,
+            "numero": "(+39) 3284540436"
+          }
+        ]
+      }
+    ],
+    "scuole_sci": [],
+    "info": {
+      "nome": "Ski Valgrisenche",
+      "indirizzo": "loc. chez carral 1<br />11010 Valgrisenche (AO)",
+      "telefono": [
+        {
+          "label": null,
+          "numero": "(+39) 0165 547593"
+        }
+      ],
+      "website": "valgrisencheski.it"
+    }
+  },
+  {
+    "slug": "rhemes-notre-dame",
+    "nome": "Rhêmes Notre Dame",
+    "km_piste": "7",
+    "piste_dettagli": {
+      "nera": 2,
+      "rossa": 3,
+      "blu": 2
+    },
+    "impianti": {
+      "funivia": 0,
+      "telecabina": 0,
+      "seggiovia": 1,
+      "skilift": 0,
+      "tapis_roulant": 4
+    },
+	"titolo_sezione": "Immersa in un'autentica oasi naturale",
+    "descrizione": "A 1725 metri d'altitudine e con soli 76 abitanti, Rhêmes-Notre-Dame è il comune più piccolo della Valle d'Aosta. Immersa in un'autentica oasi naturale ai confini con il Parco Nazionale del Gran Paradiso, Rhêmes-Notre-Dame, è un luogo magico, lontano dagli itinerari turistici più affollati. La valle di Rhêmes ospita due comprensori sciistici: Chanavey, ideale per gli sciatori esperti, e Bruil, che fa divertire grandi e piccini grazie al suo parco giochi sulla neve completo di tre tapis roulant e attrezzature come snow bike, ski fox, air board e gommoni.",
+    "immagine_card": "card-remes.webp",
+    "immagine_icon": "icon-remes.svg",
+    "noleggi_sci": [
+      {
+        "nome": "Le Petchoù Lindo",
+        "indirizzo": "Loc. Chanavey 31<br />11010 Rhêmes-Notre-Dame (AO)",
+        "telefono": [
+          {
+            "label": null,
+            "numero": "(+39) 347 1031906"
+          },
+          {
+            "label": null,
+            "numero": "(+39) 371 1423102"
+          }
+        ],
+        "email": "info.chezlindo@gmail.com"
+      },
+      {
+        "nome": "Hotel Grande Rousse",
+        "indirizzo": "Loc. Chanavey<br />11010 Rhêmes-Notre-Dame (AO)",
+        "telefono": [
+          {
+            "label": null,
+            "numero": "(+39) 0165 936105"
+          }
+        ],
+        "website": "granderousse.it"
+      }
+    ],
+    "scuole_sci": [
+      {
+        "nome": "Scuola Sci Val di Rhemes",
+        "indirizzo": "Località Chanavey<br />11010 Rhêmes-Notre-Dame (AO)",
+        "telefono": [
+          {
+            "label": null,
+            "numero": "(+39) 0165936194"
+          }
+        ],
+        "email": "scuolascivaldirhemes@libero.it"
+      }
+    ],
+    "info": {
+      "nome": "Cooperativa \"Rhêmes Impianti Soc. Coop.\"",
+      "indirizzo": "Loc.Chanavey<br />11010 Rhêmes-Notre-Dame (AO)",
+      "telefono": [
+        {
+          "label": null,
+          "numero": "(+39) 0165 93618"
+        }
+      ],
+      "website": "rhemesvacanze.it"
+    }
+  },
+  {
+    "slug": "champorcher",
+    "nome": "Champorcher",
+    "km_piste": "12",
+    "piste_dettagli": {
+      "nera": 3,
+      "rossa": 13,
+      "blu": 2
+    },
+    "impianti": {
+      "funivia": 0,
+      "telecabina": 1,
+      "seggiovia": 2,
+      "skilift": 2,
+      "tapis_roulant": 2
+    },
+	"titolo_sezione": "Immersi in un magico paesaggio invernale",
+    "descrizione": "A soli 21 Km dal confine con il Piemonte, Champorcher è la stazione sciistica più vicina per chi arriva dalle altre regioni italiane: immersi in un magico paesaggio invernale, potrete sciare su piste panoramiche di diverse difficoltà ammirando il massiccio del Monte Rosa, il Monte Cervino e il ghiacciaio della Rosa dei Bianchi. Oltre che per lo sci è ideale per vivere l'antica tradizione e cultura della Vallée: visitando i resti del castello dei Signori di Bard, la sua torre merlata e la chiesa di San Nicola scoprirete la nostra storia; assistendo alla filatura e alla tessitura della tela di canapa conoscerete l'artigianato locale. Nel periodo di Natale non mancate di assaggiare il tradizionale pane natalizio, arricchito con castagne, noci, uvetta.",
+    "immagine_card": "card-champorcher.webp",
+    "immagine_icon": "icon-champorcher.svg",
+    "noleggi_sci": [
+      {
+        "nome": "Sabolo Ski Rent",
+        "indirizzo": "11020 Champorcher (AO)",
+        "telefono": [
+          {
+            "label": null,
+            "numero": "(+39) 0125 1865105"
+          },
+          {
+            "label": null,
+            "numero": "(+39) 340 4039358"
+          }
+        ],
+        "email": "saboloskirent@hotmail.it"
+      }
+    ],
+    "scuole_sci": [
+      {
+        "nome": "Scuola Sci Champorcher",
+        "indirizzo": "Fraz. Chardonney 140<br />11020 Champorcher (AO)",
+        "telefono": [
+          {
+            "label": null,
+            "numero": "(+39) 348 4021952"
+          }
+        ],
+        "website": "scuolascichamporcher.com"
+      }
+    ],
+    "info": {
+      "nome": "Uff. promozione Monterosa Ski",
+      "indirizzo": "Route Ramey 69, Champoluc<br />11020 Ayas (AO)",
+      "telefono": [
+        {
+          "label": null,
+          "numero": "(+39) 0125 303111"
+        }
+      ],
+      "website": "visitmonterosa.com"
+    }
+  },
+  {
+    "slug": "cogne",
+    "nome": "Cogne",
+    "km_piste": "9",
+    "piste_dettagli": {
+      "nera": 1,
+      "rossa": 4,
+      "blu": 2
+    },
+    "impianti": {
+      "funivia": 0,
+      "telecabina": 1,
+      "seggiovia": 2,
+      "skilift": 0,
+      "tapis_roulant": 1
+    },
+	"titolo_sezione": "Incastonata nel cuore del Parco Nazionale del Gran Paradiso",
+    "descrizione": "A 1544 metri di altezza, Cogne è un'autentica Perla delle Alpi: incastonata nel cuore del Parco Nazionale del Gran Paradiso è la meta perfetta per divertirsi sulla neve, arrivando a quota 2252 metri, ma anche andare alla scoperta di tradizioni, storia, sapori e artigianato valdostani. Affacciata su una delle praterie montane più vaste d'Europa, il prato di Sant'Orso, è un comprensorio per lo sci alpino particolarmente adatto alle famiglie. Sciando potrete scorgere camosci e volpi in libertà e scoprire alcune delle oltre 150 cascate di ghiaccio. Un giro nel bosco incantato di Sylvenoire o sulla slitta trainata dai cavalli, renderanno la vostra vacanza ancora più magica!",
+    "immagine_card": "card-cogne.webp",
+    "immagine_icon": "icon-cogne.svg",
+    "noleggi_sci": [
+      {
+        "nome": "Desaymonet",
+        "indirizzo": "Rue Sonveulla 4<br />11012 Cogne (AO)",
+        "telefono": [
+          {
+            "label": null,
+            "numero": "(+39) 0165 74441"
+          }
+        ]
+      },
+      {
+        "nome": "Gal Sport",
+        "indirizzo": "Rue Dott. Grappein 5<br />11012 Cogne (AO)",
+        "telefono": [
+          {
+            "label": null,
+            "numero": "(+39) 0165 236134"
+          }
+        ]
+      },
+      {
+        "nome": "Ezio Sport",
+        "indirizzo": "Rue Bourgeois 64<br />11012 Cogne (AO)",
+        "telefono": [
+          {
+            "label": null,
+            "numero": "(+39) 0165 74204"
+          }
+        ]
+      }
+    ],
+    "scuole_sci": [
+      {
+        "nome": "Scuola Sci Gran Paradiso",
+        "indirizzo": "Rue Bourgeois 33<br />11012 Cogne (AO)",
+        "telefono": [
+          {
+            "label": null,
+            "numero": "(+39) 0165 74300"
+          }
+        ],
+        "website": "scuolascigranparadiso.it"
+      }
+    ],
+    "info": {
+      "nome": "Pila spa Funivie Gran Paradiso",
+      "indirizzo": "Rue Lay-de-Tré, 29<br />11012 Cogne (AO)",
+      "telefono": [
+        {
+          "label": null,
+          "numero": "(+39) 0165 74008"
+        }
+      ],
+      "email": "info@funiviegranparadiso.it"
+    }
+  },
+  {
+    "slug": "ollomont",
+    "nome": "Ollomont",
+    "km_piste": "1",
+    "piste_dettagli": {
+      "nera": 0,
+      "rossa": 0,
+      "blu": 1
+    },
+    "impianti": {
+      "funivia": 0,
+      "telecabina": 0,
+      "seggiovia": 0,
+      "skilift": 1,
+      "tapis_roulant": 1
+    },
+	"titolo_sezione": "Un piccolo paradiso",
+    "descrizione": "Ollomont sorge a 1335 metri d'altitudine nella Valpelline, in un'ampia conca selvaggia circondata da una superba catena di cime. Con i suoi 160 abitanti, è una delle piccole perle che offre l'Italia per gli appassionati di montagna e di sci: è il luogo ideale per chi desidera sperimentare le prime emozioni sugli sci, grazie alla sua piccola pista e al divertente parco giochi sulla neve con bob e gonfiabili. Inoltre è la base di partenza per ascensioni alpinistiche di un certo rilievo, come al Grand Combin e al Mont Vélan e escursioni di scialpinismo. La notorietà di questo incantevole villaggio, che in passato fu un importante centro estrattivo di rame, oggi è affidata alla sua natura, che lo rende davvero magico.",
+    "immagine_card": "card-ollomont.webp",
+    "immagine_icon": "icon-ollomont.svg",
+    "noleggi_sci": [],
+    "scuole_sci": [],
+    "info": {
+      "nome": "Sciovia Berio",
+      "indirizzo": "11010 Ollomont (AO)",
+      "telefono": [
+        {
+          "label": null,
+          "numero": "(+39) 0165 713006"
+        },
+        {
+          "label": null,
+          "numero": "(+39) 335 6661951"
+        },
+        {
+          "label": null,
+          "numero": "(+39) 348 7157811"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "antagnod",
+    "nome": "Antagnod",
+    "km_piste": "11",
+    "piste_dettagli": {
+      "nera": 1,
+      "rossa": 2,
+      "blu": 4
+    },
+    "impianti": {
+      "funivia": 0,
+      "telecabina": 0,
+      "seggiovia": 2,
+      "skilift": 0,
+      "tapis_roulant": 2
+    },
+	"titolo_sezione": "Un piccolo paradiso",
+    "descrizione": "Antagnod, in Val d'Ayas, a 1710 metri è un piccolo villaggio caratterizzato da antiche costruzioni tipiche, i Rascard, e da una splendida vista sul Monte Rosa. Ideale per le vacanze in famiglia: piacerà ai più piccoli per il suo baby snowpark e agli adulti per le piste di alto livello tecnico, omologate a livello internazionale. In questo borgo potrete visitare anche il Museo di Arte Sacra con pezzi unici risalenti al '300 dopo Cristo, testimonianza dell'abilità artigianale nell'intaglio del legno che rende famosa la Valle d'Aosta in tutta Italia.",
+    "immagine_card": "card-antagnod.webp",
+    "immagine_icon": "icon-antagnod.svg",
+    "noleggi_sci": [
+      {
+        "nome": "Scuola Sci Antagnod",
+        "indirizzo": "Loc. Antagnod<br />11020 Ayas (AO)",
+        "telefono": [
+          {
+            "label": "Scuola Sci",
+            "numero": "(+39) 0125 306641"
+          }
+        ]
+      },
+      {
+        "nome": "Noleggio e Deposito Sci",
+        "indirizzo": "Route Tchavagnod Antagnod 6<br />11020 Antagnod AO",
+        "telefono": [
+          {
+            "label": null,
+            "numero": "(+39) 340 1988676"
+          }
+        ]
+      }
+    ],
+    "scuole_sci": [
+      {
+        "nome": "Scuola Sci Antagnod",
+        "indirizzo": "Rue Tchavagnod 6, Fraz. Antagnod<br />11020 Ayas (AO)",
+        "telefono": [
+          {
+            "label": null,
+            "numero": "(+39) 0125 306641"
+          }
+        ],
+        "website": "scuolasciantagnod.com"
+      }
+    ],
+    "info": {
+      "nome": "Uff. promozione Monterosa Ski",
+      "indirizzo": "Route Ramey 69, Champoluc<br />11020 Ayas (AO)",
+      "telefono": [
+        {
+          "label": null,
+          "numero": "(+39) 0125 303111"
+        }
+      ],
+      "website": "visitmonterosa.com"
+    }
+  },
+  {
+    "slug": "chamois",
+    "nome": "Chamois",
+    "km_piste": "14",
+    "piste_dettagli": {
+      "nera": 0,
+      "rossa": 6,
+      "blu": 2
+    },
+    "impianti": {
+      "funivia": 1,
+      "telecabina": 0,
+      "seggiovia": 3,
+      "skilift": 0,
+      "tapis_roulant": 2
+    },
+	"titolo_sezione": "Un luogo incontaminato",
+    "descrizione": "Chamois, a 1800 metri di altitudine nella Valtournanche, è una delle 23 località su tutto l'arco alpino insignita del fregio di \"Perla delle Alpi\". Un luogo incontaminato dove la circolazione delle automobili è vietata che promuove il turismo dolce e sostenibile. Raggiungibile tramite la funivia che parte da Buisson, vi colpirà per le sue antiche case di legno e pietra, i suoi colori e un'idea del \"viaggiare\" non convenzionale per poter assaporare veramente le antiche tradizioni valdostane.",
+    "immagine_card": "card-chamois.webp",
+    "immagine_icon": "icon-chamois.svg",
+    "noleggi_sci": [
+      {
+        "nome": "Ducly Osvaldo",
+        "indirizzo": "Fraz. Liussel 3<br />11020 Chamois (AO)",
+        "telefono": [
+          {
+            "label": null,
+            "numero": "(+39) 339 1374708"
+          }
+        ],
+        "email": "osvaldoducly@inwind.it"
+      }
+    ],
+    "scuole_sci": [
+      {
+        "nome": "Scuola di Chamois 2500",
+        "indirizzo": "Loc. Corgnolaz<br />11020 Chamois (AO)",
+        "telefono": [
+          {
+            "label": null,
+            "numero": "(+39) 366 4333228"
+          }
+        ],
+        "website": "scuolascichamois.it"
+      }
+    ],
+    "info": {
+      "nome": "Cervino spa",
+      "indirizzo": "11020 Chamois (AO)",
+      "telefono": [
+        {
+          "label": null,
+          "numero": "(+39) 0166 47205"
+        }
+      ],
+      "website": "cervinia.it"
+    }
+  },
+  {
+    "slug": "la-magdeleine",
+    "nome": "La Magdeleine",
+    "km_piste": "5",
+    "piste_dettagli": {
+      "nera": 0,
+      "rossa": 1,
+      "blu": 1
+    },
+    "impianti": {
+      "funivia": 0,
+      "telecabina": 0,
+      "seggiovia": 0,
+      "skilift": 1,
+      "tapis_roulant": 2
+    },
+	"titolo_sezione": "Un paesino incantevole",
+    "descrizione": "A circa 1650 metri di altitudine e circondato da vaste foreste, La Magdeleine, è il più piccolo paese della Valtournenche, contando appena 100 abitanti. Un paesino incantevole, ancora non toccato dal turismo di massa, costituito da cinque piccole frazioni, semplici e pittoresche, con edifici in legno e pietra dove è ancora possibile trovare antiche costruzioni rurali come i rascards per la conservazione del fieno e i greniers per immagazzinare i cereali. È un resort ideale per principianti e bambini, grazie alla sua facilissima pista da discesa, ai tapis roulant per la risalita e al rinnovato parco giochi sulla neve.",
+    "immagine_card": "card-magdeleine.webp",
+    "immagine_icon": "icon-magdeleine.svg",
+    "noleggi_sci": [
+      {
+        "nome": "Servinmont",
+        "indirizzo": "Fraz. Clou - centro sportivo<br />11020 La Magdeleine (AO)",
+        "telefono": [
+          {
+            "label": null,
+            "numero": "(+39) 371 4219383"
+          },
+          {
+            "label": null,
+            "numero": "(+39) 0166 548423"
+          }
+        ],
+        "email": "servinmont19@gmail.com"
+      },
+      {
+        "nome": "Nolo Ski Clan s.a.s.",
+        "indirizzo": "Fraz. Brengon 4<br />La Magdeleine (AO)\n(dietro l'hotel Tantané all'ing. del paese)",
+        "telefono": [
+          {
+            "label": null,
+            "numero": "(+39) 366 4050102"
+          }
+        ]
+      }
+    ],
+    "scuole_sci": [
+      {
+        "nome": "Maestri Sci La Magdeleine",
+        "indirizzo": "La Magdeleine (AO)<br />Maestro Artaz Emilio",
+        "telefono": [
+          {
+            "label": null,
+            "numero": "(+39) 347 9638356"
+          }
+        ]
+      }
+    ],
+    "info": {
+      "nome": "Snowmet",
+      "indirizzo": "11020 La Magdeleine (AO)",
+      "telefono": [
+        {
+          "label": null,
+          "numero": "(+39) 339 8623475"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "gressoney-saint-jean",
+    "nome": "Gressoney Saint Jean",
+    "km_piste": "8",
+    "piste_dettagli": {
+      "nera": 2,
+      "rossa": 5,
+      "blu": 4
+    },
+    "impianti": {
+      "funivia": 0,
+      "telecabina": 0,
+      "seggiovia": 1,
+      "skilift": 1,
+      "tapis_roulant": 1
+    },
+	"titolo_sezione": "Un elegante resort montano",
+    "descrizione": "Gressoney-Saint-Jean è un elegante resort montano a 1385 metri di altitudine, con una impagabile vista sul ghiacciaio del Lyskamm e sull'imponente massiccio del Monte Rosa. Potrete sciare sulle mitiche piste di Weissmatten, fra cembri secolari e laghetti ghiacciati o provare la pista nera \"Internazionale Leonardo David\" che in occasione delle aperture notturne permette agli appassionati di sciare sotto le stelle. Magica per tutti gli amanti degli sport invernali e per scoprire la terra e la storia delle genti Walser.",
+    "immagine_card": "card-gressoney.webp",
+    "immagine_icon": "icon-gressoney.svg",
+    "noleggi_sci": [
+      {
+        "nome": "Bergland",
+        "indirizzo": "Località Valdobbia 10<br />11025 GSJ (AO)",
+        "telefono": [
+          {
+            "label": null,
+            "numero": "(+39) 347 6011480"
+          }
+        ],
+        "email": "bergland.snc@gmail.com"
+      },
+      {
+        "nome": "Ski Punkt J. Angster",
+        "indirizzo": "Piazzale Weissmatten<br />11025 GSJ (AO)",
+        "telefono": [
+          {
+            "label": null,
+            "numero": "(+39) 347 5305656"
+          }
+        ],
+        "email": "skipunkt@libero.it"
+      },
+      {
+        "nome": "Cisco Ski s.n.c.",
+        "indirizzo": "Località Bielciuken 8<br />11025 GSJ (AO)",
+        "telefono": [
+          {
+            "label": null,
+            "numero": "(+39) 348 8144942"
+          },
+          {
+            "label": null,
+            "numero": "(+39) 349 3610775"
+          }
+        ],
+        "website": "cisco-ski.com"
+      },
+      {
+        "nome": "Sportgeschaft Squinobal",
+        "indirizzo": "Eyematte Waeg 4<br />11025 GSJ (AO)",
+        "telefono": [
+          {
+            "label": null,
+            "numero": "(+39) 347 3065661"
+          }
+        ],
+        "email": "sportgeschaftsquinobal@gmail.com"
+      },
+      {
+        "nome": "David3 Sport",
+        "indirizzo": "Località Bielciucken 24<br />11025 GSJ (AO)",
+        "telefono": [
+          {
+            "label": null,
+            "numero": "(+39) 347 5905225"
+          }
+        ],
+        "website": "david3sport.wixsite.com/ilmiosito"
+      }
+    ],
+    "scuole_sci": [
+      {
+        "nome": "Scuola Sci Weissmatten",
+        "indirizzo": "Fraz. Bieltschocke 38<br />11025 GSJ (AO)",
+        "telefono": [
+          {
+            "label": null,
+            "numero": "(+39) 0125 355291"
+          }
+        ],
+        "website": "scuolasciweissmatten.it"
+      }
+    ],
+    "info": {
+      "nome": "Uff. promozione Monterosa Ski",
+      "indirizzo": "Route Ramey 69, Champoluc<br />11020 Ayas (AO)",
+      "telefono": [
+        {
+          "label": null,
+          "numero": "(+39) 0125 303111"
+        }
+      ],
+      "website": "visitmonterosa.com"
+    }
+  },
+  {
+    "slug": "crevacol",
+    "nome": "Crévacol",
+    "km_piste": "22",
+    "piste_dettagli": {
+      "nera": 1,
+      "rossa": 8,
+      "blu": 3
+    },
+    "impianti": {
+      "funivia": 0,
+      "telecabina": 0,
+      "seggiovia": 2,
+      "skilift": 0,
+      "tapis_roulant": 1
+    },
+	"titolo_sezione": "Un paradiso sulla neve ancora poco conosciuto",
+    "descrizione": "Crevacol sovrasta il villaggio di Saint-Rhémy-en-Bosses, l'ultimo comune della Valle del Gran San Bernardo e si sviluppa da 1640 a 2450 metri di altitudine. Esposta a sud e molto soleggiata è ideale per chi ama lo sci e per coloro che preferiscono rilassarsi ed abbronzarsi sulla neve al sole, nelle terrazze panoramiche dei rifugi e ristoranti a 2000 metri di altezza. Un paradiso sulla neve ancora poco conosciuto per sciatori e snowboarder di tutti i livelli che vogliono divertirsi lontani dal traffico dei grandi resort.",
+    "immagine_card": "card-crevacol.webp",
+    "immagine_icon": "icon-crevacol.svg",
+    "noleggi_sci": [
+      {
+        "nome": "Gal Sport",
+        "indirizzo": "Loc. Pramolé 2<br />11010 Saint Rhémy en Bosses (AO)",
+        "telefono": [
+          {
+            "label": null,
+            "numero": "(+39) 0165 780844"
+          }
+        ],
+        "website": "galsport.com"
+      }
+    ],
+    "scuole_sci": [
+      {
+        "nome": "Scuola Sci Gran San Bernardo",
+        "indirizzo": "Loc. Flassin 1<br />11010 Saint Rhémy en Bosses (AO)",
+        "telefono": [
+          {
+            "label": null,
+            "numero": "(+39) 0165 780610"
+          },
+          {
+            "label": null,
+            "numero": "(+39) 333 5056345"
+          }
+        ],
+        "website": "scuoladiscigransanbernardo.it"
+      }
+    ],
+    "info": {
+      "nome": "",
+      "indirizzo": "",
+      "telefono": [],
+      "website": ""
+    }
+  }
+]

@@ -1,0 +1,305 @@
+---
+import { Image } from "astro:assets";
+import HeaderComprensorio from "../sections/Header-Comprensorio.astro";
+import AppShell from "../layouts/AppShell.astro";
+
+import SliderComprensori from "../sections/SliderComprensori.astro";
+import LoghiBottom from "../sections/LoghiBottom.astro";
+import Footer from "../sections/Footer.astro";
+
+import "../styles/main.scss";
+import "../styles/comprensorio-detail.scss";
+
+import brussonImage from "../images/card-brusson.webp";
+import valgrisencheImage from "../images/card-valgrisenche.webp";
+import remesImage from "../images/card-remes.webp";
+import antagnodImage from "../images/card-antagnod.webp";
+import chamoisImage from "../images/card-chamois.webp";
+import champorcherImage from "../images/card-champorcher.webp";
+import cogneImage from "../images/card-cogne.webp";
+import crevacolImage from "../images/card-crevacol.webp";
+import gressoneyImage from "../images/card-gressoney.webp";
+import magdeleineImage from "../images/card-magdeleine.webp";
+import ollomontImage from "../images/card-ollomont.webp";
+
+import iconBrussonImage from "../images/icon-brusson.svg";
+import iconValgrisencheImage from "../images/icon-valgrisenche.svg";
+import iconRemesImage from "../images/icon-remes.svg";
+import iconChamporcherImage from "../images/icon-champorcher.svg";
+import iconCogneImage from "../images/icon-cogne.svg";
+import iconOllomontImage from "../images/icon-ollomont.svg";
+import iconAntagnodImage from "../images/icon-antagnod.svg";
+import iconChamoisImage from "../images/icon-chamois.svg";
+import iconMagdeleineImage from "../images/icon-magdeleine.svg";
+import iconGressoneyImage from "../images/icon-gressoney.svg";
+import iconCrevacolImage from "../images/icon-crevacol.svg";
+
+import arrowDownImage from "../images/icon-arrow-down.svg";
+import logoSkiLife from "../images/ski-life-logo.svg";
+import iconSkislope from "../images/icon-skislope.svg";
+import iconLift from "../images/icon-lift.svg";
+
+import { loadTranslations } from "../utils/loadTranslations";
+
+const { comprensorio, lang } = Astro.props;
+const translations = loadTranslations(lang);
+
+const imageMap = {
+	brusson: brussonImage,
+	valgrisenche: valgrisencheImage,
+	"rhemes-notre-dame": remesImage,
+	champorcher: champorcherImage,
+	cogne: cogneImage,
+	ollomont: ollomontImage,
+	antagnod: antagnodImage,
+	chamois: chamoisImage,
+	"la-magdeleine": magdeleineImage,
+	"gressoney-saint-jean": gressoneyImage,
+	crevacol: crevacolImage
+};
+
+const iconMap = {
+	brusson: iconBrussonImage,
+	valgrisenche: iconValgrisencheImage,
+	"rhemes-notre-dame": iconRemesImage,
+	champorcher: iconChamporcherImage,
+	cogne: iconCogneImage,
+	ollomont: iconOllomontImage,
+	antagnod: iconAntagnodImage,
+	chamois: iconChamoisImage,
+	"la-magdeleine": iconMagdeleineImage,
+	"gressoney-saint-jean": iconGressoneyImage,
+	crevacol: iconCrevacolImage
+};
+
+const bgImage = imageMap[comprensorio.slug];
+const iconImage = iconMap[comprensorio.slug];
+
+const getImpiantiList = () => {
+	const impianti = [];
+	const { funivia, telecabina, seggiovia, skilift, tapis_roulant } = comprensorio.impianti;
+
+	if (funivia > 0) impianti.push({ count: funivia, label: translations.funivia });
+	if (telecabina > 0) impianti.push({ count: telecabina, label: translations.telecabina });
+	if (seggiovia > 0) impianti.push({ count: seggiovia, label: translations.seggiovia });
+	if (skilift > 0) impianti.push({ count: skilift, label: translations.skilift });
+	if (tapis_roulant > 0) impianti.push({ count: tapis_roulant, label: translations.tapis_roulant });
+
+	return impianti;
+};
+
+const acquistaUrl = lang === "it" ? "https://skilife.skiperformance.com/it/negozio?skugroup_id=4119#/it/acquista" : lang === "en" ? "https://skilife.skiperformance.com/en/store#/en/buy?skugroup_id=4319" : "https://skilife.skiperformance.com/fr/store#/fr/buy?skugroup_id=4319";
+
+// Convert slug to translation key (replace hyphens with underscores)
+const translationKey = comprensorio.slug.replace(/-/g, "_");
+const magicaPerText = translations[translationKey] || null;
+const sanitizePhones = (phones) => (Array.isArray(phones) ? phones.filter((phone) => phone && typeof phone.numero === "string" && phone.numero.trim().length > 0) : []);
+const formatTelHref = (numero) => numero.replace(/[^+\d]/g, "");
+
+const infoPhones = sanitizePhones(comprensorio.info?.telefono);
+const allContacts = [
+  ...(comprensorio.noleggi_sci || []).map((item) => ({ ...item, type: "noleggio", telefono: sanitizePhones(item.telefono) })),
+  ...(comprensorio.scuole_sci || []).map((item) => ({ ...item, type: "scuola", telefono: sanitizePhones(item.telefono) }))
+];
+---
+
+<AppShell lang="it">
+	<div class="comprensorio-detail">
+		<HeaderComprensorio lang={lang} bgImage={bgImage} comprensorio={comprensorio} />
+
+		<!-- Barra Secondaria Sticky -->
+		<div class="secondary-bar" id="secondary-header">
+			<div class="secondary-bar-content">
+				<h2 class="secondary-bar-title">{comprensorio.nome.toUpperCase()}</h2>
+				<a href={acquistaUrl} class="btn btn--primary secondary-bar-btn" target="_blank">
+					{translations.acquista_online}
+				</a>
+			</div>
+		</div>
+
+		<!-- Contenuto Principale -->
+		<section class="main-content">
+			<div class="content">
+				<div class="two-columns-content">
+					<!-- Colonna Sinistra -->
+					<div class="content-left">
+						<h2 class="section-title">{comprensorio.titolo_sezione}</h2>
+						<p class="description-text">{comprensorio.descrizione}</p>
+						<a href={acquistaUrl} class="btn btn--primary" target="_blank">
+							{translations.acquista_online}
+						</a>
+						<div class="intermediate-image">
+							<Image src={bgImage} alt={comprensorio.nome} width="1200" height="400" />
+						</div>
+					</div>
+
+					<!-- Colonna Destra -->
+					<div class="content-right">
+						<!-- KM di Piste -->
+						<div class="info-card">
+
+							<div class="info-card-header">
+								<Image src={iconSkislope} alt="" class="info-icon" />
+								<strong>{comprensorio.km_piste} KM di piste</strong>
+							</div>
+
+							<div class="piste-badges">
+								{
+									comprensorio.piste_dettagli.blu > 0 && (
+										<div class="piste-badge piste-badge--blue">
+											<span>{comprensorio.piste_dettagli.blu}</span>
+										</div>
+										<span class="piste-label">
+											{comprensorio.piste_dettagli.blu} {translations.blu}
+										</span>
+									)
+								}
+								{
+									comprensorio.piste_dettagli.rossa > 0 && (
+										<div class="piste-badge piste-badge--red">
+											<span>{comprensorio.piste_dettagli.rossa}</span>
+										</div>
+										<span class="piste-label">
+											{comprensorio.piste_dettagli.rossa} {translations.rossa_pl}
+										</span>
+									)
+								}
+								{
+									comprensorio.piste_dettagli.nera > 0 && (
+										<div class="piste-badge piste-badge--black">
+											<span>{comprensorio.piste_dettagli.nera}</span>
+										</div>
+										<span class="piste-label">
+											{comprensorio.piste_dettagli.nera} {translations.nera_pl}
+										</span>
+									)
+								}
+							</div>
+
+						</div>
+
+						<!-- Impianti di Risalita -->
+						<div class="info-card">
+							<div class="info-card-header">
+								<Image src={iconLift} alt="" class="info-icon" />
+								<strong>{translations.impianti_risalita}</strong>
+							</div>
+							<ul class="piste-badges">
+								{
+									getImpiantiList().map((impianto, index) => (
+										<div class="piste-badge piste-badge--outline">
+											{index + 1}
+										</div>
+										<span class="piste-label">
+											{impianto.label}
+										</span>
+									))
+								}
+							</ul>
+						</div>
+
+						<!-- Magica per -->
+                        {
+                            magicaPerText && (
+                                <div class="info-card info-card--with-border">
+                                    <h3 class="info-card-title">{translations.magica_per_title}</h3>
+                                    <div class="magica-per-text" set:html={magicaPerText.replace(/<b>.*?<\/b>\s*/i, "")} />
+                                </div>
+                            )
+                        }
+
+						<!-- Info Point -->
+						{
+							comprensorio.info && comprensorio.info.nome && (
+								<div class="info-card info-card--with-border">
+                                    <h3 class="info-card-title">{translations.info_point_title}</h3>
+									<div class="info-point">
+										<strong>{comprensorio.info.nome}</strong>
+										{comprensorio.info.indirizzo && <p set:html={comprensorio.info.indirizzo}></p>}
+                                        {infoPhones.length > 0 && (
+                                        <div class="contact-phones">
+                                                {/* <span class="contact-phones__title">{translations.telefono_label}:</span> */}
+                                                <ul class="contact-phones__list">
+                                                    {infoPhones.map((phone) => (
+                                                        <li class="contact-phones__item">
+                                                            {phone.label && <span class="contact-phones__item-label">{phone.label}</span>}
+                                                            <a href={`tel:${formatTelHref(phone.numero)}`}>{phone.numero}</a>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        )}
+										{comprensorio.info.email && (
+											<p>
+												<a href={`mailto:${comprensorio.info.email}`}>{comprensorio.info.email}</a>
+											</p>
+										)}
+										{comprensorio.info.website && (
+											<p>
+												<a href={comprensorio.info.website.startsWith("http") ? comprensorio.info.website : `https://${comprensorio.info.website}`} target="_blank" rel="noopener noreferrer">{comprensorio.info.website}</a>
+											</p>
+										)}
+									</div>
+								</div>
+							)
+						}
+					</div>
+				</div>
+
+				<!-- Immagine Intermedia -->
+				<div class="intermediate-image mobile-only">
+					<Image src={bgImage} alt={comprensorio.nome} width="1200" height="400" />
+				</div>
+
+				<!-- Sezione Scuole e Noleggi -->
+				{
+					allContacts.length > 0 && (
+                        <div class="scuole-noleggi-section">
+                            <h3 class="section-title">{translations.scuole_e_noleggi}</h3>
+							<div class="content-wrapper">
+								<div class="contacts-grid">
+									{allContacts.map((contact) => (
+										<div class="contact-card">
+											<strong>{contact.nome}</strong>
+											<p set:html={contact.indirizzo}></p>
+                                        {contact.telefono.length > 0 && (
+                                            <div class="contact-phones">
+                                                {/* <span class="contact-phones__title">{translations.telefono_label}:</span> */}
+                                                <ul class="contact-phones__list">
+                                                    {contact.telefono.map((phone) => (
+                                                        <li class="contact-phones__item">
+                                                            {phone.label && <span class="contact-phones__item-label">{phone.label}</span>}
+                                                            <a href={`tel:${formatTelHref(phone.numero)}`}>{phone.numero}</a>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        )}
+										{contact.email && (
+											<p>
+												<a href={`mailto:${contact.email}`}>{contact.email}</a>
+											</p>
+										)}
+										{contact.website && (
+											<p>
+												<a href={contact.website.startsWith("http") ? contact.website : `https://${contact.website}`} target="_blank" rel="noopener noreferrer">{contact.website}</a>
+											</p>
+										)}
+										</div>
+									))}
+								</div>
+							</div>
+						</div>
+					)
+				}
+			</div>
+		</section>
+	</div>
+
+	<SliderComprensori lang={lang} noIntro={true} />
+
+	<LoghiBottom lang={lang} />
+
+	<Footer lang={lang} />
+
+</AppShell>

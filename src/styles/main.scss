@@ -3,7 +3,6 @@
 @import "./typography.scss";
 @import "./structure.scss";
 @import "./buttons.scss";
-@import "./slider.scss";
 @import "./policy.scss";
 
 :root {
@@ -18,6 +17,10 @@
 	@media (min-width: 750px) {
 		--margin-large: 150px;
 	}
+}
+
+html {
+	scroll-behavior: smooth;
 }
 
 body {
@@ -85,8 +88,6 @@ section {
 		max-width: 1300px;
 		margin-left: auto;
 		margin-right: auto;
-
-		overflow: hidden;
 	}
 }
 
@@ -163,3 +164,4 @@ section {
 		display: block;
 	}
 }
+

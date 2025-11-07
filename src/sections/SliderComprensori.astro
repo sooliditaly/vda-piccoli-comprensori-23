@@ -34,25 +34,47 @@ import "swiper/css/pagination";
 
 import { loadTranslations } from "../utils/loadTranslations";
 const { lang } = Astro.props;
+const { noIntro } = Astro.props;
 const translations = loadTranslations(lang);
+
+const baseUrl = lang === "it" ? "" : `/${lang}`;
+const pathSegment = lang === "it" ? "comprensorio" : lang === "en" ? "resort" : "station";
+
+const comprensoriSlugMap = {
+  "brusson": "brusson",
+  "valgrisenche": "valgrisenche",
+  "rhemes-notre-dame": "rhemes-notre-dame",
+  "champorcher": "champorcher",
+  "cogne": "cogne",
+  "ollomont": "ollomont",
+  "antagnod": "antagnod",
+  "chamois": "chamois",
+  "la-magdeleine": "la-magdeleine",
+  "gressoney-saint-jean": "gressoney-saint-jean",
+  "crevacol": "crevacol"
+};
 ---
 
 <script>
+	declare const dataLayer: any;
+	declare const fbq: (...args: any[]) => void;
 	// core version + navigation, pagination modules:
 	import Swiper from "swiper";
 	import { Manipulation, Navigation, Parallax, FreeMode, Pagination } from "swiper/modules";
 
-	// import "../styles/slider.scss";
+	const swiperContainer = document.querySelector<HTMLElement>(".swiper");
+	const noIntro = swiperContainer?.dataset.noIntro === "true";
 
 	const swiper = new Swiper(".swiper", {
+		initialSlide: 1,
 		// Optional parameters
 		direction: "horizontal",
-		loop: true,
+		loop: false,
 		modules: [Navigation, Parallax, Manipulation, FreeMode, Pagination],
 		parallax: true,
 
 		slidesPerView: "auto",
-		centeredSlides: true,
+		centeredSlides: false,
 		spaceBetween: 15,
 
 		// Navigation arrows
@@ -119,6 +141,11 @@ const translations = loadTranslations(lang);
 		swiper.removeSlide(0);
 	}
 
+
+	if (noIntro) {
+		swiper.translateTo(-150, 0);
+	}
+
 	window.addEventListener("DOMContentLoaded", () => {
 		document.querySelectorAll(".comprensorio").forEach(($element) => {
 			$element.querySelector("a").addEventListener("click", () => {
@@ -178,7 +205,7 @@ const translations = loadTranslations(lang);
 		user-select: none;
 	}
 
-	.swiper-slide:first-child {
+	.swiper-slide.slider-intro {
 		justify-content: center;
 		text-align: left;
 		padding-left: 0;
@@ -189,7 +216,7 @@ const translations = loadTranslations(lang);
 		padding-right: var(--margin-large);
 	}
 
-	.swiper-slide:first-child p {
+	.swiper-slide.slider-intro p {
 		margin-bottom: var(--margin-small);
 	}
 
@@ -260,25 +287,32 @@ const translations = loadTranslations(lang);
 			margin-top: var(--margin-small);
 		}
 	}
+
+
 </style>
 
 <section class="lasciati-ispirare">
-	<div class="slider-intro mobile-only">
-		<div>
-			<h1 set:html={translations.lasciati_ispirare_title} />
-			<p set:html={translations.lasciati_ispirare_p} />
-			<a href="https://skilife.skiperformance.com/it/negozio?skugroup_id=4119#/it/acquista" class="btn" id="cta-acquista-section-lasciati-ispirare" target="_blank">{translations.acquista_online}</a>
+
+	{!noIntro && (
+		<div class="slider-intro mobile-only">
+			<div>
+				<h1 set:html={translations.lasciati_ispirare_title} />
+				<p set:html={translations.lasciati_ispirare_p} />
+				<a href="https://skilife.skiperformance.com/it/negozio?skugroup_id=4119#/it/acquista" class="btn" id="cta-acquista-section-lasciati-ispirare" target="_blank">{translations.scopri}</a>
+			</div>
 		</div>
-	</div>
+	)}
 
 	<section class="slider-comprensori">
-		<div class="swiper">
+		<div class="swiper" data-no-intro={noIntro ? "true" : "false"}>
 			<div class="swiper-wrapper">
-				<div class="swiper-slide desktop-only">
-					<h1 set:html={translations.lasciati_ispirare_title} />
-					<p set:html={translations.lasciati_ispirare_p} />
-					<a href="https://skilife.skiperformance.com/it/negozio?skugroup_id=4119#/it/acquista" class="btn" id="cta-acquista-section-lasciati-ispirare" target="_blank">{translations.acquista_online}</a>
-				</div>
+				{!noIntro && (
+					<div class="swiper-slide slider-intro desktop-only">
+						<h1 set:html={translations.lasciati_ispirare_title} />
+						<p set:html={translations.lasciati_ispirare_p} />
+						<a href="https://skilife.skiperformance.com/it/negozio?skugroup_id=4119#/it/acquista" class="btn" id="cta-acquista-section-lasciati-ispirare" target="_blank">{translations.scopri}</a>
+					</div>
+				)}
 
 				<div class="swiper-slide comprensorio">
 					<div class="card-parallax-background" data-swiper-parallax-x={parallaxPercentage}>
@@ -288,7 +322,7 @@ const translations = loadTranslations(lang);
 					<Image src={iconBrussonImage} alt="Illustrazione Brusson" width="84" height="82" />
 					<h2>Brusson</h2>
 					<p set:html={translations.brusson} />
-					<a href="https://skilife.skiperformance.com/it/negozio?skugroup_id=4119#/it/acquista" class="btn btn--secondary" target="_blank">{translations.acquista_online}</a>
+					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["brusson"]}`} class="btn btn--secondary" data-astro-reload="false">{translations.scopri}</a>
 				</div>
 
 				<div class="swiper-slide comprensorio">
@@ -299,7 +333,7 @@ const translations = loadTranslations(lang);
 					<Image src={iconValgrisencheImage} alt="Illustrazione Valgrisenche" width="136" height="82" />
 					<h2>VALGRISENCHE</h2>
 					<p set:html={translations.valgrisenche} />
-					<a href="https://skilife.skiperformance.com/it/negozio?skugroup_id=4119#/it/acquista" class="btn btn--secondary" target="_blank">{translations.acquista_online}</a>
+					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["valgrisenche"]}`} class="btn btn--secondary" data-astro-reload="false">{translations.scopri}</a>
 				</div>
 
 				<div class="swiper-slide comprensorio">
@@ -310,7 +344,7 @@ const translations = loadTranslations(lang);
 					<Image src={iconRemesImage} alt="Illustrazione Rhêmes Notre Dame" width="60" height="90" />
 					<h2>Rhêmes <br />Notre Dame</h2>
 					<p set:html={translations.rhemes_notre_dame} />
-					<a href="https://skilife.skiperformance.com/it/negozio?skugroup_id=4119#/it/acquista" class="btn btn--secondary" target="_blank">{translations.acquista_online}</a>
+					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["rhemes-notre-dame"]}`} class="btn btn--secondary" data-astro-reload="false">{translations.scopri}</a>
 				</div>
 
 				<div class="swiper-slide comprensorio">
@@ -321,7 +355,7 @@ const translations = loadTranslations(lang);
 					<Image src={iconChamporcherImage} alt="Illustrazione Champorcher" width="96" height="64" />
 					<h2>CHAMPORCHER</h2>
 					<p set:html={translations.champorcher} />
-					<a href="https://skilife.skiperformance.com/it/negozio?skugroup_id=4119#/it/acquista" class="btn btn--secondary" target="_blank">{translations.acquista_online}</a>
+					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["champorcher"]}`} class="btn btn--secondary" data-astro-reload="false">{translations.scopri}</a>
 				</div>
 
 				<div class="swiper-slide comprensorio">
@@ -332,7 +366,7 @@ const translations = loadTranslations(lang);
 					<Image src={iconCogneImage} alt="Illustrazione Cogne" width="75" height="88" />
 					<h2>COGNE</h2>
 					<p set:html={translations.cogne} />
-					<a href="https://skilife.skiperformance.com/it/negozio?skugroup_id=4119#/it/acquista" class="btn btn--secondary" target="_blank">{translations.acquista_online}</a>
+					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["cogne"]}`} class="btn btn--secondary" data-astro-reload="false">{translations.scopri}</a>
 				</div>
 
 				<div class="swiper-slide comprensorio">
@@ -343,7 +377,7 @@ const translations = loadTranslations(lang);
 					<Image src={iconOllomontImage} alt="Illustrazione Ollomont" width="96" height="64" />
 					<h2>Ollomont</h2>
 					<p set:html={translations.ollomont} />
-					<a href="https://skilife.skiperformance.com/it/negozio?skugroup_id=4119#/it/acquista" class="btn btn--secondary" target="_blank">{translations.acquista_online}</a>
+					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["ollomont"]}`} class="btn btn--secondary" data-astro-reload="false">{translations.scopri}</a>
 				</div>
 
 				<div class="swiper-slide comprensorio">
@@ -354,7 +388,7 @@ const translations = loadTranslations(lang);
 					<Image src={iconAntagnodImage} alt="Illustrazione Antagnod" width="87" height="80" />
 					<h2>Antagnod</h2>
 					<p set:html={translations.antagnod} />
-					<a href="https://skilife.skiperformance.com/it/negozio?skugroup_id=4119#/it/acquista" class="btn btn--secondary" target="_blank">{translations.acquista_online}</a>
+					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["antagnod"]}`} class="btn btn--secondary" data-astro-reload="false">{translations.scopri}</a>
 				</div>
 
 				<div class="swiper-slide comprensorio">
@@ -365,7 +399,7 @@ const translations = loadTranslations(lang);
 					<Image src={iconChamoisImage} alt="Illustrazione Chamois" width="68" height="95" />
 					<h2>Chamois</h2>
 					<p set:html={translations.chamois} />
-					<a href="https://skilife.skiperformance.com/it/negozio?skugroup_id=4119#/it/acquista" class="btn btn--secondary" target="_blank">{translations.acquista_online}</a>
+					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["chamois"]}`} class="btn btn--secondary" data-astro-reload="false">{translations.scopri}</a>
 				</div>
 
 				<div class="swiper-slide comprensorio">
@@ -376,7 +410,7 @@ const translations = loadTranslations(lang);
 					<Image src={iconMagdeleineImage} alt="Illustrazione Magdeleine" width="98" height="80" />
 					<h2>La magdeleine</h2>
 					<p set:html={translations.la_magdeleine} />
-					<a href="https://skilife.skiperformance.com/it/negozio?skugroup_id=4119#/it/acquista" class="btn btn--secondary" target="_blank">{translations.acquista_online}</a>
+					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["la-magdeleine"]}`} class="btn btn--secondary" data-astro-reload="false">{translations.scopri}</a>
 				</div>
 
 				<div class="swiper-slide comprensorio">
@@ -387,7 +421,7 @@ const translations = loadTranslations(lang);
 					<Image src={iconGressoneyImage} alt="Illustrazione Gressoney Saint Jean" width="74" height="80" />
 					<h2>Gressoney saint jean</h2>
 					<p set:html={translations.gressoney_saint_jean} />
-					<a href="https://skilife.skiperformance.com/it/negozio?skugroup_id=4119#/it/acquista" class="btn btn--secondary" target="_blank">{translations.acquista_online}</a>
+					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["gressoney-saint-jean"]}`} class="btn btn--secondary" data-astro-reload="false">{translations.scopri}</a>
 				</div>
 
 				<div class="swiper-slide comprensorio">
@@ -398,7 +432,7 @@ const translations = loadTranslations(lang);
 					<Image src={iconCrevacolImage} alt="Illustrazione Crevacol" width="102" height="70" />
 					<h2>CRÉVACOL</h2>
 					<p set:html={translations.crevacol} />
-					<a href="https://skilife.skiperformance.com/it/negozio?skugroup_id=4119#/it/acquista" class="btn btn--secondary" target="_blank">{translations.acquista_online}</a>
+					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["crevacol"]}`} class="btn btn--secondary" data-astro-reload="false">{translations.scopri}</a>
 				</div>
 			</div>
 		</div>

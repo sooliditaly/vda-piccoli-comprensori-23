@@ -10,8 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^3.4.0",
+    "astro": "^5.15.3",
     "sass": "^1.69.5",
+    "sharp": "^0.34.4",
     "swiper": "^11.0.3",
     "the-new-css-reset": "^1.11.1"
   }

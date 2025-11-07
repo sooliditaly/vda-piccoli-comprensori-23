@@ -1,0 +1,241 @@
+---
+import { Image } from "astro:assets";
+
+import logoSkiLife from "../images/ski-life-logo.svg";
+import arrowDownImage from "../images/icon-arrow-down.svg";
+
+import iconBrussonImage from "../images/icon-brusson.svg";
+import iconValgrisencheImage from "../images/icon-valgrisenche.svg";
+import iconRemesImage from "../images/icon-remes.svg";
+import iconChamporcherImage from "../images/icon-champorcher.svg";
+import iconCogneImage from "../images/icon-cogne.svg";
+import iconOllomontImage from "../images/icon-ollomont.svg";
+import iconAntagnodImage from "../images/icon-antagnod.svg";
+import iconChamoisImage from "../images/icon-chamois.svg";
+import iconMagdeleineImage from "../images/icon-magdeleine.svg";
+import iconGressoneyImage from "../images/icon-gressoney.svg";
+import iconCrevacolImage from "../images/icon-crevacol.svg";
+
+import { loadTranslations } from "../utils/loadTranslations";
+const { lang, bgImage, comprensorio } = Astro.props;
+const translations = loadTranslations(lang);
+const homeHref = lang === "it" ? "/" : `/${lang}`;
+
+const iconMap = {
+	brusson: iconBrussonImage,
+	valgrisenche: iconValgrisencheImage,
+	"rhemes-notre-dame": iconRemesImage,
+	champorcher: iconChamporcherImage,
+	cogne: iconCogneImage,
+	ollomont: iconOllomontImage,
+	antagnod: iconAntagnodImage,
+	chamois: iconChamoisImage,
+	"la-magdeleine": iconMagdeleineImage,
+	"gressoney-saint-jean": iconGressoneyImage,
+	crevacol: iconCrevacolImage
+};
+
+const iconImage = iconMap[comprensorio.slug];
+---
+
+<style>
+	.lang-switch {
+		position: absolute;
+		display: flex;
+		top: var(--margin-small);
+		right: var(--margin-small);
+		width: 130px;
+		justify-content: space-around;
+	}
+
+	.lang-switch .separator {
+		border-right: 2px solid white;
+	}
+
+	.lang-switch a {
+		color: white;
+		font-size: 1.5rem;
+		font-weight: 700;
+		display: inline-block;
+		display: block;
+	}
+
+	.lang-switch a:hover {
+		text-decoration: underline;
+	}
+
+	.lang-switch a.selected {
+		text-decoration: underline;
+	}
+
+	header {
+		color: white;
+		text-align: center;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		position: relative;
+	}
+
+	header .bg-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		z-index: 0;
+	}
+
+	header .dark-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+
+		opacity: 0.7;
+		background: linear-gradient(180deg, rgba(24, 59, 80, 1) 0%, rgba(24, 59, 80, 0.63) 50%, rgba(33, 80, 110, 0) 100%);
+	}
+
+	.comprensorio-header h1 {
+		font-family: "Ramen";
+		font-size: 3.4rem;
+		color: white;
+	}
+
+	.comprensorio-header .icon-comprensorio {
+		display: inline-block;
+		width: 120px;
+		height: auto;
+		flex-shrink: 0;
+		margin-bottom: var(--margin-small);
+	}
+
+	@media (min-width: 750px) {
+		.comprensorio-header .icon-comprensorio {
+			width: 80px;
+		}
+	}
+
+	header .content {
+		position: relative;
+		z-index: 2;
+		padding-top: calc(var(--margin-standard) * 1.5);
+		padding-bottom: var(--margin-small);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		margin: 0 auto;
+		height: 80vh;
+	}
+
+	header .btn {
+		display: inline-block;
+	}
+
+	header .arrow-down-link {
+		display: block;
+		margin: 0 auto;
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+	header .arrow-down {
+		width: 30px;
+		height: auto;
+		display: block;
+	}
+
+	@media (min-width: 750px) {
+		.lang-switch {
+			position: relative;
+			align-self: flex-end;
+			width: 150px;
+			margin-bottom: -4rem;
+		}
+
+		.lang-switch {
+			background-color: var(--azzurro);
+			padding: 10px;
+			/* border: 2px solid white; */
+			border-radius: 0.6rem;
+		}
+
+		header .content {
+			padding-top: var(--margin-standard);
+			padding-bottom: var(--margin-standard);
+			align-items: center;
+			height: auto;
+		}
+
+		header .content img {
+			margin: 0;
+			width: 200px;
+			margin-bottom: var(--margin-small);
+		}
+
+		header .content a.logo-wrapper {
+			display: block;
+			align-self: flex-start;
+			margin-bottom: var(--margin-standard);
+		}
+
+		header .arrow-down {
+			display: none;
+		}
+	}
+
+	header .logo {
+		max-width: 15rem;
+		height: auto;
+		aspect-ratio: 13 / 6;
+		display: block;
+		margin: 0 auto;
+	}
+
+	@media (min-width: 750px) {
+		header .logo {
+			max-width: 18rem;
+			height: auto;
+			aspect-ratio: 13 / 6;
+			display: block;
+			margin: 0 auto;
+		}
+	}
+</style>
+
+<header class="comprensorio-header">
+	{bgImage && <Image src={bgImage} alt="" class="bg-overlay" width="1200" height="600" />}
+	<div class="dark-overlay"></div>
+
+	<div class="content">
+		<div class="lang-switch">
+			<a href="/" class={lang == "it" ? "selected" : ""}>IT</a>
+			<span class="separator"></span>
+			<a href="/en" class={lang == "en" ? "selected" : ""}>EN</a>
+			<span class="separator"></span>
+			<a href="/fr" class={lang == "fr" ? "selected" : ""}>FR</a>
+		</div>
+
+		<a href={homeHref} class="logo-wrapper">
+			<Image src={logoSkiLife} alt="Ski Life valle d'Aosta" class="logo" loading="eager" />
+		</a>
+
+		<div class="nome-comprensorio">
+			{iconImage && <Image src={iconImage} alt={comprensorio.nome} class="icon-comprensorio" />}
+			<h1>
+				{comprensorio.nome.toUpperCase()}
+			</h1>
+		</div>
+
+		<a href="#secondary-header" class="arrow-down-link">
+			<Image src={arrowDownImage} alt="Vai giù" class="arrow-down" loading="eager" />
+		</a>
+	</div>
+</header>
