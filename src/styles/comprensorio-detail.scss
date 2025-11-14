@@ -57,14 +57,12 @@
    Typography
    ========================================================================== */
 
-
-
 .section-title {
 	font-family: "Alegreya Sans", sans-serif;
 	// font-size: 5.4rem;
 	font-size: 4.5rem;
 	color: var(--azzurro);
-	margin-top: calc(var(--margin-standard)*1.3);
+	margin-top: calc(var(--margin-standard) * 1.3);
 	margin-bottom: var(--margin-small);
 	font-weight: bold;
 }
@@ -72,7 +70,6 @@
 .description-text {
 	font-size: 1.6rem;
 	line-height: 1.7;
-	color: rgba(0, 0, 0, 0.8);
 	margin-bottom: var(--margin-standard);
 	margin-top: 0;
 }
@@ -131,16 +128,16 @@
 
 .info-point p,
 .contact-card p {
-	margin: calc(var(--margin-smallest)/2) 0;
+	margin: calc(var(--margin-smallest) / 2) 0;
 }
 
 .contact-phones {
-	margin: calc(var(--margin-smallest)/2) 0;
+	margin: calc(var(--margin-smallest) / 2) 0;
 
 	&__title {
 		display: block;
 		font-weight: 600;
-		margin-bottom: calc(var(--margin-smallest)/4);
+		margin-bottom: calc(var(--margin-smallest) / 4);
 	}
 
 	&__list {
@@ -150,7 +147,7 @@
 	}
 
 	&__item {
-		margin: calc(var(--margin-smallest)/3) 0;
+		margin: calc(var(--margin-smallest) / 3) 0;
 	}
 
 	&__item-label {
@@ -231,6 +228,13 @@
 	display: none;
 }
 
+.intermediate-image.mobile-only {
+	display: block;
+	width: 100vw;
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+}
+
 /* ==========================================================================
    Sezione Scuole e Noleggi
    ========================================================================== */
@@ -253,7 +257,6 @@
 	padding: var(--margin-small);
 }
 
-
 /* ==========================================================================
    Media Queries
    ========================================================================== */
@@ -267,8 +270,8 @@
 	.two-columns-content {
 		margin: var(--margin-small) auto;
 		display: grid;
-		grid-template-columns: 1fr 1fr;
-		column-gap: var(--margin-large);
+		grid-template-columns: 11fr 9fr;
+		column-gap: var(--margin-standard);
 		align-items: start;
 	}
 
@@ -279,13 +282,11 @@
 
 	.content-left {
 		text-align: left;
+	}
 
-		.intermediate-image {
-			display: block;
-			width: 130%;
-			margin-left: -30%;
-			margin-bottom: 0;
-		}
+	.two-columns-content .intermediate-image {
+		display: block;
+		margin-bottom: 0;
 	}
 
 	.section-title {
@@ -315,5 +316,11 @@
 
 	.hero-scroll-indicator {
 		display: none;
+	}
+}
+
+@media (min-width: 1280px) {
+	.two-columns-content {
+		column-gap: var(--margin-large);
 	}
 }

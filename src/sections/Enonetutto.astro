@@ -1,7 +1,8 @@
 ---
 import { Image } from "astro:assets";
 
-import seiGiornateImage from "../images/illustrazione-6-giornate.svg";
+import percorsoImage from "../images/illustrazione-percorso.svg";
+import percorsoDesktopImage from "../images/illustrazione-percorso-desktop.svg";
 
 import { loadTranslations } from "../utils/loadTranslations";
 const { lang } = Astro.props;
@@ -51,14 +52,17 @@ const translations = loadTranslations(lang);
 <section class="intro">
 	<div class="content">
 		<div class="cose-grid">
-			<div class="title-copy-cta">
-				<h1>{translations.cose_title}</h1>
-				<p set:html={translations.cose_p1} />
-				<p set:html={translations.cose_p2} />
-				<a href="https://skilife.skiperformance.com/it/negozio?skugroup_id=4119#/it/acquista" class="btn" target="_blank" id="cta-acquista-section-cose">{translations.acquista_online}</a>
-			</div>
+			<Image src={percorsoImage} alt="Percorso" class="mobile-only percorso-mobile" />
+			<Image src={percorsoDesktopImage} alt="Percorso" class="desktop-only percorso-desktop" />
 
-			<Image src={seiGiornateImage} alt="6 giornate di skipass + 1 ora di maestro a soli 100€" class="sei-giornate" />
+			<div class="title-copy-cta">
+				<h1>{translations.nonetutto_title}</h1>
+				<p set:html={translations.nonetutto_p1} />
+				<p set:html={translations.nonetutto_p2} />
+				<p set:html={translations.nonetutto_scarica_lista} />
+				<p set:html={translations.nonetutto_p3} />
+				<p set:html={translations.nonetutto_esempi} />
+			</div>
 		</div>
 	</div>
 </section>

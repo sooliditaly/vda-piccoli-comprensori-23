@@ -10,17 +10,29 @@ import Footer from "../sections/Footer.astro";
 import "../styles/main.scss";
 import "../styles/comprensorio-detail.scss";
 
-import brussonImage from "../images/card-brusson.webp";
-import valgrisencheImage from "../images/card-valgrisenche.webp";
-import remesImage from "../images/card-remes.webp";
-import antagnodImage from "../images/card-antagnod.webp";
-import chamoisImage from "../images/card-chamois.webp";
-import champorcherImage from "../images/card-champorcher.webp";
-import cogneImage from "../images/card-cogne.webp";
-import crevacolImage from "../images/card-crevacol.webp";
-import gressoneyImage from "../images/card-gressoney.webp";
-import magdeleineImage from "../images/card-magdeleine.webp";
-import ollomontImage from "../images/card-ollomont.webp";
+import headerAntagnodImage from "../images/comprensori/header/1_Antagnod_1400.jpg";
+import headerBrussonImage from "../images/comprensori/header/2_Brusson_1400.jpg";
+import headerChamoisImage from "../images/comprensori/header/3_Chamois_1400.jpg";
+import headerChamporcherImage from "../images/comprensori/header/4_Champorcher_1400.jpg";
+import headerCogneImage from "../images/comprensori/header/5_Cogne_1400.jpg";
+import headerCrevacolImage from "../images/comprensori/header/6_Crevacol_1400.jpg";
+import headerGressoneyImage from "../images/comprensori/header/7_Gressoney Saint Jean_1400.jpg";
+import headerLaMagdeleineImage from "../images/comprensori/header/8_LaMagdeleine_1400.jpg";
+import headerOllomontImage from "../images/comprensori/header/9_Ollomont_1400.jpg";
+import headerRhemesImage from "../images/comprensori/header/10_Rhemes Notre Dame_1400.jpg";
+import headerValgrisencheImage from "../images/comprensori/header/11_Valgrisenche_1400.jpg";
+
+import schedaAntagnodImage from "../images/comprensori/schede/1_Antagnod_1400.jpg";
+import schedaBrussonImage from "../images/comprensori/schede/2_Brusson_1400.jpg";
+import schedaChamoisImage from "../images/comprensori/schede/3_Chamois_1400.jpg";
+import schedaChamporcherImage from "../images/comprensori/schede/4_Champorcher_1400.jpg";
+import schedaCogneImage from "../images/comprensori/schede/5_Cogne_1400.jpg";
+import schedaCrevacolImage from "../images/comprensori/schede/6_Crevacol_1400.jpg";
+import schedaGressoneyImage from "../images/comprensori/schede/7_Gressoney Saint Jean_1400.jpg";
+import schedaLaMagdeleineImage from "../images/comprensori/schede/8_LaMagdeleine_1400.jpg";
+import schedaOllomontImage from "../images/comprensori/schede/9_Ollomont_1400.jpg";
+import schedaRhemesImage from "../images/comprensori/schede/10_Rhemes Notre Dame_1400.jpg";
+import schedaValgrisencheImage from "../images/comprensori/schede/11_Valgrisenche_1400.jpg";
 
 import iconBrussonImage from "../images/icon-brusson.svg";
 import iconValgrisencheImage from "../images/icon-valgrisenche.svg";
@@ -44,18 +56,32 @@ import { loadTranslations } from "../utils/loadTranslations";
 const { comprensorio, lang } = Astro.props;
 const translations = loadTranslations(lang);
 
-const imageMap = {
-	brusson: brussonImage,
-	valgrisenche: valgrisencheImage,
-	"rhemes-notre-dame": remesImage,
-	champorcher: champorcherImage,
-	cogne: cogneImage,
-	ollomont: ollomontImage,
-	antagnod: antagnodImage,
-	chamois: chamoisImage,
-	"la-magdeleine": magdeleineImage,
-	"gressoney-saint-jean": gressoneyImage,
-	crevacol: crevacolImage
+const headerImageMap = {
+	antagnod: headerAntagnodImage,
+	brusson: headerBrussonImage,
+	chamois: headerChamoisImage,
+	champorcher: headerChamporcherImage,
+	cogne: headerCogneImage,
+	crevacol: headerCrevacolImage,
+	"gressoney-saint-jean": headerGressoneyImage,
+	"la-magdeleine": headerLaMagdeleineImage,
+	ollomont: headerOllomontImage,
+	"rhemes-notre-dame": headerRhemesImage,
+	valgrisenche: headerValgrisencheImage
+};
+
+const schedaImageMap = {
+	antagnod: schedaAntagnodImage,
+	brusson: schedaBrussonImage,
+	chamois: schedaChamoisImage,
+	champorcher: schedaChamporcherImage,
+	cogne: schedaCogneImage,
+	crevacol: schedaCrevacolImage,
+	"gressoney-saint-jean": schedaGressoneyImage,
+	"la-magdeleine": schedaLaMagdeleineImage,
+	ollomont: schedaOllomontImage,
+	"rhemes-notre-dame": schedaRhemesImage,
+	valgrisenche: schedaValgrisencheImage
 };
 
 const iconMap = {
@@ -72,7 +98,8 @@ const iconMap = {
 	crevacol: iconCrevacolImage
 };
 
-const bgImage = imageMap[comprensorio.slug];
+const headerImage = headerImageMap[comprensorio.slug] ?? schedaImageMap[comprensorio.slug];
+const schedaImage = schedaImageMap[comprensorio.slug] ?? headerImageMap[comprensorio.slug];
 const iconImage = iconMap[comprensorio.slug];
 
 const getImpiantiList = () => {
@@ -105,7 +132,7 @@ const allContacts = [
 
 <AppShell lang="it">
 	<div class="comprensorio-detail">
-		<HeaderComprensorio lang={lang} bgImage={bgImage} comprensorio={comprensorio} />
+		<HeaderComprensorio lang={lang} bgImage={headerImage} comprensorio={comprensorio} />
 
 		<!-- Barra Secondaria Sticky -->
 		<div class="secondary-bar" id="secondary-header">
@@ -129,7 +156,7 @@ const allContacts = [
 							{translations.acquista_online}
 						</a>
 						<div class="intermediate-image">
-							<Image src={bgImage} alt={comprensorio.nome} width="1200" height="400" />
+							<Image src={schedaImage} alt={comprensorio.nome} />
 						</div>
 					</div>
 
@@ -248,7 +275,7 @@ const allContacts = [
 
 				<!-- Immagine Intermedia -->
 				<div class="intermediate-image mobile-only">
-					<Image src={bgImage} alt={comprensorio.nome} width="1200" height="400" />
+					<Image src={schedaImage} alt={comprensorio.nome} />
 				</div>
 
 				<!-- Sezione Scuole e Noleggi -->
@@ -296,10 +323,74 @@ const allContacts = [
 		</section>
 	</div>
 
-	<SliderComprensori lang={lang} noIntro={true} />
+	<SliderComprensori lang={lang} activeSlug={comprensorio.slug} />
 
 	<LoghiBottom lang={lang} />
 
 	<Footer lang={lang} />
 
 </AppShell>
+
+<script>
+	const MIN_FREE_SPACE = 40;
+
+	const updateIntermediateImageWidth = () => {
+		const container = document.querySelector(".two-columns-content");
+
+		if (!(container instanceof HTMLElement)) {
+			return;
+		}
+
+		const imageWrapper = container.querySelector(".content-left .intermediate-image");
+
+		if (!(imageWrapper instanceof HTMLElement)) {
+			return;
+		}
+
+		const image = imageWrapper.querySelector("img");
+
+		if (!(image instanceof HTMLImageElement)) {
+			return;
+		}
+
+		const resetStyles = () => {
+			imageWrapper.style.removeProperty("width");
+			imageWrapper.style.removeProperty("margin-left");
+			image.style.removeProperty("width");
+			image.style.removeProperty("height");
+			image.style.removeProperty("object-fit");
+		};
+
+		const containerRect = container.getBoundingClientRect();
+		const leftColumn = container.querySelector(".content-left");
+
+		if (!leftColumn) {
+			return;
+		}
+
+		const leftRect = leftColumn.getBoundingClientRect();
+		const viewportWidth = window.innerWidth;
+		const freeSpace = Math.max(0, viewportWidth - containerRect.width);
+		const leftWidth = leftRect.width;
+
+		if (freeSpace > MIN_FREE_SPACE) {
+			console.log("adapt");
+			const targetWidth = leftWidth + freeSpace / 2;
+			imageWrapper.style.width = `${targetWidth}px`;
+			imageWrapper.style.marginLeft = `${-freeSpace / 2}px`;
+			image.style.width = "100%";
+			image.style.height = "100%";
+			image.style.objectFit = "cover";
+		} else {
+			resetStyles();
+		}
+	};
+
+	const throttledUpdate = () => {
+		window.requestAnimationFrame(updateIntermediateImageWidth);
+	};
+
+	window.addEventListener("resize", throttledUpdate);
+	window.addEventListener("DOMContentLoaded", updateIntermediateImageWidth);
+	updateIntermediateImageWidth();
+</script>
