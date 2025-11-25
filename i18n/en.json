@@ -14,7 +14,7 @@
 	"nonetutto_title": "And that's not all!",
 	"nonetutto_p1": "With Magic Skipass, you can also benefit from one hour of ski or snowboard lessons, in the Ski Schools available in the areas participating to the initiative. <br /><br /> <a href=\"/Skilife_MagicSkipass_25-26.pdf\" download=\"/Skilife_MagicSkipass_25-26.pdf\">Download the flyer</a> of the promotion with the list and contacts of the ski schools participating to the promotion. <small>The lesson hour with the instructor is non-transferable. You will be able to take advantage of the lesson time for the entire 2025/2026 season with the exception of weekends and the period from 12/22 to 01/06 and from 02/16 to 02/22. It is not possible to book the free lesson hour by phone or email. It can only be requested in person at the ski school, upon presentation of the Magic skipass.</small>",
 	"nonetutto_p2": "By staying in one of the hotels included in the promotion, <b>max 2 children*</b> (up to 18 years old) benefit from a free night with breakfast if they stay in the room of their parents, ski pass holders promotional.",
-	"nonetutto_scarica_lista": "<p>Download the list of hotels participating in the promotion.</p>",
+	"nonetutto_scarica_lista": "<p><a href=\"/Lista%20strutture/VDA_MagicSkipass_ListaStrutture_2526_v1_en.pdf\" download=\"VDA_MagicSkipass_ListaStrutture_2526_v1_en.pdf\">Download the list of hotels</a> participating in the promotion.</p>",
 	"nonetutto_p3": "<b>Each Magic Skipass purchased by an adult entitles you to one free night for 1 or two children up to 18 years old, in the room with the parents.</b>",
 	"nonetutto_esempi": "<div class=\"esempi\"><b>Some examples:</b><ul><li>2 parents (2 ski passes) + 1/2 child(ren): adults pay full price and child(ren) stay free for two nights</li><li>2 parents (1 ski pass) + 1/2 child(ren): adults pay full price and child(ren) stay one night free</li><li>1 parent (1 ski pass) + 1/2 child(ren): the adult pays the full price of the double room and the child(ren) stays free for one night</li></ul><p><b>N.B.:</b> Free entry to the hotel is combined exclusively with an adult ski pass. Ski passes for children aged 14 to 18 do not entitle them to free entry.</p></div>",
 
@@ -25,6 +25,13 @@
 	"come_usufruire_ritira_p": "The Magic Skipass at one of the ski area ticket offices participating to the initiative.",
 	"come_usufruire_scopri": "Discover",
 	"come_usufruire_scopri_p": "The beauty of skiing on the slopes of the Vallée d’ Aosta for a maximum of 3 days in the same ski resort.",
+
+	"qr_skipass_title": "Six days of skipass",
+	"qr_skipass_description": "Show the QR code on the first day to collect your skipass. Afterward, the card remains active: you can access the lifts directly without returning to the ticket office.",
+	"qr_lesson_title": "One ski lesson",
+	"qr_lesson_description": "Show the QR code at participating Ski Schools to get your free lesson. Remember to book in advance by contacting the school directly.",
+	"qr_hotel_title": "Free stay for minors",
+	"qr_hotel_description": "Present the QR code at participating hotels to receive the free stay for minors. The stay must be booked in advance.",
 
 	"tariffe_title": "An unbeatable price",
 	"tariffe_p1": "A nominal multi-day skipass** for 6 days of skiing to be used freely in the small ski areas of the Aosta Valley <b>for only €100 for adults, free for children up to 8 years old</b> (at purchase of an adult skipass) and <b>€80 for children under 16years old</b>. The ski pass can be used for a maximum of three days at the same ski resort",

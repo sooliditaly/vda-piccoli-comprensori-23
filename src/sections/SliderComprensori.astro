@@ -32,8 +32,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 import { loadTranslations } from "../utils/loadTranslations";
-const { lang } = Astro.props;
-const { activeSlug = "" } = Astro.props;
+const { lang, activeSlug = "", skipIntro = false } = Astro.props;
 const translations = loadTranslations(lang);
 
 const baseUrl = lang === "it" ? "" : `/${lang}`;
@@ -63,13 +62,12 @@ const comprensoriSlugMap = {
 
 	const swiperContainer = document.querySelector<HTMLElement>(".swiper");
 	const activeSlug = swiperContainer?.dataset.activeSlug || "";
+	const shouldLoop = swiperContainer?.dataset.loop === "true";
 
 	const swiper = new Swiper(".swiper", {
-		initialSlide: 1,
 		// Optional parameters
 		direction: "horizontal",
-		loop: true,
-		loopAdditionalSlides: 3,
+		loop: shouldLoop,
 		modules: [Navigation, Parallax, Manipulation],
 		parallax: true,
 
@@ -86,10 +84,11 @@ const comprensoriSlugMap = {
 			// when window width is >= 750px
 			750: {
 				initialSlide: 0,
-				loop: true,
-				centeredSlides: false,
+				loop: shouldLoop,
+				centeredSlides: shouldLoop,
 				spaceBetween: 20,
-				grabCursor: true
+				grabCursor: true,
+				loopAdditionalSlides: 3
 			}
 		}
 	});
@@ -110,8 +109,15 @@ const comprensoriSlugMap = {
 					swiper.params.breakpoints[750].centeredSlides = true;
 				}
 
-				swiper.update();
-				swiper.slideToLoop(realIndex, 0);
+				// Aggiorna Swiper dopo che gli stili CSS sono stati applicati
+				setTimeout(() => {
+					swiper.update();
+					if (swiper.params.loop) {
+						swiper.slideToLoop(realIndex, 0);
+					} else {
+						swiper.slideTo(realIndex, 0);
+					}
+				}, 50);
 			}
 		}
 	}
@@ -135,16 +141,29 @@ const comprensoriSlugMap = {
 </script>
 
 <style>
+
+	:root {
+		--comp-slide-height: 60vh;
+	}
+
 	.swiper {
 		width: 100%;
+		overflow: hidden;
+	}
+
+	.swiper-wrapper {
+		align-items: flex-end;
+		padding-bottom: calc((var(--comp-slide-height) * 1.15 - var(--comp-slide-height)) / 2);
+	}
+
+	@media (min-width: 750px) {
+		.swiper-wrapper {
+			padding-bottom: calc((var(--comp-slide-height) * 1.15 - var(--comp-slide-height)) / 2);
+		}
 	}
 
 	.slider-intro {
 		padding: 0 var(--margin-small);
-	}
-
-	.swiper-slide.desktop-only {
-		align-items: self-start;
 	}
 
 	.swiper-slide.desktop-only h2 {
@@ -157,15 +176,15 @@ const comprensoriSlugMap = {
 	}
 
 	.swiper-slide {
+
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: flex-end;
 
 		height: 90vh;
-		width: 83vw;
-		max-width: 36rem;
-		max-height: 60rem;
+		width: 70vw;
+		max-width: 28rem;
+		max-height: var(--comp-slide-height);
 
 		padding: 2rem;
 		padding-bottom: var(--margin-standard);
@@ -173,17 +192,43 @@ const comprensoriSlugMap = {
 		overflow: hidden;
 
 		user-select: none;
+
 	}
 
-	.swiper-slide.slider-intro {
-		justify-content: center;
-		text-align: left;
-		padding-left: 0;
-		width: 80vw;
-		max-width: 800px;
+	.swiper-slide h2 {
+		font-size: 2.8rem;
+	}
 
-		padding-left: var(--margin-small);
-		padding-right: var(--margin-small);
+	.swiper-slide.desktop-only {
+		display: none;
+	}
+
+	.swiper-slide.mobile-only {
+		display: none;
+	}
+
+	@media (min-width: 750px) {
+		.swiper-slide {
+			width: 83vw;
+			max-width: 36rem;
+		}
+
+		.swiper-slide h2 {
+			font-size: 3.4rem;
+		}
+
+		.swiper-slide.desktop-only {
+			display: block;
+			align-items: self-start;
+		}
+
+		.swiper-slide.mobile-only {
+			display: none;
+		}
+	}
+
+	.swiper-slide:first-child p {
+		margin-bottom: var(--margin-small);
 	}
 
 	.swiper-slide.slider-intro p {
@@ -196,9 +241,6 @@ const comprensoriSlugMap = {
 		margin: var(--margin-small) 0;
 	}
 
-	.swiper-slide p {
-	}
-
 	.swiper-slide &:first-child {
 		text-align: left;
 		padding-left: 0;
@@ -207,20 +249,66 @@ const comprensoriSlugMap = {
 
 	.swiper-slide.comprensorio {
 		color: white;
+		transition:
+			width 0.3s ease,
+			height 0.3s ease;
 	}
 
 	.swiper-slide.comprensorio.is-active {
+		width: calc(70vw * 1.15);
+		height: calc(90vh * 1.15);
+		max-width: calc(28rem * 1.15);
+		max-height: calc(60rem * 1.15);
+		margin-bottom: calc((90vh * 1.15 - 90vh) / 2 * -1);
+		z-index: 10;
+	}
+
+	@media (min-width: 750px) {
+		.swiper-slide.comprensorio.is-active {
+			width: calc(83vw * 1.15);
+			max-width: calc(36rem * 1.15);
+			margin-bottom: calc((60rem * 1.15 - 60rem) / 2 * -1);
+		}
+	}
+
+	.swiper-slide.comprensorio.is-active .card-parallax-background {
+		height: calc(60rem * 1.15);
+	}
+
+	.swiper-slide.comprensorio.is-active .card-parallax-background .gradient-overlay {
+		height: calc(60rem * 1.15);
+	}
+
+	.swiper-slide.comprensorio.is-active .card-parallax-background img {
+		height: calc(60rem * 1.15);
 	}
 
 	.swiper-slide.comprensorio h1 {
 		color: white;
 	}
 
-	.swiper-slide.comprensorio p {
+	.swiper-slide.comprensorio .icon-title-group {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: var(--margin-small);
+		flex: 1;
+	}
+
+	.swiper-slide.comprensorio .icon-title-group img {
+		margin-bottom: 0;
+	}
+
+	.swiper-slide.comprensorio .icon-title-group h2 {
+		margin: 0;
+	}
+
+	/* .swiper-slide.comprensorio p {
 		font-size: 1.5rem;
 		margin: 0;
 		min-height: 18rem;
-	}
+	} */
 
 	.card-parallax-background {
 		position: absolute;
@@ -263,31 +351,45 @@ const comprensoriSlugMap = {
 </style>
 
 <section class="lasciati-ispirare">
-	<div class="slider-intro mobile-only">
-		<div>
-			<h1 set:html={translations.lasciati_ispirare_title} />
-			<p set:html={translations.lasciati_ispirare_p} />
-			<a href="https://skilife.skiperformance.com/it/negozio?skugroup_id=4119#/it/acquista" class="btn" id="cta-acquista-section-lasciati-ispirare" target="_blank">{translations.scopri}</a>
-		</div>
-	</div>
-
-	<section class="slider-comprensori">
-		<div class="swiper" data-active-slug={activeSlug}>
-			<div class="swiper-wrapper">
-				<div class="swiper-slide slider-intro desktop-only">
+	{
+		!skipIntro && (
+			<div class="slider-intro mobile-only">
+				<div>
 					<h1 set:html={translations.lasciati_ispirare_title} />
 					<p set:html={translations.lasciati_ispirare_p} />
-					<a href="https://skilife.skiperformance.com/it/negozio?skugroup_id=4119#/it/acquista" class="btn" id="cta-acquista-section-lasciati-ispirare" target="_blank">{translations.scopri}</a>
+					<a href="https://skilife.skiperformance.com/it/negozio?skugroup_id=4119#/it/acquista" class="btn" id="cta-acquista-section-lasciati-ispirare" target="_blank">
+						{translations.acquista_online}
+					</a>
 				</div>
+			</div>
+		)
+	}
+
+	<section class="slider-comprensori">
+		<div class="swiper" data-active-slug={activeSlug} data-loop={skipIntro ? "true" : "false"}>
+			<div class="swiper-wrapper">
+				{
+					!skipIntro && (
+						<div class="swiper-slide slider-intro desktop-only">
+							<h1 set:html={translations.lasciati_ispirare_title} />
+							<p set:html={translations.lasciati_ispirare_p} />
+							<a href="https://skilife.skiperformance.com/it/negozio?skugroup_id=4119#/it/acquista" class="btn" id="cta-acquista-section-lasciati-ispirare" target="_blank">
+								{translations.acquista_online}
+							</a>
+						</div>
+					)
+				}
 
 				<div class="swiper-slide comprensorio" data-slug="brusson">
 					<div class="card-parallax-background" data-swiper-parallax-x={parallaxPercentage}>
 						<Image src={brussonImage} alt="Panorama Brusson" widths={[600, 1190]} width="600" height="600" loading="eager" />
 						<div class="gradient-overlay"></div>
 					</div>
-					<Image src={iconBrussonImage} alt="Illustrazione Brusson" width="84" height="82" />
-					<h2>Brusson</h2>
-					<p set:html={translations.brusson} />
+					<div class="icon-title-group">
+						<Image src={iconBrussonImage} alt="Illustrazione Brusson" width="84" height="82" />
+						<h2>Brusson</h2>
+					</div>
+					{/* <p set:html={translations.brusson} /> */}
 					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["brusson"]}`} class="btn btn--secondary" data-astro-reload="false">{translations.scopri}</a>
 				</div>
 
@@ -296,9 +398,11 @@ const comprensoriSlugMap = {
 						<Image src={valgrisencheImage} alt="Panorama Valgrisenche" widths={[600, 1190]} width="600" height="600" loading="eager" />
 						<div class="gradient-overlay"></div>
 					</div>
-					<Image src={iconValgrisencheImage} alt="Illustrazione Valgrisenche" width="136" height="82" />
-					<h2>VALGRISENCHE</h2>
-					<p set:html={translations.valgrisenche} />
+					<div class="icon-title-group">
+						<Image src={iconValgrisencheImage} alt="Illustrazione Valgrisenche" width="136" height="82" />
+						<h2>VALGRISENCHE</h2>
+					</div>
+					{/* <p set:html={translations.valgrisenche} /> */}
 					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["valgrisenche"]}`} class="btn btn--secondary" data-astro-reload="false">{translations.scopri}</a>
 				</div>
 
@@ -307,9 +411,11 @@ const comprensoriSlugMap = {
 						<Image src={remesImage} alt="Panorama Rhêmes Notre Dame" widths={[600, 1190]} width="600" height="600" loading="eager" />
 						<div class="gradient-overlay"></div>
 					</div>
-					<Image src={iconRemesImage} alt="Illustrazione Rhêmes Notre Dame" width="60" height="90" />
-					<h2>Rhêmes <br />Notre Dame</h2>
-					<p set:html={translations.rhemes_notre_dame} />
+					<div class="icon-title-group">
+						<Image src={iconRemesImage} alt="Illustrazione Rhêmes Notre Dame" width="60" height="90" />
+						<h2>Rhêmes <br />Notre Dame</h2>
+					</div>
+					{/* <p set:html={translations.rhemes_notre_dame} /> */}
 					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["rhemes-notre-dame"]}`} class="btn btn--secondary" data-astro-reload="false">{translations.scopri}</a>
 				</div>
 
@@ -318,9 +424,11 @@ const comprensoriSlugMap = {
 						<Image src={champorcherImage} alt="Panorama Champorcher" widths={[600, 1190]} width="600" height="600" loading="eager" />
 						<div class="gradient-overlay"></div>
 					</div>
-					<Image src={iconChamporcherImage} alt="Illustrazione Champorcher" width="96" height="64" />
-					<h2>CHAMPORCHER</h2>
-					<p set:html={translations.champorcher} />
+					<div class="icon-title-group">
+						<Image src={iconChamporcherImage} alt="Illustrazione Champorcher" width="96" height="64" />
+						<h2>CHAMPORCHER</h2>
+					</div>
+					{/* <p set:html={translations.champorcher} /> */}
 					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["champorcher"]}`} class="btn btn--secondary" data-astro-reload="false">{translations.scopri}</a>
 				</div>
 
@@ -329,9 +437,11 @@ const comprensoriSlugMap = {
 						<Image src={cogneImage} alt="Panorama Cogne" widths={[600, 1190]} width="600" height="600" loading="eager" />
 						<div class="gradient-overlay"></div>
 					</div>
-					<Image src={iconCogneImage} alt="Illustrazione Cogne" width="75" height="88" />
-					<h2>COGNE</h2>
-					<p set:html={translations.cogne} />
+					<div class="icon-title-group">
+						<Image src={iconCogneImage} alt="Illustrazione Cogne" width="75" height="88" />
+						<h2>COGNE</h2>
+					</div>
+					{/* <p set:html={translations.cogne} /> */}
 					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["cogne"]}`} class="btn btn--secondary" data-astro-reload="false">{translations.scopri}</a>
 				</div>
 
@@ -340,9 +450,11 @@ const comprensoriSlugMap = {
 						<Image src={ollomontImage} alt="Panorama Ollomont" widths={[600, 1190]} width="600" height="600" loading="eager" />
 						<div class="gradient-overlay"></div>
 					</div>
-					<Image src={iconOllomontImage} alt="Illustrazione Ollomont" width="96" height="64" />
-					<h2>Ollomont</h2>
-					<p set:html={translations.ollomont} />
+					<div class="icon-title-group">
+						<Image src={iconOllomontImage} alt="Illustrazione Ollomont" width="96" height="64" style="height: 100px; width: auto;" />
+						<h2>Ollomont</h2>
+					</div>
+					{/* <p set:html={translations.ollomont} /> */}
 					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["ollomont"]}`} class="btn btn--secondary" data-astro-reload="false">{translations.scopri}</a>
 				</div>
 
@@ -351,9 +463,11 @@ const comprensoriSlugMap = {
 						<Image src={antagnodImage} alt="Panorama Antagnod" widths={[600, 1190]} width="600" height="600" loading="eager" />
 						<div class="gradient-overlay"></div>
 					</div>
-					<Image src={iconAntagnodImage} alt="Illustrazione Antagnod" width="87" height="80" />
-					<h2>Antagnod</h2>
-					<p set:html={translations.antagnod} />
+					<div class="icon-title-group">
+						<Image src={iconAntagnodImage} alt="Illustrazione Antagnod" width="87" height="80" />
+						<h2>Antagnod</h2>
+					</div>
+					{/* <p set:html={translations.antagnod} /> */}
 					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["antagnod"]}`} class="btn btn--secondary" data-astro-reload="false">{translations.scopri}</a>
 				</div>
 
@@ -362,9 +476,11 @@ const comprensoriSlugMap = {
 						<Image src={chamoisImage} alt="Panorama Chamois" widths={[600, 1190]} width="600" height="600" loading="eager" />
 						<div class="gradient-overlay"></div>
 					</div>
-					<Image src={iconChamoisImage} alt="Illustrazione Chamois" width="68" height="95" />
-					<h2>Chamois</h2>
-					<p set:html={translations.chamois} />
+					<div class="icon-title-group">
+						<Image src={iconChamoisImage} alt="Illustrazione Chamois" width="68" height="95" />
+						<h2>Chamois</h2>
+					</div>
+					{/* <p set:html={translations.chamois} /> */}
 					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["chamois"]}`} class="btn btn--secondary" data-astro-reload="false">{translations.scopri}</a>
 				</div>
 
@@ -373,9 +489,11 @@ const comprensoriSlugMap = {
 						<Image src={magdeleineImage} alt="Panorama Magdeleine" widths={[600, 1190]} width="600" height="600" loading="eager" />
 						<div class="gradient-overlay"></div>
 					</div>
-					<Image src={iconMagdeleineImage} alt="Illustrazione Magdeleine" width="98" height="80" />
-					<h2>La magdeleine</h2>
-					<p set:html={translations.la_magdeleine} />
+					<div class="icon-title-group">
+						<Image src={iconMagdeleineImage} alt="Illustrazione Magdeleine" width="98" height="80" />
+						<h2>La magdeleine</h2>
+					</div>
+					{/* <p set:html={translations.la_magdeleine} /> */}
 					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["la-magdeleine"]}`} class="btn btn--secondary" data-astro-reload="false">{translations.scopri}</a>
 				</div>
 
@@ -384,9 +502,11 @@ const comprensoriSlugMap = {
 						<Image src={gressoneyImage} alt="Panorama Gressoney Saint Jean" widths={[600, 1190]} width="600" height="600" loading="eager" />
 						<div class="gradient-overlay"></div>
 					</div>
-					<Image src={iconGressoneyImage} alt="Illustrazione Gressoney Saint Jean" width="74" height="80" />
-					<h2>Gressoney saint jean</h2>
-					<p set:html={translations.gressoney_saint_jean} />
+					<div class="icon-title-group">
+						<Image src={iconGressoneyImage} alt="Illustrazione Gressoney Saint Jean" width="74" height="80" />
+						<h2>Gressoney saint jean</h2>
+					</div>
+					{/* <p set:html={translations.gressoney_saint_jean} /> */}
 					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["gressoney-saint-jean"]}`} class="btn btn--secondary" data-astro-reload="false">{translations.scopri}</a>
 				</div>
 
@@ -395,9 +515,11 @@ const comprensoriSlugMap = {
 						<Image src={crevacolImage} alt="Panorama Crevacol" widths={[600, 1190]} width="600" height="600" loading="eager" />
 						<div class="gradient-overlay"></div>
 					</div>
-					<Image src={iconCrevacolImage} alt="Illustrazione Crevacol" width="102" height="70" />
-					<h2>CRÉVACOL</h2>
-					<p set:html={translations.crevacol} />
+					<div class="icon-title-group">
+						<Image src={iconCrevacolImage} alt="Illustrazione Crevacol" width="102" height="70" />
+						<h2>CRÉVACOL</h2>
+					</div>
+					{/* <p set:html={translations.crevacol} /> */}
 					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["crevacol"]}`} class="btn btn--secondary" data-astro-reload="false">{translations.scopri}</a>
 				</div>
 			</div>

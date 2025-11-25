@@ -1,9 +1,9 @@
 ---
 import { Image } from "astro:assets";
 
-import stepOneImage from "../images/icon-step-1.svg";
-import stepTwoImage from "../images/icon-step-2.svg";
-import stepThreeImage from "../images/icon-step-3.svg";
+import qrSkipassImage from "../images/icon-qr-skipass.svg";
+import qrLezioneImage from "../images/icon-qr-lezione.svg";
+import qrPernottamentoImage from "../images/icon-qr-pernottamento.svg";
 
 import { loadTranslations } from "../utils/loadTranslations";
 const { lang } = Astro.props;
@@ -14,10 +14,6 @@ const translations = loadTranslations(lang);
 	.come-usufruire h1,
 	.come-usufruire h2 {
 		color: white;
-	}
-
-	.come-usufruire h1 {
-		margin-bottom: calc(var(--margin-standard) * 2);
 	}
 
 	.come-usufruire li {
@@ -56,7 +52,8 @@ const translations = loadTranslations(lang);
 	}
 
 	.come-usufruire h1,
-	.come-usufruire h2 {
+	.come-usufruire h2,
+	.come-usufruire p {
 		color: white;
 	}
 
@@ -83,6 +80,8 @@ const translations = loadTranslations(lang);
 		.come-usufruire .steps {
 			display: grid;
 			grid-template-columns: 1fr 1fr 1fr;
+			margin-top: var(--margin-large);
+			margin-bottom: var(--margin-large);
 		}
 
 		.come-usufruire.visible {
@@ -113,24 +112,24 @@ const translations = loadTranslations(lang);
 <section class="come-usufruire lazy-background">
 	<div class="content">
 		<h1>{translations.come_usufruire_title}</h1>
-
+		<p>Acquista il Magic Skipass online o presso le biglietterie dei comprensori aderenti. Riceverai via email o in versione cartacea i QR code necessari per accedere alle promozioni incluse.</p>
 		<ul class="steps">
 			<li>
-				<Image src={stepOneImage} alt="Uno" width="100" />
-				<h2>{translations.come_usufruire_acquista}</h2>
-				<p>{translations.come_usufruire_acquista_p}</p>
+				<Image src={qrSkipassImage} alt="Uno" width="100" />
+				<h2>{translations.qr_skipass_title}</h2>
+				<p>{translations.qr_skipass_description}</p>
 			</li>
 
 			<li>
-				<Image src={stepTwoImage} alt="Due" width="100" />
-				<h2>{translations.come_usufruire_ritira}</h2>
-				<p>{translations.come_usufruire_ritira_p}</p>
+				<Image src={qrLezioneImage} alt="Due" width="100" />
+				<h2>{translations.qr_lesson_title}</h2>
+				<p>{translations.qr_lesson_description}</p>
 			</li>
 
 			<li>
-				<Image src={stepThreeImage} alt="Tre" width="100" />
-				<h2>{translations.come_usufruire_scopri}</h2>
-				<p>{translations.come_usufruire_scopri_p}</p>
+				<Image src={qrPernottamentoImage} alt="Tre" width="100" />
+				<h2>{translations.qr_hotel_title}</h2>
+				<p>{translations.qr_hotel_description}</p>
 			</li>
 		</ul>
 

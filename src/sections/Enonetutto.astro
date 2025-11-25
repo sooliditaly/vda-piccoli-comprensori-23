@@ -32,15 +32,15 @@ const translations = loadTranslations(lang);
 		.cose-grid {
 			column-gap: 8rem;
 			row-gap: var(--margin-large);
+			grid-template-columns: 1fr 1fr;
 		}
 
 		.cose-grid .percorso-desktop {
 			width: 90%;
 			justify-self: flex-start;
-		}
-
-		.cose-grid {
-			grid-template-columns: 1fr 1fr;
+			position: sticky;
+			top: 2rem;
+			align-self: start;
 		}
 
 		.sei-giornate {
