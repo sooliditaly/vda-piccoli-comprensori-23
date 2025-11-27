@@ -124,7 +124,10 @@ const comprensoriSlugMap = {
 
 	window.addEventListener("DOMContentLoaded", () => {
 		document.querySelectorAll(".comprensorio").forEach(($element) => {
-			$element.querySelector("a").addEventListener("click", () => {
+			const link = $element.querySelector("a");
+			const href = link?.getAttribute("href");
+
+			$element.addEventListener("click", (e) => {
 				// send event
 				dataLayer.push({
 					event: "click_cta-comprensorio",
@@ -135,6 +138,11 @@ const comprensoriSlugMap = {
 				fbq("trackCustom", "click_cta-comprensorio", {
 					nome_comprensorio: $element.querySelector("h2").innerText
 				});
+
+				// Navigate to the link
+				if (href) {
+					window.location.href = href;
+				}
 			});
 		});
 	});
@@ -249,6 +257,7 @@ const comprensoriSlugMap = {
 
 	.swiper-slide.comprensorio {
 		color: white;
+		cursor: pointer;
 		transition:
 			width 0.3s ease,
 			height 0.3s ease;
@@ -390,7 +399,7 @@ const comprensoriSlugMap = {
 						<h2>Brusson</h2>
 					</div>
 					{/* <p set:html={translations.brusson} /> */}
-					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["brusson"]}`} class="btn btn--secondary" data-astro-reload="false">{translations.scopri}</a>
+					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["brusson"]}`} class="btn btn--secondary" data-astro-reload="false" style="pointer-events: none;">{translations.scopri}</a>
 				</div>
 
 				<div class="swiper-slide comprensorio" data-slug="valgrisenche">
@@ -403,7 +412,7 @@ const comprensoriSlugMap = {
 						<h2>VALGRISENCHE</h2>
 					</div>
 					{/* <p set:html={translations.valgrisenche} /> */}
-					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["valgrisenche"]}`} class="btn btn--secondary" data-astro-reload="false">{translations.scopri}</a>
+					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["valgrisenche"]}`} class="btn btn--secondary" data-astro-reload="false" style="pointer-events: none;">{translations.scopri}</a>
 				</div>
 
 				<div class="swiper-slide comprensorio" data-slug="rhemes-notre-dame">
@@ -416,7 +425,7 @@ const comprensoriSlugMap = {
 						<h2>Rhêmes <br />Notre Dame</h2>
 					</div>
 					{/* <p set:html={translations.rhemes_notre_dame} /> */}
-					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["rhemes-notre-dame"]}`} class="btn btn--secondary" data-astro-reload="false">{translations.scopri}</a>
+					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["rhemes-notre-dame"]}`} class="btn btn--secondary" data-astro-reload="false" style="pointer-events: none;">{translations.scopri}</a>
 				</div>
 
 				<div class="swiper-slide comprensorio" data-slug="champorcher">
@@ -429,7 +438,7 @@ const comprensoriSlugMap = {
 						<h2>CHAMPORCHER</h2>
 					</div>
 					{/* <p set:html={translations.champorcher} /> */}
-					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["champorcher"]}`} class="btn btn--secondary" data-astro-reload="false">{translations.scopri}</a>
+					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["champorcher"]}`} class="btn btn--secondary" data-astro-reload="false" style="pointer-events: none;">{translations.scopri}</a>
 				</div>
 
 				<div class="swiper-slide comprensorio" data-slug="cogne">
@@ -442,7 +451,7 @@ const comprensoriSlugMap = {
 						<h2>COGNE</h2>
 					</div>
 					{/* <p set:html={translations.cogne} /> */}
-					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["cogne"]}`} class="btn btn--secondary" data-astro-reload="false">{translations.scopri}</a>
+					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["cogne"]}`} class="btn btn--secondary" data-astro-reload="false" style="pointer-events: none;">{translations.scopri}</a>
 				</div>
 
 				<div class="swiper-slide comprensorio" data-slug="ollomont">
@@ -455,7 +464,7 @@ const comprensoriSlugMap = {
 						<h2>Ollomont</h2>
 					</div>
 					{/* <p set:html={translations.ollomont} /> */}
-					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["ollomont"]}`} class="btn btn--secondary" data-astro-reload="false">{translations.scopri}</a>
+					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["ollomont"]}`} class="btn btn--secondary" data-astro-reload="false" style="pointer-events: none;">{translations.scopri}</a>
 				</div>
 
 				<div class="swiper-slide comprensorio" data-slug="antagnod">
@@ -468,7 +477,7 @@ const comprensoriSlugMap = {
 						<h2>Antagnod</h2>
 					</div>
 					{/* <p set:html={translations.antagnod} /> */}
-					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["antagnod"]}`} class="btn btn--secondary" data-astro-reload="false">{translations.scopri}</a>
+					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["antagnod"]}`} class="btn btn--secondary" data-astro-reload="false" style="pointer-events: none;">{translations.scopri}</a>
 				</div>
 
 				<div class="swiper-slide comprensorio" data-slug="chamois">
@@ -481,7 +490,7 @@ const comprensoriSlugMap = {
 						<h2>Chamois</h2>
 					</div>
 					{/* <p set:html={translations.chamois} /> */}
-					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["chamois"]}`} class="btn btn--secondary" data-astro-reload="false">{translations.scopri}</a>
+					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["chamois"]}`} class="btn btn--secondary" data-astro-reload="false" style="pointer-events: none;">{translations.scopri}</a>
 				</div>
 
 				<div class="swiper-slide comprensorio" data-slug="la-magdeleine">
@@ -494,7 +503,7 @@ const comprensoriSlugMap = {
 						<h2>La magdeleine</h2>
 					</div>
 					{/* <p set:html={translations.la_magdeleine} /> */}
-					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["la-magdeleine"]}`} class="btn btn--secondary" data-astro-reload="false">{translations.scopri}</a>
+					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["la-magdeleine"]}`} class="btn btn--secondary" data-astro-reload="false" style="pointer-events: none;">{translations.scopri}</a>
 				</div>
 
 				<div class="swiper-slide comprensorio" data-slug="gressoney-saint-jean">
@@ -507,7 +516,7 @@ const comprensoriSlugMap = {
 						<h2>Gressoney saint jean</h2>
 					</div>
 					{/* <p set:html={translations.gressoney_saint_jean} /> */}
-					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["gressoney-saint-jean"]}`} class="btn btn--secondary" data-astro-reload="false">{translations.scopri}</a>
+					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["gressoney-saint-jean"]}`} class="btn btn--secondary" data-astro-reload="false" style="pointer-events: none;">{translations.scopri}</a>
 				</div>
 
 				<div class="swiper-slide comprensorio" data-slug="crevacol">
@@ -520,7 +529,7 @@ const comprensoriSlugMap = {
 						<h2>CRÉVACOL</h2>
 					</div>
 					{/* <p set:html={translations.crevacol} /> */}
-					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["crevacol"]}`} class="btn btn--secondary" data-astro-reload="false">{translations.scopri}</a>
+					<a href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["crevacol"]}`} class="btn btn--secondary" data-astro-reload="false" style="pointer-events: none;">{translations.scopri}</a>
 				</div>
 			</div>
 		</div>

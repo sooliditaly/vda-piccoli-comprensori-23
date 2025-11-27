@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 
 import percorsoImage from "../images/illustrazione-percorso.svg";
 import percorsoDesktopImage from "../images/illustrazione-percorso-desktop.svg";
+import mapImage from "../images/mappa-piccoli-comprensori.webp";
 
 import { loadTranslations } from "../utils/loadTranslations";
 const { lang } = Astro.props;
@@ -35,7 +36,7 @@ const translations = loadTranslations(lang);
 			grid-template-columns: 1fr 1fr;
 		}
 
-		.cose-grid .percorso-desktop {
+		.cose-grid .mappa-piccoli-comprensori {
 			width: 90%;
 			justify-self: flex-start;
 			position: sticky;
@@ -52,8 +53,9 @@ const translations = loadTranslations(lang);
 <section class="intro">
 	<div class="content">
 		<div class="cose-grid">
-			<Image src={percorsoImage} alt="Percorso" class="mobile-only percorso-mobile" />
-			<Image src={percorsoDesktopImage} alt="Percorso" class="desktop-only percorso-desktop" />
+			<!-- <Image src={percorsoImage} alt="Percorso" class="mobile-only percorso-mobile" />
+			<Image src={percorsoDesktopImage} alt="Percorso" class="desktop-only percorso-desktop" /> -->
+			<Image src={mapImage} alt="Mappa piccoli comprensori" class="mappa-piccoli-comprensori" />
 
 			<div class="title-copy-cta">
 				<h1>{translations.nonetutto_title}</h1>

@@ -1,0 +1,365 @@
+---
+import { Image } from "astro:assets";
+
+import brussonImage from "../images/card-brusson.webp";
+import valgrisencheImage from "../images/card-valgrisenche.webp";
+import remesImage from "../images/card-remes.webp";
+import antagnodImage from "../images/card-antagnod.webp";
+import chamoisImage from "../images/card-chamois.webp";
+import champorcherImage from "../images/card-champorcher.webp";
+import cogneImage from "../images/card-cogne.webp";
+import crevacolImage from "../images/card-crevacol.webp";
+import gressoneyImage from "../images/card-gressoney.webp";
+import magdeleineImage from "../images/card-magdeleine.webp";
+import ollomontImage from "../images/card-ollomont.webp";
+
+import iconBrussonImage from "../images/icon-brusson.svg";
+import iconValgrisencheImage from "../images/icon-valgrisenche.svg";
+import iconRemesImage from "../images/icon-remes.svg";
+import iconChamporcherImage from "../images/icon-champorcher.svg";
+import iconCogneImage from "../images/icon-cogne.svg";
+import iconOllomontImage from "../images/icon-ollomont.svg";
+import iconAntagnodImage from "../images/icon-antagnod.svg";
+import iconChamoisImage from "../images/icon-chamois.svg";
+import iconMagdeleineImage from "../images/icon-magdeleine.svg";
+import iconGressoneyImage from "../images/icon-gressoney.svg";
+import iconCrevacolImage from "../images/icon-crevacol.svg";
+
+import percorsoDesktopImage from "../images/illustrazione-percorso-desktop.svg";
+
+import { loadTranslations } from "../utils/loadTranslations";
+const { lang } = Astro.props;
+const translations = loadTranslations(lang);
+
+const baseUrl = lang === "it" ? "" : `/${lang}`;
+const pathSegment = lang === "it" ? "comprensorio" : lang === "en" ? "resort" : "station";
+
+const comprensoriSlugMap = {
+	brusson: "brusson",
+	valgrisenche: "valgrisenche",
+	"rhemes-notre-dame": "rhemes-notre-dame",
+	champorcher: "champorcher",
+	cogne: "cogne",
+	ollomont: "ollomont",
+	antagnod: "antagnod",
+	chamois: "chamois",
+	"la-magdeleine": "la-magdeleine",
+	"gressoney-saint-jean": "gressoney-saint-jean",
+	crevacol: "crevacol"
+};
+---
+
+<script>
+	declare const dataLayer: any;
+	declare const fbq: (...args: any[]) => void;
+
+	window.addEventListener("DOMContentLoaded", () => {
+		document.querySelectorAll(".comprensorio-card").forEach(($element) => {
+			$element.addEventListener("click", () => {
+				// send event
+				dataLayer.push({
+					event: "click_cta-comprensorio",
+					nome_comprensorio: $element.querySelector("h2").innerText
+				});
+
+				// send fb event
+				fbq("trackCustom", "click_cta-comprensorio", {
+					nome_comprensorio: $element.querySelector("h2").innerText
+				});
+			});
+		});
+	});
+</script>
+
+<style>
+	.mosaico-comprensori {
+		width: 100%;
+	}
+
+	.mosaico-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+	}
+
+	@media (min-width: 600px) {
+		.mosaico-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (min-width: 900px) {
+		.mosaico-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	@media (min-width: 1200px) {
+		.mosaico-grid {
+			grid-template-columns: repeat(4, 1fr);
+			gap: 2rem;
+		}
+	}
+
+	.comprensorio-card {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+
+		min-height: 400px;
+		padding: 2rem;
+		padding-bottom: var(--margin-standard);
+		overflow: hidden;
+
+		color: white;
+		text-decoration: none;
+		cursor: pointer;
+
+		transition:
+			transform 0.3s ease,
+			box-shadow 0.3s ease;
+	}
+
+	.comprensorio-card:hover {
+		transform: scale(1.01);
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+	}
+
+	.card-background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+	}
+
+	.card-background img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.gradient-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(0deg, rgba(17, 31, 54, 1) 0%, rgba(17, 31, 54, 0) 84%);
+	}
+
+	.icon-title-group {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: var(--margin-small);
+		flex: 1;
+		z-index: 1;
+	}
+
+	.icon-title-group img {
+		margin-bottom: 0;
+		max-width: 100px;
+		height: auto;
+	}
+
+	.icon-title-group h2 {
+		font-family: "Ramen";
+		font-size: 2.4rem;
+		color: white;
+		margin: 0;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	@media (min-width: 750px) {
+		.icon-title-group h2 {
+			font-size: 2.8rem;
+		}
+	}
+
+	.comprensorio-card .btn {
+		z-index: 1;
+		margin-top: auto;
+		pointer-events: none;
+	}
+</style>
+
+<section class="mosaico-comprensori">
+	<div class="content">
+		<style>
+
+			.mosaico-intro {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: var(--margin-large);
+				margin-bottom: var(--margin-large);
+			}
+
+			.mosaico-intro .col-right h1 {
+				margin: 0;
+			}
+
+			.mosaico-intro .col-right {
+				text-align: left;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+
+			.mosaico-intro .col-left img {
+				width: 100%;
+				height: auto;
+			}
+		</style>
+
+		<div class="mosaico-intro">
+			<div class="col-left">
+				<Image src={percorsoDesktopImage} alt="Mosaico Comprensori" width="619" height="526" />
+			</div>
+			<div class="col-right">
+				<h1 set:html={translations.lasciati_ispirare_title} />
+				<p set:html={translations.lasciati_ispirare_p} />
+			</div>
+		</div>
+
+		<div class="mosaico-grid">
+
+			<a class="comprensorio-card" data-slug="brusson" href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["brusson"]}`} data-astro-reload="false">
+				<div class="card-background">
+					<Image src={brussonImage} alt="Panorama Brusson" widths={[400, 600]} width="400" height="400" loading="lazy" />
+					<div class="gradient-overlay"></div>
+				</div>
+				<div class="icon-title-group">
+					<Image src={iconBrussonImage} alt="Illustrazione Brusson" width="84" height="82" />
+					<h2>Brusson</h2>
+				</div>
+				<span class="btn btn--secondary">{translations.scopri}</span>
+			</a>
+
+			<a class="comprensorio-card" data-slug="valgrisenche" href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["valgrisenche"]}`} data-astro-reload="false">
+				<div class="card-background">
+					<Image src={valgrisencheImage} alt="Panorama Valgrisenche" widths={[400, 600]} width="400" height="400" loading="lazy" />
+					<div class="gradient-overlay"></div>
+				</div>
+				<div class="icon-title-group">
+					<Image src={iconValgrisencheImage} alt="Illustrazione Valgrisenche" width="136" height="82" />
+					<h2>Valgrisenche</h2>
+				</div>
+				<span class="btn btn--secondary">{translations.scopri}</span>
+			</a>
+
+			<a class="comprensorio-card" data-slug="rhemes-notre-dame" href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["rhemes-notre-dame"]}`} data-astro-reload="false">
+				<div class="card-background">
+					<Image src={remesImage} alt="Panorama Rhêmes Notre Dame" widths={[400, 600]} width="400" height="400" loading="lazy" />
+					<div class="gradient-overlay"></div>
+				</div>
+				<div class="icon-title-group">
+					<Image src={iconRemesImage} alt="Illustrazione Rhêmes Notre Dame" width="60" height="90" />
+					<h2>Rhêmes <br />Notre Dame</h2>
+				</div>
+				<span class="btn btn--secondary">{translations.scopri}</span>
+			</a>
+
+			<a class="comprensorio-card" data-slug="champorcher" href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["champorcher"]}`} data-astro-reload="false">
+				<div class="card-background">
+					<Image src={champorcherImage} alt="Panorama Champorcher" widths={[400, 600]} width="400" height="400" loading="lazy" />
+					<div class="gradient-overlay"></div>
+				</div>
+				<div class="icon-title-group">
+					<Image src={iconChamporcherImage} alt="Illustrazione Champorcher" width="96" height="64" />
+					<h2>Champorcher</h2>
+				</div>
+				<span class="btn btn--secondary">{translations.scopri}</span>
+			</a>
+
+			<a class="comprensorio-card" data-slug="cogne" href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["cogne"]}`} data-astro-reload="false">
+				<div class="card-background">
+					<Image src={cogneImage} alt="Panorama Cogne" widths={[400, 600]} width="400" height="400" loading="lazy" />
+					<div class="gradient-overlay"></div>
+				</div>
+				<div class="icon-title-group">
+					<Image src={iconCogneImage} alt="Illustrazione Cogne" width="75" height="88" />
+					<h2>Cogne</h2>
+				</div>
+				<span class="btn btn--secondary">{translations.scopri}</span>
+			</a>
+
+			<a class="comprensorio-card" data-slug="ollomont" href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["ollomont"]}`} data-astro-reload="false">
+				<div class="card-background">
+					<Image src={ollomontImage} alt="Panorama Ollomont" widths={[400, 600]} width="400" height="400" loading="lazy" />
+					<div class="gradient-overlay"></div>
+				</div>
+				<div class="icon-title-group">
+					<Image src={iconOllomontImage} alt="Illustrazione Ollomont" width="96" height="64" style="height: 100px; width: auto;" />
+					<h2>Ollomont</h2>
+				</div>
+				<span class="btn btn--secondary">{translations.scopri}</span>
+			</a>
+
+			<a class="comprensorio-card" data-slug="antagnod" href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["antagnod"]}`} data-astro-reload="false">
+				<div class="card-background">
+					<Image src={antagnodImage} alt="Panorama Antagnod" widths={[400, 600]} width="400" height="400" loading="lazy" />
+					<div class="gradient-overlay"></div>
+				</div>
+				<div class="icon-title-group">
+					<Image src={iconAntagnodImage} alt="Illustrazione Antagnod" width="87" height="80" />
+					<h2>Antagnod</h2>
+				</div>
+				<span class="btn btn--secondary">{translations.scopri}</span>
+			</a>
+
+			<a class="comprensorio-card" data-slug="chamois" href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["chamois"]}`} data-astro-reload="false">
+				<div class="card-background">
+					<Image src={chamoisImage} alt="Panorama Chamois" widths={[400, 600]} width="400" height="400" loading="lazy" />
+					<div class="gradient-overlay"></div>
+				</div>
+				<div class="icon-title-group">
+					<Image src={iconChamoisImage} alt="Illustrazione Chamois" width="68" height="95" />
+					<h2>Chamois</h2>
+				</div>
+				<span class="btn btn--secondary">{translations.scopri}</span>
+			</a>
+
+			<a class="comprensorio-card" data-slug="la-magdeleine" href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["la-magdeleine"]}`} data-astro-reload="false">
+				<div class="card-background">
+					<Image src={magdeleineImage} alt="Panorama Magdeleine" widths={[400, 600]} width="400" height="400" loading="lazy" />
+					<div class="gradient-overlay"></div>
+				</div>
+				<div class="icon-title-group">
+					<Image src={iconMagdeleineImage} alt="Illustrazione Magdeleine" width="98" height="80" />
+					<h2>La Magdeleine</h2>
+				</div>
+				<span class="btn btn--secondary">{translations.scopri}</span>
+			</a>
+
+			<a class="comprensorio-card" data-slug="gressoney-saint-jean" href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["gressoney-saint-jean"]}`} data-astro-reload="false">
+				<div class="card-background">
+					<Image src={gressoneyImage} alt="Panorama Gressoney Saint Jean" widths={[400, 600]} width="400" height="400" loading="lazy" />
+					<div class="gradient-overlay"></div>
+				</div>
+				<div class="icon-title-group">
+					<Image src={iconGressoneyImage} alt="Illustrazione Gressoney Saint Jean" width="74" height="80" />
+					<h2>Gressoney <br />Saint Jean</h2>
+				</div>
+				<span class="btn btn--secondary">{translations.scopri}</span>
+			</a>
+
+			<a class="comprensorio-card" data-slug="crevacol" href={`${baseUrl}/${pathSegment}/${comprensoriSlugMap["crevacol"]}`} data-astro-reload="false">
+				<div class="card-background">
+					<Image src={crevacolImage} alt="Panorama Crevacol" widths={[400, 600]} width="400" height="400" loading="lazy" />
+					<div class="gradient-overlay"></div>
+				</div>
+				<div class="icon-title-group">
+					<Image src={iconCrevacolImage} alt="Illustrazione Crevacol" width="102" height="70" />
+					<h2>Crévacol</h2>
+				</div>
+				<span class="btn btn--secondary">{translations.scopri}</span>
+			</a>
+		</div>
+	</div>
+</section>

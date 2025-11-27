@@ -11,7 +11,28 @@ import IntroCose from "../../sections/IntroCose.astro";
 import ComeUsufruire from "../../sections/ComeUsufruire.astro";
 import Footer from "../../sections/Footer.astro";
 import Enonetutto from "../../sections/Enonetutto.astro";
+import MosaicoComprensori from "../../sections/MosaicoComprensori.astro";
 ---
+
+<style>
+	.comprensori-mobile {
+		display: block;
+	}
+
+	.comprensori-desktop {
+		display: none;
+	}
+
+	@media (min-width: 750px) {
+		.comprensori-mobile {
+			display: none;
+		}
+
+		.comprensori-desktop {
+			display: block;
+		}
+	}
+</style>
 
 <AppShell lang="en">
 
@@ -19,13 +40,21 @@ import Enonetutto from "../../sections/Enonetutto.astro";
 
 	<IntroCose lang="en" />
 
+	<!-- Mobile: Slider -->
+	<div class="comprensori-mobile">
+		<SliderComprensori lang="en" />
+	</div>
+
+	<!-- Desktop: Mosaico -->
+	<div class="comprensori-desktop">
+		<MosaicoComprensori lang="en" />
+	</div>
+
 	<Enonetutto lang="en" />
 
 	<ComeUsufruire lang="en" />
 
 	<TariffeGrid lang="en" />
-
-	<SliderComprensori lang="en" />
 
 	<LoghiBottom lang="en" />
 
