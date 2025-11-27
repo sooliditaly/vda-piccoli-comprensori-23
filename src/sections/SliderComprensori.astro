@@ -56,6 +56,7 @@ const comprensoriSlugMap = {
 <script>
 	declare const dataLayer: any;
 	declare const fbq: (...args: any[]) => void;
+	declare const usermaven: any;
 	// core version + navigation modules:
 	import Swiper from "swiper";
 	import { Manipulation, Navigation, Parallax } from "swiper/modules";
@@ -128,15 +129,24 @@ const comprensoriSlugMap = {
 			const href = link?.getAttribute("href");
 
 			$element.addEventListener("click", (e) => {
-				// send event
+				const nomeComprensorio = $element.querySelector("h2").innerText;
+
+				// send event to Google Tag Manager (slider-specific)
 				dataLayer.push({
-					event: "click_cta-comprensorio",
-					nome_comprensorio: $element.querySelector("h2").innerText
+					event: "click_cta-comprensorio-slider",
+					nome_comprensorio: nomeComprensorio,
+					source: "slider"
 				});
 
-				// send fb event
-				fbq("trackCustom", "click_cta-comprensorio", {
-					nome_comprensorio: $element.querySelector("h2").innerText
+				// send event to UserMaven (slider-specific)
+				usermaven("track", "click_cta-comprensorio-slider", {
+					comprensorio: nomeComprensorio
+				});
+
+				// send event to Facebook Pixel (slider-specific)
+				fbq("trackCustom", "click_cta-comprensorio-slider", {
+					nome_comprensorio: nomeComprensorio,
+					source: "slider"
 				});
 
 				// Navigate to the link

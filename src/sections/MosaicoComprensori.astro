@@ -52,19 +52,29 @@ const comprensoriSlugMap = {
 <script>
 	declare const dataLayer: any;
 	declare const fbq: (...args: any[]) => void;
+	declare const usermaven: any;
 
 	window.addEventListener("DOMContentLoaded", () => {
 		document.querySelectorAll(".comprensorio-card").forEach(($element) => {
 			$element.addEventListener("click", () => {
-				// send event
+				const nomeComprensorio = $element.querySelector("h2").innerText;
+
+				// send event to Google Tag Manager (mosaico-specific)
 				dataLayer.push({
-					event: "click_cta-comprensorio",
-					nome_comprensorio: $element.querySelector("h2").innerText
+					event: "click_cta-comprensorio-mosaico",
+					nome_comprensorio: nomeComprensorio,
+					source: "mosaico"
 				});
 
-				// send fb event
-				fbq("trackCustom", "click_cta-comprensorio", {
-					nome_comprensorio: $element.querySelector("h2").innerText
+				// send event to UserMaven (mosaico-specific)
+				usermaven("track", "click_cta-comprensorio-mosaico", {
+					comprensorio: nomeComprensorio
+				});
+
+				// send event to Facebook Pixel (mosaico-specific)
+				fbq("trackCustom", "click_cta-comprensorio-mosaico", {
+					nome_comprensorio: nomeComprensorio,
+					source: "mosaico"
 				});
 			});
 		});
