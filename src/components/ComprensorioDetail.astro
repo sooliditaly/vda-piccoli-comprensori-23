@@ -116,6 +116,7 @@ const getImpiantiList = () => {
 };
 
 const acquistaUrl = lang === "it" ? "https://skilife.skiperformance.com/it/negozio?skugroup_id=4119#/it/acquista" : lang === "en" ? "https://skilife.skiperformance.com/en/store#/en/buy?skugroup_id=4319" : "https://skilife.skiperformance.com/fr/store#/fr/buy?skugroup_id=4319";
+const homeUrl = lang === "it" ? "/" : lang === "en" ? "/en" : "/fr";
 
 // Convert slug to translation key (replace hyphens with underscores)
 const translationKey = comprensorio.slug.replace(/-/g, "_");
@@ -138,8 +139,8 @@ const allContacts = [
 		<div class="secondary-bar" id="secondary-header">
 			<div class="secondary-bar-content">
 				<h2 class="secondary-bar-title">{comprensorio.nome.toUpperCase()}</h2>
-				<a href={acquistaUrl} class="btn btn--primary secondary-bar-btn" target="_blank">
-					{translations.acquista_online}
+				<a href={homeUrl} class="btn btn--primary secondary-bar-btn">
+					{translations.scopri_magic_skipass}
 				</a>
 			</div>
 		</div>
@@ -152,8 +153,8 @@ const allContacts = [
 					<div class="content-left">
 						<h2 class="section-title">{comprensorio.titolo_sezione}</h2>
 						<p class="description-text">{comprensorio.descrizione}</p>
-						<a href={acquistaUrl} class="btn btn--primary" target="_blank">
-							{translations.acquista_online}
+						<a href={homeUrl} class="btn btn--primary">
+							{translations.scopri_magic_skipass}
 						</a>
 						<div class="intermediate-image">
 							<Image src={schedaImage} alt={comprensorio.nome} />

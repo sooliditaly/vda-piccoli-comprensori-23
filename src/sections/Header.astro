@@ -213,6 +213,9 @@ const translations = loadTranslations(lang);
 			targetElement = document.querySelector(".intro"),
 			scopriElement = document.querySelector(".scopri-di-piu"),
 			sliderElement = document.querySelector(".slider-comprensori"),
+			mosaicoGridElement = document.querySelector(".mosaico-grid"),
+			comprensoriMobileElement = document.querySelector(".comprensori-mobile"),
+			comprensoriDesktopElement = document.querySelector(".comprensori-desktop"),
 			acquistaHeaderElement = document.querySelector("#cta-acquista-header"),
 			acquistaComeElement = document.querySelector("#cta-acquista-section-come"),
 			acquistaCoseElement = document.querySelector("#cta-acquista-section-cose"),
@@ -238,13 +241,33 @@ const translations = loadTranslations(lang);
 
 			usermaven("track", "click_cta-lasciati-ispirare-header");
 
-			window.scroll({
-				top: sliderElement.offsetTop - 15,
-				left: 0,
-				behavior: "smooth"
-			});
+			// Cerca il target per lo scroll: slider o mosaico-grid
+			let targetScrollElement = null;
+			
+			// Controlla se siamo su mobile (slider visibile)
+			if (comprensoriMobileElement && window.getComputedStyle(comprensoriMobileElement).display !== "none" && sliderElement) {
+				targetScrollElement = sliderElement;
+			}
+			// Controlla se siamo su desktop (mosaico-grid visibile)
+			else if (comprensoriDesktopElement && window.getComputedStyle(comprensoriDesktopElement).display !== "none" && mosaicoGridElement) {
+				targetScrollElement = mosaicoGridElement;
+			}
+			// Fallback: usa lo slider se esiste, altrimenti il mosaico-grid
+			else if (sliderElement) {
+				targetScrollElement = sliderElement;
+			} else if (mosaicoGridElement) {
+				targetScrollElement = mosaicoGridElement;
+			}
 
-			if (fbq != "undefined") fbq("trackCustom", "click_cta-lasciati-ispirare-header");
+			if (targetScrollElement) {
+				window.scroll({
+					top: targetScrollElement.offsetTop - 15,
+					left: 0,
+					behavior: "smooth"
+				});
+			}
+
+			if (typeof fbq != "undefined") fbq("trackCustom", "click_cta-lasciati-ispirare-header");
 		});
 
 		acquistaHeaderElement.addEventListener("click", function (e) {
