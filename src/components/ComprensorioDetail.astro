@@ -115,7 +115,7 @@ const getImpiantiList = () => {
 	return impianti;
 };
 
-const acquistaUrl = lang === "it" ? "https://skilife.skiperformance.com/it/negozio?skugroup_id=4119#/it/acquista" : lang === "en" ? "https://skilife.skiperformance.com/en/store#/en/buy?skugroup_id=4319" : "https://skilife.skiperformance.com/fr/store#/fr/buy?skugroup_id=4319";
+const acquistaUrl = translations.link_skiperformance;
 const homeUrl = lang === "it" ? "/" : lang === "en" ? "/en" : "/fr";
 
 // Convert slug to translation key (replace hyphens with underscores)
