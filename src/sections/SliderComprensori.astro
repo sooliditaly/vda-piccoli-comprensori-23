@@ -147,8 +147,7 @@ const comprensoriSlugMap = {
 				// send event to Google Tag Manager (slider-specific, current_lang is already in dataLayer)
 				dataLayer.push({
 					event: "click_cta-comprensorio-slider",
-					nome_comprensorio: nomeComprensorio,
-					source: "slider"
+					nome_comprensorio: nomeComprensorio
 				});
 
 				// send event to UserMaven (slider-specific)
@@ -160,7 +159,6 @@ const comprensoriSlugMap = {
 				// send event to Facebook Pixel (slider-specific)
 				fbq("trackCustom", "click_cta-comprensorio-slider", {
 					nome_comprensorio: nomeComprensorio,
-					source: "slider",
 					lingua: currentLang
 				});
 

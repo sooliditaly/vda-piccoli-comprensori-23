@@ -262,7 +262,7 @@ const translations = loadTranslations(lang);
 
 			// Cerca il target per lo scroll: slider o mosaico-grid
 			let targetScrollElement = null;
-			
+
 			// Controlla se siamo su mobile (slider visibile)
 			if (comprensoriMobileElement && window.getComputedStyle(comprensoriMobileElement).display !== "none" && sliderElement) {
 				targetScrollElement = sliderElement;
@@ -297,8 +297,7 @@ const translations = loadTranslations(lang);
 				lingua: currentLang
 			});
 			// evt ga4 impostato da tag mangager
-			fbq("trackCustom", "click_cta-acquista-lp", {
-				posizione: "header",
+			fbq("trackCustom", "click_cta-acquista-header", {
 				lingua: currentLang
 			});
 		});
@@ -309,8 +308,7 @@ const translations = loadTranslations(lang);
 				lingua: currentLang
 			});
 			// evt ga4 impostato da tag mangager
-			fbq("trackCustom", "click_cta-acquista-lp", {
-				posizione: "section-come",
+			fbq("trackCustom", "click_cta-acquista-section-come", {
 				lingua: currentLang
 			});
 		});
@@ -321,8 +319,7 @@ const translations = loadTranslations(lang);
 				lingua: currentLang
 			});
 			// evt ga4 impostato da tag mangager
-			fbq("trackCustom", "click_cta-acquista-lp", {
-				posizione: "section-cose",
+			fbq("trackCustom", "click_cta-acquista-section-cose", {
 				lingua: currentLang
 			});
 		});
@@ -333,8 +330,7 @@ const translations = loadTranslations(lang);
 				lingua: currentLang
 			});
 			// evt ga4 impostato da tag mangager
-			fbq("trackCustom", "click_cta-acquista-lp", {
-				posizione: "lasciati-ispirare",
+			fbq("trackCustom", "click_cta-acquista-section-lasciati-ispirare", {
 				lingua: currentLang
 			});
 		});

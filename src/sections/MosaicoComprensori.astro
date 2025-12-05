@@ -75,8 +75,7 @@ const comprensoriSlugMap = {
 				// send event to Google Tag Manager (mosaico-specific, current_lang is already in dataLayer)
 				dataLayer.push({
 					event: "click_cta-comprensorio-mosaico",
-					nome_comprensorio: nomeComprensorio,
-					source: "mosaico"
+					nome_comprensorio: nomeComprensorio
 				});
 
 				// send event to UserMaven (mosaico-specific)
@@ -88,7 +87,6 @@ const comprensoriSlugMap = {
 				// send event to Facebook Pixel (mosaico-specific)
 				fbq("trackCustom", "click_cta-comprensorio-mosaico", {
 					nome_comprensorio: nomeComprensorio,
-					source: "mosaico",
 					lingua: currentLang
 				});
 			});
