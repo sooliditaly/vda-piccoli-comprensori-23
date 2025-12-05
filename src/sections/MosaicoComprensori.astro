@@ -54,12 +54,25 @@ const comprensoriSlugMap = {
 	declare const fbq: (...args: any[]) => void;
 	declare const usermaven: any;
 
+	// Helper function to get current_lang from dataLayer
+	const getCurrentLang = () => {
+		if (window.dataLayer && window.dataLayer.length > 0) {
+			for (let i = window.dataLayer.length - 1; i >= 0; i--) {
+				if (window.dataLayer[i].current_lang) {
+					return window.dataLayer[i].current_lang;
+				}
+			}
+		}
+		return "it"; // fallback
+	};
+
 	window.addEventListener("DOMContentLoaded", () => {
 		document.querySelectorAll(".comprensorio-card").forEach(($element) => {
 			$element.addEventListener("click", () => {
 				const nomeComprensorio = $element.querySelector("h2").innerText;
+				const currentLang = getCurrentLang();
 
-				// send event to Google Tag Manager (mosaico-specific)
+				// send event to Google Tag Manager (mosaico-specific, current_lang is already in dataLayer)
 				dataLayer.push({
 					event: "click_cta-comprensorio-mosaico",
 					nome_comprensorio: nomeComprensorio,
@@ -68,13 +81,15 @@ const comprensoriSlugMap = {
 
 				// send event to UserMaven (mosaico-specific)
 				usermaven("track", "click_cta-comprensorio-mosaico", {
-					comprensorio: nomeComprensorio
+					comprensorio: nomeComprensorio,
+					lingua: currentLang
 				});
 
 				// send event to Facebook Pixel (mosaico-specific)
 				fbq("trackCustom", "click_cta-comprensorio-mosaico", {
 					nome_comprensorio: nomeComprensorio,
-					source: "mosaico"
+					source: "mosaico",
+					lingua: currentLang
 				});
 			});
 		});

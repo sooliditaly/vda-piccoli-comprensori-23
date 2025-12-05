@@ -139,7 +139,7 @@ const allContacts = [
 		<div class="secondary-bar" id="secondary-header">
 			<div class="secondary-bar-content">
 				<h2 class="secondary-bar-title">{comprensorio.nome.toUpperCase()}</h2>
-				<a href={homeUrl} class="btn btn--primary secondary-bar-btn">
+				<a href={homeUrl} class="btn btn--primary secondary-bar-btn" id="cta-scopri-magic-skipass-sticky">
 					{translations.scopri_magic_skipass}
 				</a>
 			</div>
@@ -153,7 +153,7 @@ const allContacts = [
 					<div class="content-left">
 						<h2 class="section-title">{comprensorio.titolo_sezione}</h2>
 						<p class="description-text">{comprensorio.descrizione}</p>
-						<a href={homeUrl} class="btn btn--primary">
+						<a href={homeUrl} class="btn btn--primary" id="cta-scopri-magic-skipass-content">
 							{translations.scopri_magic_skipass}
 						</a>
 						<div class="intermediate-image">
@@ -332,7 +332,7 @@ const allContacts = [
 
 </AppShell>
 
-<script>
+<script define:vars={{ comprensorioNome: comprensorio.nome }}>
 	const MIN_FREE_SPACE = 40;
 
 	const updateIntermediateImageWidth = () => {
@@ -394,4 +394,72 @@ const allContacts = [
 	window.addEventListener("resize", throttledUpdate);
 	window.addEventListener("DOMContentLoaded", updateIntermediateImageWidth);
 	updateIntermediateImageWidth();
+
+	// Tracking events for CTA buttons
+	window.addEventListener("DOMContentLoaded", () => {
+		const stickyBtn = document.querySelector("#cta-scopri-magic-skipass-sticky");
+		const contentBtn = document.querySelector("#cta-scopri-magic-skipass-content");
+
+		// Helper function to get current_lang from dataLayer
+		const getCurrentLang = () => {
+			if (window.dataLayer && window.dataLayer.length > 0) {
+				for (let i = window.dataLayer.length - 1; i >= 0; i--) {
+					if (window.dataLayer[i].current_lang) {
+						return window.dataLayer[i].current_lang;
+					}
+				}
+			}
+			return "it"; // fallback
+		};
+
+		// Sticky bar button tracking
+		if (stickyBtn) {
+			stickyBtn.addEventListener("click", () => {
+				const currentLang = getCurrentLang();
+
+				// send event to Google Tag Manager (current_lang is already in dataLayer)
+				dataLayer.push({
+					event: "click_cta-scopri-magic-skipass-sticky",
+					nome_comprensorio: comprensorioNome
+				});
+
+				// send event to UserMaven
+				usermaven("track", "click_cta-scopri-magic-skipass-sticky", {
+					comprensorio: comprensorioNome,
+					lingua: currentLang
+				});
+
+				// send event to Facebook Pixel
+				fbq("trackCustom", "click_cta-scopri-magic-skipass-sticky", {
+					nome_comprensorio: comprensorioNome,
+					lingua: currentLang
+				});
+			});
+		}
+
+		// Content button tracking
+		if (contentBtn) {
+			contentBtn.addEventListener("click", () => {
+				const currentLang = getCurrentLang();
+
+				// send event to Google Tag Manager (current_lang is already in dataLayer)
+				dataLayer.push({
+					event: "click_cta-scopri-magic-skipass-content",
+					nome_comprensorio: comprensorioNome
+				});
+
+				// send event to UserMaven
+				usermaven("track", "click_cta-scopri-magic-skipass-content", {
+					comprensorio: comprensorioNome,
+					lingua: currentLang
+				});
+
+				// send event to Facebook Pixel
+				fbq("trackCustom", "click_cta-scopri-magic-skipass-content", {
+					nome_comprensorio: comprensorioNome,
+					lingua: currentLang
+				});
+			});
+		}
+	});
 </script>

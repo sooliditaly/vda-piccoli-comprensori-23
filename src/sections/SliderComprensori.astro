@@ -57,6 +57,18 @@ const comprensoriSlugMap = {
 	declare const dataLayer: any;
 	declare const fbq: (...args: any[]) => void;
 	declare const usermaven: any;
+
+	// Helper function to get current_lang from dataLayer
+	const getCurrentLang = () => {
+		if (window.dataLayer && window.dataLayer.length > 0) {
+			for (let i = window.dataLayer.length - 1; i >= 0; i--) {
+				if (window.dataLayer[i].current_lang) {
+					return window.dataLayer[i].current_lang;
+				}
+			}
+		}
+		return "it"; // fallback
+	};
 	// core version + navigation modules:
 	import Swiper from "swiper";
 	import { Manipulation, Navigation, Parallax } from "swiper/modules";
@@ -130,8 +142,9 @@ const comprensoriSlugMap = {
 
 			$element.addEventListener("click", (e) => {
 				const nomeComprensorio = $element.querySelector("h2").innerText;
+				const currentLang = getCurrentLang();
 
-				// send event to Google Tag Manager (slider-specific)
+				// send event to Google Tag Manager (slider-specific, current_lang is already in dataLayer)
 				dataLayer.push({
 					event: "click_cta-comprensorio-slider",
 					nome_comprensorio: nomeComprensorio,
@@ -140,13 +153,15 @@ const comprensoriSlugMap = {
 
 				// send event to UserMaven (slider-specific)
 				usermaven("track", "click_cta-comprensorio-slider", {
-					comprensorio: nomeComprensorio
+					comprensorio: nomeComprensorio,
+					lingua: currentLang
 				});
 
 				// send event to Facebook Pixel (slider-specific)
 				fbq("trackCustom", "click_cta-comprensorio-slider", {
 					nome_comprensorio: nomeComprensorio,
-					source: "slider"
+					source: "slider",
+					lingua: currentLang
 				});
 
 				// Navigate to the link

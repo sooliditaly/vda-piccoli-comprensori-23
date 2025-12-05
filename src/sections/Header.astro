@@ -209,6 +209,22 @@ const translations = loadTranslations(lang);
 	</div>
 
 	<script>
+		declare const dataLayer: any;
+		declare const fbq: (...args: any[]) => void;
+		declare const usermaven: any;
+
+		// Helper function to get current_lang from dataLayer
+		const getCurrentLang = () => {
+			if (window.dataLayer && window.dataLayer.length > 0) {
+				for (let i = window.dataLayer.length - 1; i >= 0; i--) {
+					if (window.dataLayer[i].current_lang) {
+						return window.dataLayer[i].current_lang;
+					}
+				}
+			}
+			return "it"; // fallback
+		};
+
 		const scrollLink = document.querySelector(".arrow-down"),
 			targetElement = document.querySelector(".intro"),
 			scopriElement = document.querySelector(".scopri-di-piu"),
@@ -234,12 +250,15 @@ const translations = loadTranslations(lang);
 
 		scopriElement.addEventListener("click", function (e) {
 			e.preventDefault();
+			const currentLang = getCurrentLang();
 
 			dataLayer.push({
 				event: "click_cta-lasciati-ispirare-header"
 			});
 
-			usermaven("track", "click_cta-lasciati-ispirare-header");
+			usermaven("track", "click_cta-lasciati-ispirare-header", {
+				lingua: currentLang
+			});
 
 			// Cerca il target per lo scroll: slider o mosaico-grid
 			let targetScrollElement = null;
@@ -267,53 +286,81 @@ const translations = loadTranslations(lang);
 				});
 			}
 
-			if (typeof fbq != "undefined") fbq("trackCustom", "click_cta-lasciati-ispirare-header");
+			if (typeof fbq != "undefined") fbq("trackCustom", "click_cta-lasciati-ispirare-header", {
+				lingua: currentLang
+			});
 		});
 
 		acquistaHeaderElement.addEventListener("click", function (e) {
-			usermaven("track", "click_cta-acquista-header");
+			const currentLang = getCurrentLang();
+			usermaven("track", "click_cta-acquista-header", {
+				lingua: currentLang
+			});
 			// evt ga4 impostato da tag mangager
 			fbq("trackCustom", "click_cta-acquista-lp", {
-				posizione: "header"
+				posizione: "header",
+				lingua: currentLang
 			});
 		});
 
 		acquistaComeElement.addEventListener("click", function (e) {
-			usermaven("track", "click_cta-acquista-section-come");
+			const currentLang = getCurrentLang();
+			usermaven("track", "click_cta-acquista-section-come", {
+				lingua: currentLang
+			});
 			// evt ga4 impostato da tag mangager
 			fbq("trackCustom", "click_cta-acquista-lp", {
-				posizione: "section-come"
+				posizione: "section-come",
+				lingua: currentLang
 			});
 		});
 
 		acquistaCoseElement.addEventListener("click", function (e) {
-			usermaven("track", "click_cta-acquista-section-cose");
+			const currentLang = getCurrentLang();
+			usermaven("track", "click_cta-acquista-section-cose", {
+				lingua: currentLang
+			});
 			// evt ga4 impostato da tag mangager
 			fbq("trackCustom", "click_cta-acquista-lp", {
-				posizione: "section-cose"
+				posizione: "section-cose",
+				lingua: currentLang
 			});
 		});
 
 		acquistaLasciatiIspirareElement.addEventListener("click", function (e) {
-			usermaven("track", "click_cta-acquista-section-lasciati-ispirare");
+			const currentLang = getCurrentLang();
+			usermaven("track", "click_cta-acquista-section-lasciati-ispirare", {
+				lingua: currentLang
+			});
 			// evt ga4 impostato da tag mangager
 			fbq("trackCustom", "click_cta-acquista-lp", {
-				posizione: "lasciati-ispirare"
+				posizione: "lasciati-ispirare",
+				lingua: currentLang
 			});
 		});
 
 		footerTelLinkElement.addEventListener("click", function (e) {
-			usermaven("track", "click_footer-tel-link");
+			const currentLang = getCurrentLang();
+			usermaven("track", "click_footer-tel-link", {
+				lingua: currentLang
+			});
 			// evt ga4 impostato da tag mangager
-			fbq("trackCustom", "click_footer-tel-link");
+			fbq("trackCustom", "click_footer-tel-link", {
+				lingua: currentLang
+			});
 		});
 
 		footerEmailLinkElement.addEventListener("click", function (e) {
-			usermaven("track", "click_footer-email-link");
+			const currentLang = getCurrentLang();
+			usermaven("track", "click_footer-email-link", {
+				lingua: currentLang
+			});
 			dataLayer.push({
 				event: "click_footer-email-link"
 			});
-			fbq("trackCustom", "click_footer-email-link");
+			fbq("trackCustom", "click_footer-email-link", {
+				lingua: currentLang
+			});
 		});
 	</script>
 </header>
