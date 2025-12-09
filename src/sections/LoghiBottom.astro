@@ -3,6 +3,10 @@ import { Image } from "astro:assets";
 import snowcareImage from "../images/footer-logo_snowcare.png";
 import valleImage from "../images/footer-logo_valle-daosta.png";
 import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
+
+import { loadTranslations } from "../utils/loadTranslations";
+const { lang } = Astro.props;
+const translations = loadTranslations(lang);
 ---
 
 <style>
@@ -43,12 +47,12 @@ import portaleImage from "../images/footer-ti_il-portale-dello-sci-it.svg";
 </style>
 <div class="loghi">
 	<div>
-		<Image src={snowcareImage} alt="Assicurazione sci e snowboard Snowcare" class="snowcare" />
+		<Image src={snowcareImage} alt={translations.alt_snowcare} class="snowcare" />
 
 		<a href="http://www.lovevda.it/" target="_blank">
-			<Image src={valleImage} alt="Valle d'Aosta, Vallée d'Aosta" class="valle" />
+			<Image src={valleImage} alt={translations.alt_valle_daosta} class="valle" />
 		</a>
 	</div>
 
-	<Image src={portaleImage} alt="Il portale dello sci in valle d'aosta" class="portale" />
+	<Image src={portaleImage} alt={translations.alt_portale_sci} class="portale" />
 </div>

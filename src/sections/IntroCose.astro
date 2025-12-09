@@ -1,11 +1,19 @@
 ---
 import { Image } from "astro:assets";
 
-import seiGiornateImage from "../images/illustrazione-6-giornate.svg";
+import seiGiornateImageIt from "../images/illustrazione-6-giornate-it.svg";
+import seiGiornateImageEn from "../images/illustrazione-6-giornate-en.svg";
+import seiGiornateFrImage from "../images/illustrazione-6-giornate-fr.svg";
 
 import { loadTranslations } from "../utils/loadTranslations";
 const { lang } = Astro.props;
 const translations = loadTranslations(lang);
+
+const seiGiornateImages = {
+	it: seiGiornateImageIt,
+	en: seiGiornateImageEn,
+	fr: seiGiornateFrImage,
+};
 ---
 
 <style>
@@ -58,7 +66,7 @@ const translations = loadTranslations(lang);
 				<a href={translations.link_skiperformance} class="btn" target="_blank" id="cta-acquista-section-cose">{translations.acquista_online}</a>
 			</div>
 
-			<Image src={seiGiornateImage} alt="6 giornate di skipass + 1 ora di maestro a soli 100€" class="sei-giornate" />
+			<Image src={seiGiornateImages[lang]} alt={translations.sei_giornate_alt || "Illustrazione 6 giornate"} class="sei-giornate" />
 		</div>
 	</div>
 </section>

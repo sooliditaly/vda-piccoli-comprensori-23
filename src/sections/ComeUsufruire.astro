@@ -112,22 +112,22 @@ const translations = loadTranslations(lang);
 <section class="come-usufruire lazy-background">
 	<div class="content">
 		<h1>{translations.come_usufruire_title}</h1>
-		<p>Acquista il Magic Skipass online o presso le biglietterie dei comprensori aderenti. Riceverai via email o in versione cartacea i QR code necessari per accedere alle promozioni incluse.</p>
+		<p>{translations.come_usufruire_intro}</p>
 		<ul class="steps">
 			<li>
-				<Image src={qrSkipassImage} alt="Uno" width="100" />
+				<Image src={qrSkipassImage} alt={translations.alt_qr_uno} width="100" />
 				<h2>{translations.qr_skipass_title}</h2>
 				<p>{translations.qr_skipass_description}</p>
 			</li>
 
 			<li>
-				<Image src={qrLezioneImage} alt="Due" width="100" />
+				<Image src={qrLezioneImage} alt={translations.alt_qr_due} width="100" />
 				<h2>{translations.qr_lesson_title}</h2>
 				<p>{translations.qr_lesson_description}</p>
 			</li>
 
 			<li>
-				<Image src={qrPernottamentoImage} alt="Tre" width="100" />
+				<Image src={qrPernottamentoImage} alt={translations.alt_qr_tre} width="100" />
 				<h2>{translations.qr_hotel_title}</h2>
 				<p>{translations.qr_hotel_description}</p>
 			</li>

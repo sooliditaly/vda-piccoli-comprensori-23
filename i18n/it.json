@@ -1,5 +1,8 @@
 {
 	"page_title": "Scopri l'autentica magia della Valle d'Aosta",
+	"page_description": "Magic Skipass è la promozione ideata per incentivare la scoperta di itinerari fuori dal comune dove poter vivere la propria passione per la neve, provare a sciare e assaporare le tradizioni più vere e radicate, contrastando il caro vita.",
+	"og_title": "Scopri l'autentica magia della Valle d'Aosta",
+	"og_description": "Magic Skipass è la promozione ideata per incentivare la scoperta di itinerari fuori dal comune dove poter vivere la propria passione per la neve, provare a sciare e assaporare le tradizioni più vere e radicate, contrastando il caro vita.",
 
 	"scopri_la_magia": "Scopri l'autentica magia della<br class=\"mobile-only\" /> Valle d'Aosta e scia nei",
 	"piccoli_comprensori": "piccoli<br class=\"mobile-only\" /> comprensori",
@@ -103,5 +106,19 @@
 	"link_skilife_privacy_policy": "https://www.skilife.ski/privacy/",
 	"link_skilife_cookie_policy": "/cookie-policy",
 
-	"link_skiperformance": "https://skilife.skiperformance.com/it/negozio#/it/acquista?skugroup_id=4119"
+	"link_skiperformance": "https://skilife.skiperformance.com/it/negozio#/it/acquista?skugroup_id=4119",
+
+	"alt_ski_life": "Ski Life valle d'Aosta",
+	"alt_vai_giu": "Vai giù",
+	"lang_italiano": "Italiano",
+	"lang_english": "English",
+	"lang_french": "French",
+	"come_usufruire_intro": "Acquista il Magic Skipass online o presso le biglietterie dei comprensori aderenti. Riceverai via email o in versione cartacea i QR code necessari per accedere alle promozioni incluse.",
+	"alt_qr_uno": "Uno",
+	"alt_qr_due": "Due",
+	"alt_qr_tre": "Tre",
+	"alt_mappa_comprensori": "Mappa piccoli comprensori",
+	"alt_snowcare": "Assicurazione sci e snowboard Snowcare",
+	"alt_valle_daosta": "Valle d'Aosta, Vallée d'Aoste",
+	"alt_portale_sci": "Il portale dello sci in valle d'aosta"
 }

@@ -192,7 +192,7 @@ const translations = loadTranslations(lang);
 			<a href="/fr" class={lang == "fr" ? "selected" : ""}>FR</a>
 		</div>
 
-		<Image src={logoSkiLife} alt="Ski Life valle d'Aosta" class="logo" loading="eager" />
+		<Image src={logoSkiLife} alt={translations.alt_ski_life} class="logo" loading="eager" />
 
 		<div>
 			<div>
@@ -205,7 +205,7 @@ const translations = loadTranslations(lang);
 			<button class="btn btn--secondary scopri-di-piu">{translations.scopri_borghi}</button>
 		</div>
 
-		<Image src={arrowDownImage} alt="Vai giù" class="arrow-down" loading="eager" />
+		<Image src={arrowDownImage} alt={translations.alt_vai_giu} class="arrow-down" loading="eager" />
 	</div>
 
 	<script>

@@ -1,5 +1,8 @@
 {
-	"page_title": "Scopri l'autentica magia della Valle d'Aosta",
+	"page_title": "Découvrez la magie authentique de la Vallée d'Aoste",
+	"page_description": "Magic Skipass est la promotion conçue pour encourager la découverte d'itinéraires insolites où vivre votre passion pour la neige, essayer le ski et savourer les traditions les plus vraies et les plus profondes, en contrastant le coût de la vie élevé.",
+	"og_title": "Découvrez la magie authentique de la Vallée d'Aoste",
+	"og_description": "Magic Skipass est la promotion conçue pour encourager la découverte d'itinéraires insolites où vivre votre passion pour la neige, essayer le ski et savourer les traditions les plus vraies et les plus profondes, en contrastant le coût de la vie élevé.",
 
 	"scopri_la_magia": "Découvrez la magie authentique de la <br class=\"mobile-only\" />Vallée d'Aoste et skiez dans les",
 	"piccoli_comprensori": "PETITS DOMAINES SKIABLES",
@@ -107,5 +110,19 @@
 	"link_skilife_privacy_policy": "https://www.skilife.ski/fr/privacy",
 	"link_skilife_cookie_policy": "/fr/cookie-policy",
 
-	"link_skiperformance": "https://skilife.skiperformance.com/fr/store#/fr/buy?skugroup_id=4319"
+	"link_skiperformance": "https://skilife.skiperformance.com/fr/store#/fr/buy?skugroup_id=4319",
+
+	"alt_ski_life": "Ski Life Vallée d'Aoste",
+	"alt_vai_giu": "Descendre",
+	"lang_italiano": "Italiano",
+	"lang_english": "English",
+	"lang_french": "French",
+	"come_usufruire_intro": "Achetez le Magic Skipass en ligne ou aux caisses des domaines skiables participant à l'initiative. Vous recevrez par e-mail ou en version imprimée les codes QR nécessaires pour accéder aux promotions incluses.",
+	"alt_qr_uno": "Un",
+	"alt_qr_due": "Deux",
+	"alt_qr_tre": "Trois",
+	"alt_mappa_comprensori": "Carte des petits domaines skiables",
+	"alt_snowcare": "Assurance ski et snowboard Snowcare",
+	"alt_valle_daosta": "Valle d'Aosta, Vallée d'Aoste",
+	"alt_portale_sci": "Le portail du ski en Vallée d'Aoste"
 }

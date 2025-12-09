@@ -1,5 +1,8 @@
 {
-	"page_title": "Scopri l'autentica magia della Valle d'Aosta",
+	"page_title": "Discover the authentic magic of the Aosta Valley",
+	"page_description": "Magic Skipass is the promotion designed to encourage the discovery of off-the-beaten-path itineraries where you can live your passion for snow, try skiing and savor the truest and deepest traditions, counteracting the high cost of living.",
+	"og_title": "Discover the authentic magic of the Aosta Valley",
+	"og_description": "Magic Skipass is the promotion designed to encourage the discovery of off-the-beaten-path itineraries where you can live your passion for snow, try skiing and savor the truest and deepest traditions, counteracting the high cost of living.",
 
 	"scopri_la_magia": "Discover the authentic magic of the<br class=\"mobile-only\" /> Aosta Valley and ski in the",
 	"piccoli_comprensori": "SMALL SKI AREAS",
@@ -104,5 +107,19 @@
 	"link_skilife_privacy_policy": "https://www.skilife.ski/en/privacy",
 	"link_skilife_cookie_policy": "/en/cookie-policy",
 
-	"link_skiperformance": "https://skilife.skiperformance.com/en/store#/en/buy?skugroup_id=4319"
+	"link_skiperformance": "https://skilife.skiperformance.com/en/store#/en/buy?skugroup_id=4319",
+
+	"alt_ski_life": "Ski Life Aosta Valley",
+	"alt_vai_giu": "Scroll down",
+	"lang_italiano": "Italiano",
+	"lang_english": "English",
+	"lang_french": "French",
+	"come_usufruire_intro": "Buy the Magic Skipass online or at the ticket offices of participating ski areas. You will receive via email or in printed form the QR codes necessary to access the included promotions.",
+	"alt_qr_uno": "One",
+	"alt_qr_due": "Two",
+	"alt_qr_tre": "Three",
+	"alt_mappa_comprensori": "Map of small ski areas",
+	"alt_snowcare": "Ski and snowboard insurance Snowcare",
+	"alt_valle_daosta": "Aosta Valley, Vallée d'Aoste",
+	"alt_portale_sci": "The ski portal in Aosta Valley"
 }
