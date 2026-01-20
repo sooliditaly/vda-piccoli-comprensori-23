@@ -1,25 +1,27 @@
 ---
 import "../../node_modules/the-new-css-reset/css/reset.css";
-const { lang } = Astro.props;
+const { lang, pageTitle } = Astro.props;
 
 import favicon from "../images/favicon.svg";
 
 import { loadTranslations } from "../utils/loadTranslations";
 const translations = loadTranslations(lang);
+const title = pageTitle ?? translations.page_title;
+const ogTitle = pageTitle ?? translations.og_title;
 ---
 
 <html lang={lang}>
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>{translations.page_title}</title>
+		<title>{title}</title>
 
 		<meta name="description" content={translations.page_description} />
 		<meta name="google-site-verification" content="OfJmWG7hGmO0OGqfVR-4gILKZQERd-ew5d8at8oVvWc" />
 
 		<meta property="og:url" content="https://magic-pass.skilife.ski/" />
 		<meta property="og:site_name" content="magic-pass.skilife.ski" />
-		<meta property="og:title" content={translations.og_title} />
+		<meta property="og:title" content={ogTitle} />
 		<meta property="og:description" content={translations.og_description} />
 		<meta property="og:locale" content={lang === "it" ? "it_IT" : lang === "en" ? "en_US" : "fr_FR"} />
 		<meta property="og:image" content="/og-header.jpg" />

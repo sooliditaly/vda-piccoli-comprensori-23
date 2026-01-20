@@ -16,8 +16,9 @@ const { comprensorio } = Astro.props;
 const lang = "en";
 
 const translations = loadTranslations(lang);
+const pageTitle = translations.comprensorio_page_title.replace("{nome}", comprensorio.nome);
 ---
 
-<AppShell lang={lang}>
+<AppShell lang={lang} pageTitle={pageTitle}>
 	<ComprensorioDetail comprensorio={comprensorio} lang={lang} />
 </AppShell>
