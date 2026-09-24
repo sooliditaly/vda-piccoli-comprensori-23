@@ -12,6 +12,7 @@ import ComeUsufruire from "../../sections/ComeUsufruire.astro";
 import Footer from "../../sections/Footer.astro";
 import Enonetutto from "../../sections/Enonetutto.astro";
 import MosaicoComprensori from "../../sections/MosaicoComprensori.astro";
+import { SHOW_EXTRA_PROMOS } from "../../utils/featureFlags";
 ---
 
 <style>
@@ -50,9 +51,8 @@ import MosaicoComprensori from "../../sections/MosaicoComprensori.astro";
 		<MosaicoComprensori lang="fr" />
 	</div>
 
-	<Enonetutto lang="fr" />
-
-	<ComeUsufruire lang="fr" />
+	{SHOW_EXTRA_PROMOS && <Enonetutto lang="fr" />}
+	{SHOW_EXTRA_PROMOS && <ComeUsufruire lang="fr" />}
 
 	<TariffeGrid lang="fr" />
 

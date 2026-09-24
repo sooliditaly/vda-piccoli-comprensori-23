@@ -302,16 +302,18 @@ const translations = loadTranslations(lang);
 			});
 		});
 
-		acquistaComeElement.addEventListener("click", function (e) {
-			const currentLang = getCurrentLang();
-			usermaven("track", "click_cta-acquista-section-come", {
-				lingua: currentLang
+		if (acquistaComeElement) {
+			acquistaComeElement.addEventListener("click", function (e) {
+				const currentLang = getCurrentLang();
+				usermaven("track", "click_cta-acquista-section-come", {
+					lingua: currentLang
+				});
+				// evt ga4 impostato da tag mangager
+				fbq("trackCustom", "click_cta-acquista-section-come", {
+					lingua: currentLang
+				});
 			});
-			// evt ga4 impostato da tag mangager
-			fbq("trackCustom", "click_cta-acquista-section-come", {
-				lingua: currentLang
-			});
-		});
+		}
 
 		acquistaCoseElement.addEventListener("click", function (e) {
 			const currentLang = getCurrentLang();
