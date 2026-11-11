@@ -17,11 +17,11 @@
 	"cose_p2": "Esperienze imperdibili per godere di qualche giorno lontani dal caos, dai ritmi frenetici delle città e scoprire la bellezza di sciare in mezzo alla natura più pura e meravigliosa della Valle d'Aosta.",
 
 	"nonetutto_title": "E non è tutto!",
-	"nonetutto_p1": "Con Magic Skipass, potrai usufruire anche di 1 ora di lezione di sci o di snowboard, presso le Scuole Sci disponibili nei piccoli comprensori che aderiscono all'iniziativa.<br /><br /> <a href=\"/Skilife_MagicSkipass_25-26.pdf\" download=\"/Skilife_MagicSkipass_25-26.pdf\">Scarica il leaflet</a> della promozione con l'elenco ed i contatti delle Scuola Sci che aderiscono alla promozione. <small>L'ora di lezione con il maestro non è cedibile. Potrai usufruire dell'ora di lezione per tutta la stagione 2025/2026 ad eccezione dei weekend e dei periodi dal 22/12 al 06/01 e dal 16/02 al 22/02. Non è possibile prenotare telefonicamente o a mezzo mail l’ora di lezione gratuita. Essa può essere richiesta solo in presenza alla Scuola di sci, dietro presentazione del Magic skipass.</small>",
-	"nonetutto_p2": "Soggiornando in una delle strutture aderenti alla promozione, <b>max 2 ragazzi*</b> (fino a 18 anni non compiuti) usufruiscono della gratuità per pernottamento e prima colazione se soggiornano in camera con i genitori, possessori dello skipass promozionale.",
-	"nonetutto_scarica_lista": "<p><a href=\"/Lista%20strutture/VDA_MagicSkipass_ListaStrutture_2526_v1_ita.pdf\" download=\"VDA_MagicSkipass_ListaStrutture_2526_v1_ita.pdf\">Scarica la lista degli alberghi</a> che aderiscono alla promozione.</p>",
-	"nonetutto_p3": "<b>Ogni Magic skipass acquistato da un adulto dà diritto a una notte gratuita per 1 o due ragazzi fino a 18 anni non ancora compiuti, in camera con i genitori.</b>",
-	"nonetutto_esempi": "<div class=\"esempi\"><b>Alcuni esempi:</b><ul><li>2 genitori (2 skipass) + 1/2 ragazzo/i: gli adulti pagano la tariffa piena e il/i ragazzo/i soggiorna/no gratis per due notti</li><li>2 genitori (1 skipass) + 1/2 ragazzo/i: gli adulti pagano la tariffa piena e il/i ragazzo/i soggiorna/no gratis per una notte</li><li> 1 genitore (1 skipass) + 1/2 ragazzo/i: l'adulto paga la tariffa piena della camera doppia e il/i ragazzo/i soggiorna/no gratis per una notte</li></ul><p><b>N.B.:</b> La gratuità in hotel è abbinata esclusivamente ad uno skipass adulto. Lo skipass dei ragazzi 14 - 18 anni non genera la gratuità.</p></div>",
+	"nonetutto_p1": "Formula <b>«1+1»</b> (1 ora acquistata = 1 ora in omaggio): i possessori del Magic Skipass hanno diritto a <b>1 ora di lezione gratuita</b> di sci o snowboard a fronte dell'acquisto contestuale di 1 ora di lezione, presso le Scuole Sci dei piccoli comprensori aderenti. <small>Condizioni di validità: la promozione resta attiva dal lunedì al venerdì, con l'esclusione dei periodi di alta stagione e festività: dal 4 all'8 dicembre 2026; dal 20 dicembre 2026 al 10 gennaio 2027; dal 5 al 14 febbraio 2027; dal 25 al 30 marzo 2027. Per il riscatto dell'ora gratuita si utilizza il QR code, da presentare in presenza alla Scuola di sci. L'ora di lezione non è cedibile e non è prenotabile telefonicamente o via email.</small>",
+	"nonetutto_p2": "Soggiorno gratuito, con trattamento di <b>camera e colazione</b>, per bambini e ragazzi di <b>età inferiore a 14 anni</b>, fino a un massimo di due per camera, se alloggiati nella stessa camera dei genitori.",
+	"nonetutto_scarica_lista": "",
+	"nonetutto_p3": "<b>L'agevolazione sul soggiorno non è applicabile nei seguenti periodi:</b> dal 4 all'8 dicembre 2026; dal 20 dicembre 2026 al 10 gennaio 2027; dal 5 al 14 febbraio 2027; dal 25 al 30 marzo 2027.",
+	"nonetutto_esempi": "<div class=\"esempi\"><p>Il soggiorno presso le strutture aderenti è prenotabile su richiesta e soggetto a conferma, in base alla disponibilità e nel rispetto degli eventuali soggiorni minimi e delle condizioni di pagamento e cancellazione stabilite da ciascuna struttura.</p><p><b>Per accedere all'agevolazione è sufficiente dimostrare l'acquisto di almeno un Magic Skipass per nucleo familiare.</b></p></div>",
 
 	"come_usufruire_title": "Come usufruire della promozione",
 	"come_usufruire_acquista": "Acquista",
@@ -33,14 +33,14 @@
 
 	"qr_skipass_title": "Sei giornate di skipass",
 	"qr_skipass_description": "Mostra il QR code il primo giorno per ritirare lo skipass. In seguito la tessera resterà attiva: potrai accedere direttamente agli impianti senza ripassare in biglietteria.",
-	"qr_lesson_title": "Una lezione di sci",
-	"qr_lesson_description": "Mostra il QR code alle Scuole Sci convenzionate per ottenere la lezione gratuita. Prenota direttamente in presenza alla scuola di sci.",
-	"qr_hotel_title": "Pernottamento gratuito per minorenni",
-	"qr_hotel_description": "Presenta il QR code presso una delle strutture alberghiere aderenti per ottenere il soggiorno gratuito dei minorenni. Il soggiorno deve essere prenotato in anticipo.",
+	"qr_lesson_title": "Formula 1+1",
+	"qr_lesson_description": "Mostra il QR code alle Scuole Sci convenzionate per riscattare l'ora in omaggio: 1 ora acquistata = 1 ora gratuita. Valida dal lunedì al venerdì, fuori dai periodi di alta stagione.",
+	"qr_hotel_title": "Soggiorno gratuito under 14",
+	"qr_hotel_description": "Presenta il QR code in una struttura aderente: camera e colazione gratuite per bambini e ragazzi sotto i 14 anni, massimo due per camera, nella camera dei genitori. Basta un Magic Skipass per nucleo familiare. Prenotazione su richiesta, soggetta a conferma.",
 
 	"tariffe_title": "Un prezzo imbattibile",
 	"tariffe_p1": "1 skipass plurigiornaliero** nominale da 6 giornate di sci da utilizzare a libera scelta nei piccoli comprensori valdostani <b>a soli 100€ per gli adulti, gratis per i bambini fino a 8 anni</b> (con l'acquisto di uno skipass adulto) e <b>80€ per i ragazzi sotto ai 16 anni</b>.",
-	"tariffe_p2": "Lo skipass è utilizzabile per un massimo di tre giorni nella stessa località sciistica. <small>** Lo skipass è utilizzabile per un massimo di 3 giornate di sci fruibili all’interno dello stesso piccolo comprensorio.</small> <small>Under 16: nati dopo il 31/10/2009. Under 8: nati dopo il 31/10/2017.</small>",
+	"tariffe_p2": "Lo skipass è utilizzabile per un massimo di tre giorni nella stessa località sciistica. <small>** Lo skipass è utilizzabile per un massimo di 3 giornate di sci fruibili all’interno dello stesso piccolo comprensorio.</small> <small>Junior under 16: nati dopo il 31/10/2010. Baby under 8: nati dopo il 31/10/2018.</small>",
 
 	"lasciati_ispirare_title": "Lasciati ispirare <br />dai piccoli borghi",
 	"lasciati_ispirare_p": "Ecco i piccoli borghi in cui assaporare la magia e la tradizione della Valle d'Aosta con il magic skipass: <b>Antagnod, Brusson, Chamois, Champorcher, Cogne, Crévacol, Gressoney-Saint-Jean, La Magdeleine, Ollomont, Rhêames-Notre-Dame, Valgrisenche</b>",

@@ -17,14 +17,14 @@
 	"cose_p2": "Des expériences incontournables pour profiter de quelques jours loin du chaos, des rythmes frénétiques des villes et découvrir la beauté du ski au milieu de la nature la plus pure et la plus merveilleuse de la Vallée d’Aoste.",
 
 	"nonetutto_title": "Et ce n'est pas tout!",
-	"nonetutto_p1": "Avec Magic Skipass, vous pouvez également profiter d’une heure de cours de ski ou de snowboard, dans les Ecoles de Ski disponibles dans les petits domaines participant à l’initiative. <br /><br /> <a href=\"/Skilife_MagicSkipass_25-26_fr.pdf\" download=\"/Skilife_MagicSkipass_25-26_fr.pdf\">Téléchargez le dépliant</a> de la promotion avec la liste et les contacts des écoles de ski participant à la promotion. <small>Vous pourrez profiter de l’heure de cours pour toute la saison 2025/2026 à l’exception des week-ends et de la période du 22/12 au 06/01 et du 16/02 au 22/02. Il n’est pas possible de réserver l’heure de cours gratuite par téléphone ou par e-mail. Elle peut uniquement être demandée en personne à l’école de ski, sur présentation du Magic skipass.</small>",
-	"nonetutto_p2": "En séjournant dans l’un des hôtels compris dans la promotion , <b>max  2 enfants*</b> (jusqu’à 18 ans) bénéficient d’une nuit gratuite avec petit-déjeuner s’ils séjournent dans la chambre de leurs parents, titulaires du forfait-ski promotionnel.",
+	"nonetutto_p1": "Formule <b>« 1+1 »</b> (1 heure achetée = 1 heure offerte) : les détenteurs du Magic Skipass ont droit à <b>1 heure de cours gratuite</b> de ski ou de snowboard contre l’achat simultané d’1 heure de cours, dans les écoles de ski des petits domaines participants. <small>Conditions de validité : la promotion est active du lundi au vendredi, à l’exclusion des périodes de haute saison et des fêtes : du 4 au 8 décembre 2026 ; du 20 décembre 2026 au 10 janvier 2027 ; du 5 au 14 février 2027 ; du 25 au 30 mars 2027. L’heure offerte se récupère avec le QR code, à présenter en personne à l’école de ski. L’heure de cours n’est pas cessible et ne peut pas être réservée par téléphone ou par e-mail.</small>",
+	"nonetutto_p2": "Séjour gratuit, en <b>chambre et petit-déjeuner</b>, pour les enfants et les jeunes de <b>moins de 14 ans</b>, jusqu’à deux par chambre au maximum, s’ils sont hébergés dans la même chambre que leurs parents.",
 
-	"nonetutto_scarica_lista": "<p><a href=\"/Lista%20strutture/VDA_MagicSkipass_ListaStrutture_2526_v1_fra.pdf\" download=\"VDA_MagicSkipass_ListaStrutture_2526_v1_fra.pdf\">Téléchargez la liste des hôtels</a> participant à la promotion.</p>",
+	"nonetutto_scarica_lista": "",
 
-	"nonetutto_p3": "<b>Chaque forfait-ski Magic Skipass acheté par un adulte donne droit à une nuit gratuite pour 1 ou deux enfants jusqu’à 18 ans, dans la chambre avec les parents.</b>",
+	"nonetutto_p3": "<b>L’avantage sur le séjour ne s’applique pas pendant les périodes suivantes :</b> du 4 au 8 décembre 2026 ; du 20 décembre 2026 au 10 janvier 2027 ; du 5 au 14 février 2027 ; du 25 au 30 mars 2027.",
 
-	"nonetutto_esempi": "<div class=\"esempi\"><b>Quelques exemples:</b><ul><li>2 parents (2 forfaits-ski) + 1/2 enfant(s) : les adultes paient plein tarif et le(s) enfant(s) séjournent gratuitement pour deux nuits</li><li>2 parents (1 forfaits-ski) + 1/2 enfant(s) : les adultes paient plein tarif et le(s) enfant(s) séjourne(nt) gratuitement une nuit</li><li>1 parent (1 forfaits-ski) + 1/2 enfant(s) : l’adulte paie le plein tarif de la chambre double et le(s) enfant(s) séjourne(nt) gratuitement pour une nuit</li></ul><p><b>N.B.:</b> L’entrée gratuite à l’hôtel est combinée exclusivement avec un forfaits-ski adulte. Le forfaits-ski pour les enfants de 14 à 18 ans ne donne pas droit à une entrée gratuite.</p></div>",
+	"nonetutto_esempi": "<div class=\"esempi\"><p>Le séjour dans les établissements participants est réservable sur demande et soumis à confirmation, selon les disponibilités et dans le respect des éventuels séjours minimum ainsi que des conditions de paiement et d’annulation fixées par chaque établissement.</p><p><b>Pour bénéficier de l’avantage, il suffit de justifier l’achat d’au moins un Magic Skipass par famille.</b></p></div>",
 
 	"come_usufruire_title": "Comment profiter de la promotion",
 	"come_usufruire_acquista_title": "Acheter",
@@ -36,15 +36,15 @@
 
 	"qr_skipass_title": "Six jours de skipass",
 	"qr_skipass_description": "Présentez le QR code le premier jour pour retirer votre skipass. La carte restera ensuite active : vous pourrez accéder directement aux remontées sans repasser par la caisse.",
-	"qr_lesson_title": "Une leçon de ski",
-	"qr_lesson_description": "Présentez le QR code aux Écoles de Ski partenaires pour bénéficier de la leçon gratuite. Réservez directement en personne à l'école de ski.",
-	"qr_hotel_title": "Hébergement gratuit pour les mineurs",
-	"qr_hotel_description": "Présentez le QR code dans les établissements participants pour obtenir le séjour gratuit pour les mineurs. Le séjour doit être réservé à l'avance.",
+	"qr_lesson_title": "Formule 1+1",
+	"qr_lesson_description": "Présentez le QR code aux écoles de ski partenaires pour récupérer l’heure offerte : 1 heure achetée = 1 heure gratuite. Valable du lundi au vendredi, hors périodes de haute saison.",
+	"qr_hotel_title": "Séjour gratuit moins de 14 ans",
+	"qr_hotel_description": "Présentez le QR code dans un établissement participant : chambre et petit-déjeuner gratuits pour les enfants de moins de 14 ans, deux maximum par chambre, dans la chambre des parents. Un Magic Skipass par famille suffit. Réservation sur demande, sous réserve de confirmation.",
 
 	"tariffe_title": "Un prix imbattable",
 	"tariffe_p1": "1 forfait-ski nominal plusieurs-jours** pour 6 jours de ski à utiliser librement dans les petits domaines skiables de la Vallée d’Aoste <b>pour seulement 100 € pour les adultes, gratuit pour les enfants jusqu’à 8 ans</b> (à l’achat d’un forfait de ski adulte) et <b>80 € pour les enfants de moins de 16 ans</b>. Le forfait de ski peut être utilisé pendant trois jours maximum dans la même station de ski.",
 	"tariffe_p2": "** Le forfait de ski peut être utilisé pour un maximum de 3 jours de ski sur un même petit domaine.",
-	"tariffe_p3": "Moins de 16 ans: né après le 31/10/2009. Moins de 8 ans: né après le 31/10/2017.",
+	"tariffe_p3": "Junior moins de 16 ans : nés après le 31/10/2010. Baby moins de 8 ans : nés après le 31/10/2018.",
 
 	"lasciati_ispirare_title": "Laissez-vous inspirer par les petits villages",
 	"lasciati_ispirare_p": "Voici les petits villages où vous pourrez savourer la magie et la tradition de la Vallée d’Aoste avec Magic Skipass: <b>Antagnod, Brusson, Chamois, Champorcher, Cogne, Crévacol, Gressoney-Saint-Jean, La Magdeleine, Ollomont, Rhêmes-Notre-Dame, Valgrisenche</b>",

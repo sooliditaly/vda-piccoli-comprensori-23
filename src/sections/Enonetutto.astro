@@ -61,7 +61,7 @@ const translations = loadTranslations(lang);
 				<h1>{translations.nonetutto_title}</h1>
 				<p set:html={translations.nonetutto_p1} />
 				<p set:html={translations.nonetutto_p2} />
-				<p set:html={translations.nonetutto_scarica_lista} />
+				{translations.nonetutto_scarica_lista && <p set:html={translations.nonetutto_scarica_lista} />}
 				<p set:html={translations.nonetutto_p3} />
 				<p set:html={translations.nonetutto_esempi} />
 			</div>

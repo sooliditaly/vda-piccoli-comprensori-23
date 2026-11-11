@@ -17,11 +17,11 @@
 	"cose_p2": "Unmissable experiences to enjoy a few days away from the chaos, the frenetic rhythms of the cities and discover the beauty of skiing in the middle of the purest and most wonderful nature of the Aosta Valley.",
 
 	"nonetutto_title": "And that's not all!",
-	"nonetutto_p1": "With Magic Skipass, you can also benefit from one hour of ski or snowboard lessons, in the Ski Schools available in the areas participating to the initiative. <br /><br /> <a href=\"/Skilife_MagicSkipass_25-26_en.pdf\" download=\"/Skilife_MagicSkipass_25-26_en.pdf\">Download the flyer</a> of the promotion with the list and contacts of the ski schools participating to the promotion. <small>The lesson hour with the instructor is non-transferable. You will be able to take advantage of the lesson time for the entire 2025/2026 season with the exception of weekends and the period from 12/22 to 01/06 and from 02/16 to 02/22. It is not possible to book the free lesson hour by phone or email. It can only be requested in person at the ski school, upon presentation of the Magic skipass.</small>",
-	"nonetutto_p2": "By staying in one of the hotels included in the promotion, <b>max 2 children*</b> (up to 18 years old) benefit from a free night with breakfast if they stay in the room of their parents, ski pass holders promotional.",
-	"nonetutto_scarica_lista": "<p><a href=\"/Lista%20strutture/VDA_MagicSkipass_ListaStrutture_2526_v1_en.pdf\" download=\"VDA_MagicSkipass_ListaStrutture_2526_v1_en.pdf\">Download the list of hotels</a> participating in the promotion.</p>",
-	"nonetutto_p3": "<b>Each Magic Skipass purchased by an adult entitles you to one free night for 1 or two children up to 18 years old, in the room with the parents.</b>",
-	"nonetutto_esempi": "<div class=\"esempi\"><b>Some examples:</b><ul><li>2 parents (2 ski passes) + 1/2 child(ren): adults pay full price and child(ren) stay free for two nights</li><li>2 parents (1 ski pass) + 1/2 child(ren): adults pay full price and child(ren) stay one night free</li><li>1 parent (1 ski pass) + 1/2 child(ren): the adult pays the full price of the double room and the child(ren) stays free for one night</li></ul><p><b>N.B.:</b> Free entry to the hotel is combined exclusively with an adult ski pass. Ski passes for children aged 14 to 18 do not entitle them to free entry.</p></div>",
+	"nonetutto_p1": "<b>“1+1” formula</b> (1 hour purchased = 1 hour free): Magic Skipass holders are entitled to <b>1 free hour</b> of ski or snowboard lessons when buying 1 lesson hour at the same time, at the ski schools in the participating small ski areas. <small>Validity: the promotion is active from Monday to Friday, excluding high season and holiday periods: from 4 to 8 December 2026; from 20 December 2026 to 10 January 2027; from 5 to 14 February 2027; from 25 to 30 March 2027. The free hour is redeemed with the QR code, to be shown in person at the ski school. The lesson hour is non-transferable and cannot be booked by phone or email.</small>",
+	"nonetutto_p2": "Free stay, with <b>room and breakfast</b>, for children and young people <b>under 14</b>, up to a maximum of two per room, if they stay in the same room as their parents.",
+	"nonetutto_scarica_lista": "",
+	"nonetutto_p3": "<b>The stay benefit does not apply in the following periods:</b> from 4 to 8 December 2026; from 20 December 2026 to 10 January 2027; from 5 to 14 February 2027; from 25 to 30 March 2027.",
+	"nonetutto_esempi": "<div class=\"esempi\"><p>Stays at participating properties can be booked on request and are subject to confirmation, depending on availability and in accordance with any minimum stays and the payment and cancellation conditions set by each property.</p><p><b>To access the stay benefit, it is sufficient to show the purchase of at least one Magic Skipass per family.</b></p></div>",
 
 	"come_usufruire_title": "How to take advantage of the promotion",
 	"come_usufruire_acquista": "Buy",
@@ -33,15 +33,15 @@
 
 	"qr_skipass_title": "Six days of skipass",
 	"qr_skipass_description": "Show the QR code on the first day to collect your skipass. Afterward, the card remains active: you can access the lifts directly without returning to the ticket office.",
-	"qr_lesson_title": "One ski lesson",
-	"qr_lesson_description": "Show the QR code at participating Ski Schools to get your free lesson. Book directly in person at the ski school.",
-	"qr_hotel_title": "Free stay for minors",
-	"qr_hotel_description": "Present the QR code at participating hotels to receive the free stay for minors. The stay must be booked in advance.",
+	"qr_lesson_title": "1+1 formula",
+	"qr_lesson_description": "Show the QR code at participating ski schools to redeem the free hour: 1 hour purchased = 1 hour free. Valid Monday to Friday, outside high-season periods.",
+	"qr_hotel_title": "Free stay under 14",
+	"qr_hotel_description": "Show the QR code at a participating property: room and breakfast are free for children under 14, up to two per room, in the parents' room. One Magic Skipass per family is enough. Booking on request, subject to confirmation.",
 
 	"tariffe_title": "An unbeatable price",
 	"tariffe_p1": "A nominal multi-day skipass** for 6 days of skiing to be used freely in the small ski areas of the Aosta Valley <b>for only €100 for adults, free for children up to 8 years old</b> (at purchase of an adult skipass) and <b>€80 for children under 16years old</b>. The ski pass can be used for a maximum of three days at the same ski resort",
 	"tariffe_p2": "** The ski pass can be used for a maximum of 3 days of skiing in the same small area.",
-	"tariffe_p3": "Under 16 years old: born after 10/31/2009. Under 8 years old: born after  10/31/2017.",
+	"tariffe_p3": "Junior under 16: born after 31/10/2010. Baby under 8: born after 31/10/2018.",
 
 	"lasciati_ispirare_title": "Let yourself be inspired by the small villages",
 	"lasciati_ispirare_p": "Here are the small villages where you can savor the magic and tradition of the Aosta Valley with Magic Skipass: <b>Antagnod, Brusson, Chamois, Champorcher, Cogne, Crévacol, Gressoney-Saint-Jean, La Magdeleine, Ollomont, Rhêmes-Notre-Dame, Valgrisenche</b>",
